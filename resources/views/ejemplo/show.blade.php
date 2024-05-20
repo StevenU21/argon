@@ -10,66 +10,51 @@
                         <h3 class="mb-0"><i class="fas fa-eye"></i> Ver Ejemplo</h3>
                     </div>
                     <div class="col-4 text-right">
-                        <a href="{{ route('ejemplo.index') }}" class="btn btn-sm btn-primary"><i
-                                class="fas fa-arrow-left"></i>
-                            Volver</a>
+                        <a href="{{ route('ejemplo.index') }}" class="btn btn-sm btn-primary"><i class="fas fa-arrow-left"></i> Volver</a>
                     </div>
                 </div>
             </div>
             <div class="card-body">
-                <h6 class="heading-small text-muted mb-4">Información del Ejemplo</h6>
-                <div class="pl-lg-4">
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="table_number"><i class="fas fa-signature"></i>
-                                    Numero de Mesa</label>
-                                <p>A1</p>
-                            </div>
-                        </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6 class="heading-small text-muted mb-4">Datos del Ejemplo</h6>
+                        <div class="pl-lg-4">
+                            <label class="form-control-label" for="name"><i class="fas fa-signature"></i> Nombre</label>
+                            <p>Centro Tecnologico</p>
 
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="table_number"><i class="fas fa-signature"></i>
-                                    Tipo de Mesa</label>
-                                <p>Pareja</p>
-                            </div>
+                            <label class="form-control-label" for="name"><i class="fas fa-graduation-cap"></i>
+                                Direción</label>
+                            <p>tanque verde</p>
+
+                            <label class="form-control-label" for="name"><i class="fas fa-clock"></i> Teléfono</label>
+                            <p>1246765344565</p>
+
+                            <label class="form-control-label" for="name"><i class="fas fa-clock"></i> URL</label>
+                            <p>http://sdmlsfnkajfn.com</p>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="status"><i
-                                        class="fas fa-toggle-on"></i>Estado</label>
-                                <p>
-                                    <span class="badge badge-success">Disponible</span>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="register_date"><i class="fas fa-calendar-alt"></i>
-                                    Capacidad</label>
-                                <p>2 Personas</p>
-                            </div>
-                        </div>
+                    <div class="col-md-6">
+                        <h6 class="heading-small text-muted mb-4">Datos Adicionales</h6>
+                        <div class="pl-lg-4">
+                            <label class="form-control-label" for="name"><i class="fas fa-chalkboard-teacher"></i>
+                                Sectores</label>
 
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="register_date"><i class="fas fa-calendar-alt"></i>
-                                    Precio</label>
-                                <p>C$ 80</p>
-                            </div>
-                        </div>
+                            <ul>
+                                <li>Salud</li>
+                                <li>Comercio</li>
+                                <li>Industria</li>
+                            </ul>
 
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="register_date"><i class="fas fa-calendar-alt"></i>
-                                    Fecha de Registro</label>
-                                <p>21/05/2024</p>
-                            </div>
+                            <label class="form-control-label" for="name"><i class="fas fa-calendar-alt"></i>
+                                Municipio</label>
+                            <p>Esteli</p>
+
+                            <label class="form-control-label" for="name"><i class="fas fa-calendar-check"></i>
+                                Descripción</label>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, voluptates
+                                voluptatum. Quisquam, voluptates voluptatum.
+                            </p>
                         </div>
                     </div>
                 </div>
