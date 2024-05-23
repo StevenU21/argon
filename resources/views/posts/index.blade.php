@@ -1,5 +1,5 @@
 @extends('layouts.panel')
-@section('title', 'Ejemplo')
+@section('title', 'Post')
 
 @section('content')
     <div class="row">
@@ -56,7 +56,7 @@
                                             style="margin-right: 5px;">
                                             <i class="fas fa-edit"></i> Editar
                                         </a>
-                                        <form action="{{ route('posts.destroy', $post) }}" method="POST"
+                                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST"
                                             style="display: inline-block; margin: 0; display: flex; align-items: center;">
                                             @csrf
                                             @method('DELETE')

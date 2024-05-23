@@ -16,13 +16,23 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Steven Ulloa',
-            'email' => 'steven@gmail.com',
-            'password' => bcrypt('steven@gmail.com')
-        ]);
-        
+        User::factory()->create(
+            [
+                'name' => 'Steven Ulloa',
+                'email' => 'steven@gmail.com',
+                'password' => bcrypt('steven@gmail.com')
+            ],
+        );
+
+        User::factory()->create(
+            [
+                'name' => 'Limber Rodriguez',
+                'email' => 'limber@gmail.com',
+                'password' => bcrypt('limber@gmail.com')
+            ],
+        );
+
         $this->call([CategorySeeder::class]);
-        Post::factory(50)->create();
+        Post::factory(1000)->create();
     }
 }

@@ -13,7 +13,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::with('category')->latest()->paginate(10);
+        $posts = Post::with('category')->paginate(10);
         return view('posts.index', compact('posts'));
     }
 
@@ -60,15 +60,15 @@ class PostController extends Controller
     public function update(PostRequest $request, Post $post)
     {
         $post->update($request->validated());
-        return redirect()->route('posts.index')->with('success', 'Post actualizado Correctamente');
+        return redirect()->route('posts.index')->with('updated', 'Post actualizado Correctamente');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Post $post)
+    public function destroy(int $id)
     {
-        $post->delete();
+        Post::find($id)->delete();
         return redirect()->route('posts.index')->with('deleted', 'Post eliminado Correctamente');
     }
 }
