@@ -17,11 +17,11 @@
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
-                                <th scope="col"><i class="fas fa-hashtag"></i> ID</th>
-                                <th scope="col"><i class="fas fa-signature"></i> Título</th>
-                                <th scope="col"><i class="fas fa-toggle-on"></i> Contenido</th>
-                                <th scope="col"><i class="fas fa-toggle-on"></i> Categoria</th>
-                                <th scope="col"><i class="fas fa-calendar-alt"></i> Fecha de Registro</th>
+                                <th scope="col"><i class="fas fa-list-ol"></i> ID</th>
+                                <th scope="col"><i class="fas fa-heading"></i> Título</th>
+                                <th scope="col"><i class="fas fa-align-left"></i> Contenido</th>
+                                <th scope="col"><i class="fas fa-tags"></i> Categoria</th>
+                                <th scope="col"><i class="fas fa-calendar-check"></i> Fecha de Registro</th>
                                 <th scope="col"><i class="fas fa-cogs"></i> Acciones</th>
                             </tr>
                         </thead>

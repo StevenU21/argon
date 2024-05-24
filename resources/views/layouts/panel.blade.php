@@ -47,6 +47,7 @@
             animation: toaster 0.5s ease-in-out;
         }
     </style>
+    @livewireStyles
 </head>
 
 <body class="">
@@ -64,7 +65,7 @@
             <!-- User -->
             @include('includes.mobile_menu')
             <!-- Collapse -->
-            <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+            {{-- <div class="collapse navbar-collapse" id="sidenav-collapse-main">
                 <!-- Collapse header -->
                 <div class="navbar-collapse-header d-md-none">
                     <div class="row">
@@ -85,7 +86,10 @@
                 </div>
                 <!-- Navigation -->
                 @include('includes.navigation')
-            </div>
+            </div> --}}
+
+            {{-- componente de livewire --}}
+            <livewire:navigation />
         </div>
     </nav>
     <div class="main-content">
@@ -216,6 +220,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @include('components.alerts') <!-- Mueve esto al final -->
+    @livewireScripts
 </body>
 
 </html>
