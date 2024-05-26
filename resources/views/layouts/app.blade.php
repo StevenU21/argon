@@ -158,6 +158,7 @@
                 application: "argon-dashboard-free"
             });
     </script>
+      @include('components.alerts') <!-- Mueve esto al final -->
 </body>
 
 </html>

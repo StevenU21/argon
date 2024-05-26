@@ -19,6 +19,7 @@ class User extends Authenticatable
     protected $fillable = [
         'name',
         'email',
+        'profile_image',
         'password',
     ];
 
@@ -43,5 +44,14 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function image()
+    {
+        if ($this->profile_image) {
+            return asset('storage/' . $this->profile_image);
+        } else {
+            return asset('img/theme/team-4-800x800.jpg');
+        }
     }
 }

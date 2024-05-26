@@ -43,10 +43,17 @@
     <h6 class="navbar-heading text-muted">Otras Acciones</h6>
     <!-- Navigation -->
     <ul class="navbar-nav mb-md-3">
+        <li class="nav-item {{ Request::route()->named('profile.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('profile.index') ? 'active' : '' }}"
+                href="{{ route('profile.index') }}" wire:navigate>
+                <i class="fas fa-user text-blue"></i> Perfil
+            </a>
+        </li>
+
         <li class="nav-item {{ Request::route()->named('posts.index') ? 'active' : '' }}">
             <a class="nav-link {{ Request::route()->named('posts.index') ? 'active' : '' }}"
                 href="{{ route('posts.index') }}" wire:navigate>
-                <i class="ni ni-single-02 text-red"></i> Posts
+                <i class="fas fa-newspaper text-red"></i> Posts
             </a>
         </li>
 

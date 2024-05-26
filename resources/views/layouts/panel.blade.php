@@ -21,32 +21,6 @@
 
     @vite('resources/js/app.js')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
-    <style>
-        @keyframes toaster {
-            0% {
-                transform: scale(0);
-                opacity: 0;
-            }
-
-            50% {
-                transform: scale(1.05);
-                opacity: 1;
-            }
-
-            75% {
-                transform: scale(0.95);
-            }
-
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .modal.fade .modal-dialog {
-            animation: toaster 0.5s ease-in-out;
-        }
-    </style>
     @livewireStyles
 </head>
 
@@ -65,115 +39,122 @@
             <!-- User -->
             @include('includes.mobile_menu')
             <!-- Collapse -->
-            {{-- <div class="collapse navbar-collapse" id="sidenav-collapse-main">
-                <!-- Collapse header -->
-                <div class="navbar-collapse-header d-md-none">
-                    <div class="row">
-                        <div class="col-6 collapse-brand">
-                            <a href="#">
-                                <img src="{{ asset('img/brand/blue.png') }}">
-                            </a>
-                        </div>
-                        <div class="col-6 collapse-close">
-                            <button type="button" class="navbar-toggler" data-toggle="collapse"
-                                data-target="#sidenav-collapse-main" aria-controls="sidenav-main" aria-expanded="false"
-                                aria-label="Toggle sidenav">
-                                <span></span>
-                                <span></span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Navigation -->
-                @include('includes.navigation')
-            </div> --}}
-
-            {{-- componente de livewire --}}
             <livewire:navigation />
         </div>
     </nav>
-    <div class="main-content">
-        <!-- Navbar -->
-        <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
-            <div class="container-fluid">
-                <!-- Brand -->
-                <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
-                    href="{{ route('dashboard') }}">Dashboard</a>
-                <!-- User -->
-                @include('includes.menu')
-            </div>
-        </nav>
-        <!-- End Navbar -->
-        <!-- Header -->
-        <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
-            @if (request()->routeIs('dashboard'))
+
+    @if (request()->routeIs('profile.index'))
+        <div class="main-content">
+            <!-- Navbar -->
+            <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
                 <div class="container-fluid">
-                    <div class="header-body">
-                        <!-- Card stats -->
-                        <div class="row">
-                            <div class="col-xl-3 col-lg-6">
-                                <div class="card card-stats mb-4 mb-xl-0">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <h5 class="card-title text-uppercase text-muted mb-0">Dato 1</h5>
-                                                <span class="h2 font-weight-bold mb-0">Ejemplo</span>
-                                            </div>
-                                            <div class="col-auto">
-                                                <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
-                                                    <i class="fas fa-chart-bar"></i>
+                    <!-- Brand -->
+                    <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="{{ route('profile.index') }}">Perfil de
+                        Usuario</a>
+                    <!-- User -->
+                    <livewire:menu />
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <!-- Header -->
+            <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center"
+                style="min-height: 600px; background-image: url({{ auth()->user()->image() }}); background-size: cover; background-position: center top;">
+                <!-- Mask -->
+                <span class="mask bg-gradient-default opacity-8"></span>
+                <!-- Header container -->
+                <livewire:profile-edit />
+            </div>
+            <!-- Page content -->
+            <div class="container-fluid mt--7">
+                @yield('content')
+            </div>
+        </div>
+    @else
+        <div class="main-content">
+            <!-- Navbar -->
+            <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
+                <div class="container-fluid">
+                    <!-- Brand -->
+                    <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
+                        href="{{ route('dashboard') }}">Dashboard</a>
+                    <livewire:menu />
+                </div>
+            </nav>
+            <!-- End Navbar -->
+            <!-- Header -->
+            <div class="header bg-gradient-primary pb-8 pt-5 pt-md-8">
+                @if (request()->routeIs('dashboard'))
+                    <div class="container-fluid">
+                        <div class="header-body">
+                            <!-- Card stats -->
+                            <div class="row">
+                                <div class="col-xl-3 col-lg-6">
+                                    <div class="card card-stats mb-4 mb-xl-0">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h5 class="card-title text-uppercase text-muted mb-0">Dato 1</h5>
+                                                    <span class="h2 font-weight-bold mb-0">Ejemplo</span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div
+                                                        class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                                                        <i class="fas fa-chart-bar"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6">
-                                <div class="card card-stats mb-4 mb-xl-0">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <h5 class="card-title text-uppercase text-muted mb-0">Dato 2</h5>
-                                                <span class="h2 font-weight-bold mb-0">Ejemplo</span>
-                                            </div>
-                                            <div class="col-auto">
-                                                <div
-                                                    class="icon icon-shape bg-warning text-white rounded-circle shadow">
-                                                    <i class="fas fa-chart-pie"></i>
+                                <div class="col-xl-3 col-lg-6">
+                                    <div class="card card-stats mb-4 mb-xl-0">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h5 class="card-title text-uppercase text-muted mb-0">Dato 2</h5>
+                                                    <span class="h2 font-weight-bold mb-0">Ejemplo</span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div
+                                                        class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                                                        <i class="fas fa-chart-pie"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6">
-                                <div class="card card-stats mb-4 mb-xl-0">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <h5 class="card-title text-uppercase text-muted mb-0">Dato 3</h5>
-                                                <span class="h2 font-weight-bold mb-0">Ejemplo</span>
-                                            </div>
-                                            <div class="col-auto">
-                                                <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
-                                                    <i class="fas fa-users"></i>
+                                <div class="col-xl-3 col-lg-6">
+                                    <div class="card card-stats mb-4 mb-xl-0">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h5 class="card-title text-uppercase text-muted mb-0">Dato 3</h5>
+                                                    <span class="h2 font-weight-bold mb-0">Ejemplo</span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div
+                                                        class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                                                        <i class="fas fa-users"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-6">
-                                <div class="card card-stats mb-4 mb-xl-0">
-                                    <div class="card-body">
-                                        <div class="row">
-                                            <div class="col">
-                                                <h5 class="card-title text-uppercase text-muted mb-0">Dato 4</h5>
-                                                <span class="h2 font-weight-bold mb-0">Ejemplo</span>
-                                            </div>
-                                            <div class="col-auto">
-                                                <div class="icon icon-shape bg-info text-white rounded-circle shadow">
-                                                    <i class="fas fa-percent"></i>
+                                <div class="col-xl-3 col-lg-6">
+                                    <div class="card card-stats mb-4 mb-xl-0">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <h5 class="card-title text-uppercase text-muted mb-0">Dato 4</h5>
+                                                    <span class="h2 font-weight-bold mb-0">Ejemplo</span>
+                                                </div>
+                                                <div class="col-auto">
+                                                    <div
+                                                        class="icon icon-shape bg-info text-white rounded-circle shadow">
+                                                        <i class="fas fa-percent"></i>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -182,13 +163,13 @@
                             </div>
                         </div>
                     </div>
-                </div>
-            @endif
+                @endif
+            </div>
+            <div class="container-fluid mt--7">
+                @yield('content')
+            </div>
         </div>
-        <div class="container-fluid mt--7">
-            @yield('content')
-        </div>
-    </div>
+    @endif
 
     <!--   Core   -->
     <script src="{{ asset('js/plugins/jquery/dist/jquery.min.js') }}"></script>
@@ -217,7 +198,6 @@
                 application: "argon-dashboard-free"
             });
     </script>
-
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @include('components.alerts') <!-- Mueve esto al final -->
     @livewireScripts
