@@ -158,7 +158,8 @@
                 application: "argon-dashboard-free"
             });
     </script>
-      @include('components.alerts') <!-- Mueve esto al final -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    @include('components.alerts') <!-- Mueve esto al final -->
 </body>
 
 </html>

@@ -53,6 +53,17 @@
             });
         </script>
     @break
+
+    @case(session('warning'))
+        <script>
+            Swal.fire({
+                icon: 'warning',
+                title: 'Advertencia',
+                text: '{{ session('warning') }}',
+                showConfirmButton: true,
+            });
+        </script>
+    @break
 @endswitch
 
 @if ($errors->any())
