@@ -27,51 +27,65 @@ Antes de comenzar a utilizar esta plantilla, asegúrate de tener instalado:
 
 1. Clona este repositorio en tu máquina local:
 
-```bash
-git clone https://github.com/StevenU21/argon
-```
+    ```bash
+    git clone https://github.com/StevenU21/argon
+    ```
 
 2. Navega a la carpeta del proyecto:
 
-```bash
-cd argon
-```
+    ```bash
+    cd argon
+    ```
 
 3. Instala las dependencias PHP usando Composer:
 
-```bash
-composer install
-```
+    ```bash
+    composer install
+    ```
 
 4. Instala las dependencias de JavaScript:
 
-```bash
-npm install
-```
+    ```bash
+    npm install
+    ```
 
 5. Copia el archivo de configuración de ejemplo y configura tu entorno:
 
-```bash
-cp .env.example .env
-php artisan key:generate
-```
+    ```bash
+    cp .env.example .env
+    php artisan key:generate
+    ```
 
-6. Ejecuta las migraciones de la base de datos y los seeders (si es necesario):
+6. Configura Mailtrap para la funcionalidad de verificación de correo electrónico y otros servicios de correo:
+   
+   - Crea una cuenta en [Mailtrap](https://mailtrap.io/).
+   - Obtén tus credenciales de Mailtrap (username y password).
+   - Añade tus credenciales de Mailtrap en el archivo `.env` de tu proyecto:
 
-```bash
-php artisan migrate --seed
-```
+    ```env
+    MAIL_MAILER=smtp
+    MAIL_HOST=smtp.mailtrap.io
+    MAIL_PORT=2525
+    MAIL_USERNAME=your_mailtrap_username
+    MAIL_PASSWORD=your_mailtrap_password
+    MAIL_ENCRYPTION=null
+    MAIL_FROM_ADDRESS=example@example.com
+    MAIL_FROM_NAME="${APP_NAME}"
+    ```
 
-7. Inicia el servidor de desarrollo:
+7. Ejecuta las migraciones de la base de datos y los seeders (si es necesario):
 
-```bash
-php artisan serve
-```
+    ```bash
+    php artisan migrate --seed
+    ```
 
-## Contribuciones
+8. Inicia el servidor de desarrollo:
 
-¡Las contribuciones son bienvenidas! Si encuentras un error o quieres mejorar este proyecto, no dudes en abrir un issue o enviar un pull request.
-
+    ```bash
+    php artisan serve
+    ```
 ## Licencia
 
 Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para obtener más detalles.
+
+---
