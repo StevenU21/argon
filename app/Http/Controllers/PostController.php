@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\PostRequest;
 use App\Models\Post;
 use App\Models\Category;
+use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
@@ -32,7 +33,9 @@ class PostController extends Controller
      */
     public function store(PostRequest $request)
     {
-        Post::create($request->validated());
+        Post::create($request->validated() + [
+            'slug' => Str::slug($request->title, '-')
+        ]);
         return redirect()->route('posts.index')->with('success', 'Post creado Correctamente');
     }
 
@@ -59,7 +62,9 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post)
     {
-        $post->update($request->validated());
+        $post->update($request->validated() + [
+            'slug' => Str::slug($request->title, '-')
+        ]);
         return redirect()->route('posts.index')->with('updated', 'Post actualizado Correctamente');
     }
 

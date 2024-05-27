@@ -13,10 +13,13 @@ Route::get('/dashboard', function () {
 })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'index'])->name('profile.index');
-    Route::get('/profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    Route::prefix('/profile')->group(function () {
+        Route::get('/', [ProfileController::class, 'index'])->name('profile.index');
+        Route::get('/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+        Route::patch('/update', [ProfileController::class, 'update'])->name('profile.update');
+        Route::delete('/destroy', [ProfileController::class, 'destroy'])->name('profile.destroy');
+    });
 
     //rutas de ejemplo sin controlador
     Route::get('/ejemplo/index', fn () => view('ejemplo.index'))->name('ejemplo.index');
@@ -34,24 +37,24 @@ Route::middleware('auth')->group(function () {
 
     //rutas de posts con controlador
     //hagamos un prefix para no repetir /posts en todas las rutas
-    Route::prefix('/posts')->group(function () {
-        Route::get('/', [PostController::class, 'index'])->name('posts.index');
-        Route::get('/create', [PostController::class, 'create'])->name('posts.create');
-        Route::post('/', [PostController::class, 'store'])->name('posts.store');
-        Route::get('/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
-        Route::put('/{post}', [PostController::class, 'update'])->name('posts.update');
-        Route::delete('/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
-        Route::get('/{post}', [PostController::class, 'show'])->name('posts.show');
-    });
+    // Route::prefix('/posts')->group(function () {
+    //     Route::get('/', [PostController::class, 'index'])->name('posts.index');
+    //     Route::get('/create', [PostController::class, 'create'])->name('posts.create');
+    //     Route::post('/', [PostController::class, 'store'])->name('posts.store');
+    //     Route::get('/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+    //     Route::put('/{post}', [PostController::class, 'update'])->name('posts.update');
+    //     Route::delete('/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+    //     Route::get('/{post}', [PostController::class, 'show'])->name('posts.show');
+    // });
 
     //rutas sin prefijo
-    // Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
-    // Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
-    // Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
-    // Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
-    // Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
-    // Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
-    // Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
+    Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+    Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
+    Route::post('/posts', [PostController::class, 'store'])->name('posts.store');
+    Route::get('/posts/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
+    Route::put('/posts/{post}', [PostController::class, 'update'])->name('posts.update');
+    Route::delete('/posts/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
+    Route::get('/posts/{post}', [PostController::class, 'show'])->name('posts.show');
 
     //rutas de posts de tipo resource
     // Route::resource('/posts', PostController::class);

@@ -15,6 +15,7 @@ return new class extends Migration
             $table->increments('id');
             $table->string('title', 30);
             $table->text('content', 300);
+            $table->string('slug', 30)->unique();
 
             //relacion con la tabla de etiquetas
             $table->integer('category_id')->unsigned();

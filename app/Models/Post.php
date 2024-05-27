@@ -5,7 +5,6 @@ namespace App\Models;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Str;
 
 class Post extends Model
 {
@@ -14,7 +13,8 @@ class Post extends Model
     protected $fillable = [
         'title',
         'content',
-        'category_id'
+        'category_id',
+        'slug',
     ];
 
     public function getCreatedAtAttribute($value)
@@ -24,7 +24,7 @@ class Post extends Model
 
     public function getRouteKeyName()
     {
-        return 'title';
+        return 'slug';
     }
 
     public function category()

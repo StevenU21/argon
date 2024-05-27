@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Str;
 
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
@@ -16,10 +17,12 @@ class PostFactory extends Factory
      */
     public function definition(): array
     {
+        $title = fake()->unique()->sentence(2);
         return [
-            'title' => fake()->sentence(2),
+            'title' => $title,
             'content' => fake()->text(30),
-            'category_id' => fake()->numberBetween(1, 30)
+            'category_id' => fake()->numberBetween(1, 30),
+            'slug' => Str::slug($title),
         ];
     }
 }
