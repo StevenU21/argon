@@ -19,6 +19,7 @@
                             <tr>
                                 <th scope="col"><i class="fas fa-list-ol"></i> ID</th>
                                 <th scope="col"><i class="fas fa-heading"></i> Nombre</th>
+                                <th scope="col"><i class="fas fa-list-ol"></i> Slug</th>
                                 <th scope="col"><i class="fas fa-calendar-check"></i> Fecha de Registro</th>
                                 <th scope="col"><i class="fas fa-cogs"></i> Acciones</th>
                             </tr>
@@ -31,6 +32,10 @@
                                     </td>
                                     <td>
                                         {{ $category->name }}
+                                    </td>
+
+                                    <td>
+                                        {{ $category->slug }}
                                     </td>
 
                                     <td>

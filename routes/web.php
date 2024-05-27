@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\CategoryController;
-use App\Http\Controllers\PostController;
+use App\Http\Controllers\Example\CategoryController;
+use App\Http\Controllers\Example\PostController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -30,10 +30,10 @@ Route::middleware('auth')->group(function () {
 
     //rutas de ejemplo sin controlador con prefijo
     Route::prefix('/ejemplo')->group(function () {
-        Route::get('/index', fn () => view('ejemplo.index'))->name('ejemplo.index');
-        Route::get('/create', fn () => view('ejemplo.create'))->name('ejemplo.create');
-        Route::get('/edit', fn () => view('ejemplo.edit'))->name('ejemplo.edit');
-        Route::get('/show', fn () => view('ejemplo.show'))->name('ejemplo.show');
+        Route::get('/index', fn () => view('examples.ejemplo.index'))->name('ejemplo.index');
+        Route::get('/create', fn () => view('examples.ejemplo.create'))->name('ejemplo.create');
+        Route::get('/edit', fn () => view('examples.ejemplo.edit'))->name('ejemplo.edit');
+        Route::get('/show', fn () => view('examples.ejemplo.show'))->name('ejemplo.show');
     });
 
     //rutas con controlador y prefix

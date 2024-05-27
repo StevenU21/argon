@@ -22,8 +22,9 @@ class PostRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'title' => ['required', 'string', 'min:3', 'max:255', 'unique:posts,title,except,id'],
+            'title' => ['required', 'string', 'min:3', 'max:255', 'unique:posts,title,' . $this->route('post')->id,],
             'content' => ['required', 'string'],
+            'slug' => ['string', 'min:3', 'max:255', 'unique:posts,title,' . $this->route('post')->id,],
             'category_id' => ['required', 'exists:categories,id'],
         ];
     }
@@ -41,6 +42,10 @@ class PostRequest extends FormRequest
             'title.min' => 'El título no puede tener menos de 3 caracteres',
             'title.max' => 'El título no puede tener más de 255 caracteres',
             'title.unique' => 'El título ya está en uso',
+            'slug.string' => 'El slug debe ser un texto',
+            'slug.min' => 'El slug no puede tener menos de 3 caracteres',
+            'slug.max' => 'El slug no puede tener más de 255 caracteres',
+            'slug.unique' => 'El slug ya está en uso',
             'content.required' => 'El contenido es requerido',
             'content.string' => 'El contenido debe ser un texto',
             'category_id.required' => 'La categoría es requerida',

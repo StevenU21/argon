@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Example;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\RedirectResponse;
@@ -16,7 +17,7 @@ class CategoryController extends Controller
     public function index(): View
     {
         $categories = Category::latest()->paginate(5);
-        return view('categories.index', compact('categories'));
+        return view('examples.categories.index', compact('categories'));
     }
 
     /**
@@ -25,7 +26,7 @@ class CategoryController extends Controller
     public function create(): View
     {
         $category = new Category();
-        return view('categories.create', compact('category'));
+        return view('examples.categories.create', compact('category'));
     }
 
     /**
@@ -44,7 +45,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category): View
     {
-        return view('categories.show', compact('category'));
+        return view('examples.categories.show', compact('category'));
     }
 
     /**
@@ -52,7 +53,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category): View
     {
-        return view('categories.edit', compact('category'));
+        return view('examples.categories.edit', compact('category'));
     }
 
     /**
