@@ -21,7 +21,7 @@ class PostFactory extends Factory
         return [
             'title' => $title,
             'content' => fake()->text(30),
-            'category_id' => fake()->numberBetween(1, 30),
+            'category_id' => fake()->numberBetween(1, 10),
             'slug' => Str::slug($title),
         ];
     }

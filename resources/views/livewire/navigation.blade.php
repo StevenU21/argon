@@ -33,7 +33,7 @@
         <li class="nav-item {{ Request::route()->named('ejemplo.index') ? 'active' : '' }}">
             <a class="nav-link {{ Request::route()->named('ejemplo.index') ? 'active' : '' }}"
                 href="{{ route('ejemplo.index') }}" wire:navigate>
-                <i class="fas fa-book text-green"></i> Ejemplo
+                <i class="fas fa-book text-purple"></i> Ejemplo
             </a>
         </li>
     </ul>
@@ -69,10 +69,17 @@
     <h6 class="navbar-heading text-muted">Ejemplos</h6>
     <!-- Navigation -->
     <ul class="navbar-nav mb-md-3">
+        <li class="nav-item {{ Request::route()->named('categories.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('categories.index') ? 'active' : '' }}"
+                href="{{ route('categories.index') }}" wire:navigate>
+                <i class="fas fa-tags text-yellow"></i> Categories (Normal)
+            </a>
+        </li>
+
         <li class="nav-item {{ Request::route()->named('posts.index') ? 'active' : '' }}">
             <a class="nav-link {{ Request::route()->named('posts.index') ? 'active' : '' }}"
                 href="{{ route('posts.index') }}" wire:navigate>
-                <i class="fas fa-newspaper text-red"></i> Posts (Relacionado)
+                <i class="fas fa-newspaper text-green"></i> Posts (Relacionado)
             </a>
         </li>
     </ul>
