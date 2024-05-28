@@ -26,4 +26,13 @@ class Product extends Model
     {
         return 'slug';
     }
+
+    public function image(): string
+    {
+        if ($this->image) {
+            return asset('storage/' . $this->image);
+        } else {
+            return asset('img/theme/animal.jpeg');
+        }
+    }
 }

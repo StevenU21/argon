@@ -89,5 +89,12 @@
                 <i class="fas fa-dove text-orange"></i> Animals (Imagenes)
             </a>
         </li>
+
+        <li class="nav-item {{ Request::route()->named('products.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('products.index') ? 'active' : '' }}"
+                href="{{ route('products.index') }}" wire:navigate>
+                <i class="fas fa-box text-red"></i> Products (Livewire)
+            </a>
+        </li>
     </ul>
 </div>

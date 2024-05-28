@@ -3,7 +3,9 @@
 use App\Http\Controllers\Example\AnimalController;
 use App\Http\Controllers\Example\CategoryController;
 use App\Http\Controllers\Example\PostController;
+use App\Http\Controllers\Example\ProductController;
 use App\Http\Controllers\ProfileController;
+use App\Livewire\Products\ProductList;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -67,6 +69,8 @@ Route::middleware('auth')->group(function () {
         Route::delete('/{animal}', [AnimalController::class, 'destroy'])->name('animals.destroy');
         Route::get('/{animal}', [AnimalController::class, 'show'])->name('animals.show');
     });
+
+    Route::resource('/products', ProductController::class);
 
     //rutas sin prefijo
     // Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
