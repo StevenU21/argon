@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Example\AnimalController;
 use App\Http\Controllers\Example\CategoryController;
 use App\Http\Controllers\Example\PostController;
 use App\Http\Controllers\ProfileController;
@@ -57,7 +58,15 @@ Route::middleware('auth')->group(function () {
         Route::get('/{post}', [PostController::class, 'show'])->name('posts.show');
     });
 
-    Route::resource('/animals', \App\Http\Controllers\Example\AnimalController::class);
+    Route::prefix('/animals')->group(function () {
+        Route::get('/', [AnimalController::class, 'index'])->name('animals.index');
+        Route::get('/create', [AnimalController::class, 'create'])->name('animals.create');
+        Route::post('/', [AnimalController::class, 'store'])->name('animals.store');
+        Route::get('/{animal}/edit', [AnimalController::class, 'edit'])->name('animals.edit');
+        Route::put('/{animal}', [AnimalController::class, 'update'])->name('animals.update');
+        Route::delete('/{animal}', [AnimalController::class, 'destroy'])->name('animals.destroy');
+        Route::get('/{animal}', [AnimalController::class, 'show'])->name('animals.show');
+    });
 
     //rutas sin prefijo
     // Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
@@ -76,9 +85,18 @@ Route::middleware('auth')->group(function () {
     // Route::delete('/categories/{category}', [CategoryController::class, 'destroy'])->name('categories.destroy');
     // Route::get('/categories/{category}', [CategoryController::class, 'show'])->name('categories.show');
 
+    // Route::get('/animals', [AnimalController::class, 'index'])->name('animals.index');
+    // Route::get('/animals/create', [AnimalController::class, 'create'])->name('animals.create');
+    // Route::post('/animals', [AnimalController::class, 'store'])->name('animals.store');
+    // Route::get('/animals/{animal}/edit', [AnimalController::class, 'edit'])->name('animals.edit');
+    // Route::put('/animals/{animal}', [AnimalController::class, 'update'])->name('animals.update');
+    // Route::delete('/animals/{animal}', [AnimalController::class, 'destroy'])->name('animals.destroy');
+    // Route::get('/animals/{animal}', [AnimalController::class, 'show'])->name('animals.show');
+
     //rutas de posts de tipo resource
     // Route::resource('/posts', PostController::class);
     // Route::resource('/categories', CategoryController::class);
+    // Route::resource('/animals', AnimalController::class);
 });
 
 require __DIR__ . '/auth.php';

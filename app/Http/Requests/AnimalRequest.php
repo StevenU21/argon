@@ -26,7 +26,7 @@ class AnimalRequest extends FormRequest
             'type' => ['required', 'string', 'min:3', 'max:20'],
             'color' => ['required', 'string', 'min:3', 'max:20'],
             'age' => ['required', 'integer', 'min:1', 'max:255'],
-            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,svg,webp', 'max:2048'],
+            'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,webp', 'max:2048'],
         ];
     }
 
@@ -55,7 +55,7 @@ class AnimalRequest extends FormRequest
             'age.min' => 'La edad debe ser mayor a 0',
             'age.max' => 'La edad no debe ser mayor a 255',
             'image.image' => 'El archivo debe ser una imagen',
-            'image.mimes' => 'El archivo debe ser una imagen de tipo: jpeg, png, jpg, gif, svg',
+            'image.mimes' => 'El archivo debe ser una imagen de tipo: jpeg, png, jpg, gif o webp',
             'image.max' => 'El archivo no debe pesar más de 2MB',
         ];
     }
