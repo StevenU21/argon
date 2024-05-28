@@ -57,6 +57,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/{post}', [PostController::class, 'show'])->name('posts.show');
     });
 
+    Route::resource('/animals', \App\Http\Controllers\Example\AnimalController::class);
+
     //rutas sin prefijo
     // Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
     // Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');

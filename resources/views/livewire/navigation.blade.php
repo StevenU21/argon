@@ -82,5 +82,12 @@
                 <i class="fas fa-newspaper text-green"></i> Posts (Relacionado)
             </a>
         </li>
+
+        <li class="nav-item {{ Request::route()->named('animals.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('animals.index') ? 'active' : '' }}"
+                href="{{ route('animals.index') }}" wire:navigate>
+                <i class="fas fa-dove text-orange"></i> Animals (Imagenes)
+            </a>
+        </li>
     </ul>
 </div>

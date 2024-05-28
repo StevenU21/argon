@@ -53,7 +53,7 @@ class ProfileController extends Controller
             $imageName = Str::slug($user->name, '-') . '-' . $user->id . '.jpg';
             $user->profile_image = $file->storeAs('profile_images', $imageName, 'public');
         }
-
+        
         $user->save();
         return Redirect::route('profile.edit')->with('updated', 'Perfil actualizado correctamente.');
     }

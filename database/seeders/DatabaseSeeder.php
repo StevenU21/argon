@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
+use App\Models\Animal;
 use App\Models\Category;
 use App\Models\Post;
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
         );
 
         Category::factory(10)->create();
-        Post::factory(1000)->create();
+        Post::factory(50)->create();
+        Animal::factory(50)->create();
     }
 }

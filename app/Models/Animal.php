@@ -22,4 +22,13 @@ class Animal extends Model
     {
         return 'slug';
     }
+
+    public function image()
+    {
+        if ($this->image) {
+            return asset('storage/' . $this->image);
+        } else {
+            return asset('img/theme/animal.jpeg');
+        }
+    }
 }
