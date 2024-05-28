@@ -18,12 +18,12 @@ class Animal extends Model
         'slug'
     ];
 
-    public function getRouteKeyName()
+    public function getRouteKeyName(): string
     {
         return 'slug';
     }
 
-    public function image()
+    public function image(): string
     {
         if ($this->image) {
             return asset('storage/' . $this->image);

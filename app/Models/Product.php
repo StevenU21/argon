@@ -4,30 +4,26 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Support\Str;
 
-class Category extends Model
+class Product extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'name',
+        'description',
+        'price',
+        'stock',
+        'image',
         'slug',
     ];
 
-    public function getNameAttribute($value)
-    {
-        return Str::upper($value);
-    }
+    protected $casts = [
+        'price' => 'decimal:2',
+    ];
 
     public function getRouteKeyName(): string
     {
         return 'slug';
-    }
-
-    public function posts(): HasMany
-    {
-        return $this->hasMany(Post::class);
     }
 }
