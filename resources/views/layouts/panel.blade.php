@@ -18,6 +18,7 @@
     <link href="{{ asset('css/argon-dashboard.css?v=1.1.2') }}" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
+
     @vite('resources/js/app.js')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
     @livewireStyles
@@ -48,7 +49,8 @@
             <nav class="navbar navbar-top navbar-expand-md navbar-dark" id="navbar-main">
                 <div class="container-fluid">
                     <!-- Brand -->
-                    <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block" href="{{ route('profile.index') }}">Perfil de
+                    <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
+                        href="{{ route('profile.index') }}">Perfil de
                         Usuario</a>
                     <!-- User -->
                     <livewire:menu />

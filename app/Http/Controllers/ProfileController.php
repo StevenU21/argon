@@ -7,7 +7,9 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\View\View;
+use Illuminate\Support\Str;
 
 class ProfileController extends Controller
 {
@@ -33,18 +35,26 @@ class ProfileController extends Controller
      */
     public function update(ProfileUpdateRequest $request): RedirectResponse
     {
-        $request->user()->fill($request->validated());
+        $user = $request->user();
+        $user->fill($request->validated());
 
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
         }
 
         if ($request->hasFile('profile_image')) {
-            $request->user()->profile_image = $request->file('profile_image')->store('profile_images', 'public');
+            // Eliminar la imagen anterior si existe
+            if ($user->profile_image) {
+                Storage::disk('public')->delete('profiles_images/' . $user->profile_image);
+            }
+
+            $file = $request->file('profile_image');
+            // El borrar solo funciona si las imagenes se llaman exactamente igual
+            $imageName = Str::slug($user->name, '-') . '-' . $user->id . '.jpg';
+            $user->profile_image = $file->storeAs('profile_images', $imageName, 'public');
         }
 
-        $request->user()->save();
-
+        $user->save();
         return Redirect::route('profile.edit')->with('updated', 'Perfil actualizado correctamente.');
     }
 
