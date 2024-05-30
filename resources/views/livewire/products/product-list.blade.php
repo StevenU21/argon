@@ -3,9 +3,9 @@
         <div class="card shadow">
             <div class="card-header border-0">
                 <div class="d-flex justify-content-between align-items-center">
-                    <h3 class="mb-0">Animales</h3>
-                    <a href="#" class="btn btn-primary">
-                        <i class="fas fa-plus"></i> Nuevo Post
+                    <h3 class="mb-0">Productos</h3>
+                    <a href="{{ route('products.create') }}" class="btn btn-primary" wire:navigate>
+                        <i class="fas fa-plus"></i> Nuevo Producto
                     </a>
                 </div>
             </div>
@@ -18,7 +18,6 @@
                             <th scope="col"><i class="fas fa-file-alt"></i> Descripción</th>
                             <th scope="col"><i class="fas fa-dollar-sign"></i> Precio</th>
                             <th scope="col"><i class="fas fa-boxes"></i> Stock</th>
-                            <th scope="col"><i class="fas fa-image"></i> Imagen</th>
                             <th scope="col"><i class="fas fa-tools"></i> Acciones</th>
                         </tr>
                     </thead>
@@ -42,13 +41,6 @@
 
                                 <td>
                                     {{ $product->stock }}
-                                </td>
-
-                                <td class="align-middle">
-                                    <div class="d-flex align-items-center justify-content-center bg-light rounded"
-                                        style="width: 100px; height: 100px; overflow: hidden;">
-                                        <img src="{{ $product->image() }}" alt="{{ $product->name }}" class="img-fluid">
-                                    </div>
                                 </td>
 
                                 <td style="white-space: nowrap; display: flex; align-items: center;">

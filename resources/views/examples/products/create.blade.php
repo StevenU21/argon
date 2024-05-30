@@ -1,3 +1,6 @@
-<div>
-    <!-- The only way to do great work is to love what you do. - Steve Jobs -->
-</div>
+@extends('layouts.panel')
+@section('title', 'Animal/Create')
+
+@section('content')
+<livewire:products.product-create />
+@endsection

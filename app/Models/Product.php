@@ -14,7 +14,6 @@ class Product extends Model
         'description',
         'price',
         'stock',
-        'image',
         'slug',
     ];
 
@@ -25,14 +24,5 @@ class Product extends Model
     public function getRouteKeyName(): string
     {
         return 'slug';
-    }
-
-    public function image(): string
-    {
-        if ($this->image) {
-            return asset('storage/' . $this->image);
-        } else {
-            return asset('img/theme/animal.jpeg');
-        }
     }
 }
