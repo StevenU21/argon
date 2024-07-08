@@ -192,6 +192,19 @@
     <!--   Argon JS   -->
     <script src="{{ asset('js/argon-dashboard.min.js?v=1.1.2') }}"></script>
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var multipleCancelButton = new Choices('#exampleFormControlSelect2', {
+                removeItemButton: true,
+                maxItemCount:5,
+                searchResultLimit:5,
+                renderChoiceLimit:5
+            });
+        });
+    </script>
+
+    
     <script>
         window.TrackJS &&
             TrackJS.install({
