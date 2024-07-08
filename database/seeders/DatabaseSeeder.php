@@ -34,9 +34,17 @@ class DatabaseSeeder extends Seeder
             ],
         );
 
-        Category::factory(10)->create();
-        Post::factory(50)->create();
-        Animal::factory(50)->create();
-        Product::factory(50)->create();
+
+        User::factory()->create(
+            [
+                'name' => 'Test User',
+                'email' => 'test@gmail.com',
+                'password' => bcrypt('test@gmail.com')
+            ],
+        );
+
+        Category::factory(7)->create();
+        Post::factory(20)->create();
+        Animal::factory(5)->create();
     }
 }

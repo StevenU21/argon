@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -21,7 +22,7 @@ class PostFactory extends Factory
         return [
             'title' => $title,
             'content' => fake()->text(30),
-            'category_id' => fake()->numberBetween(1, 10),
+            'category_id' => Category::all()->random()->id,
             'slug' => Str::slug($title),
         ];
     }

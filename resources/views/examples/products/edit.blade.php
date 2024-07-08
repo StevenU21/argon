@@ -1,3 +1,6 @@
-<div>
-    <!-- Always remember that you are absolutely unique. Just like everyone else. - Margaret Mead -->
-</div>
+@extends('layouts.panel')
+@section('title', 'Animal/Create')
+
+@section('content')
+<livewire:products.product-update />
+@endsection

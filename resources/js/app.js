@@ -15,3 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+    window.addEventListener('delete', event => {
+        Swal.fire({
+            icon: 'error',
+            title: '¡Borrado!',
+            text: event.detail,
+        });
+    });
+});
