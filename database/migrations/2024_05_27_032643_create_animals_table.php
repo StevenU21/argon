@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('color', 20);
             $table->tinyInteger('age'); // 0-255
             $table->string('image')->nullable();
-            $table->string('slug', 20)->unique();
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }
