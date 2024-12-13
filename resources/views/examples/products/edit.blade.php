@@ -2,5 +2,5 @@
 @section('title', 'Animal/Create')
 
 @section('content')
-<livewire:products.product-update />
+<livewire:products.edit-product />
 @endsection
