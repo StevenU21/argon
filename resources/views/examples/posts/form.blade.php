@@ -15,13 +15,12 @@
 
                 <select name="category_id" id="category_id" class="form-control form-control-alternative">
                     <option disabled>Seleccionar una Categoria</option>
-                    @foreach ($categories as $category)
-                        <option value="{{ $category->id }}" @selected(old('category_id', $post->category_id) == $category->id)>
-                            {{ $category->name }}
+                    @foreach ($categories as $id => $name)
+                        <option value="{{ $id }}" @selected(old('category_id', $post->category_id) == $id)>
+                            {{ $name }}
                         </option>
                     @endforeach
                 </select>
-
             </div>
         </div>
     </div>

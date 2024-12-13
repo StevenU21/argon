@@ -4,8 +4,8 @@ namespace App\Http\Controllers\Example;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostRequest;
-use App\Models\Post;
-use App\Models\Category;
+use App\Models\Example\Post;
+use App\Models\Example\Category;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Str;
@@ -17,6 +17,9 @@ class PostController extends Controller
      */
     public function index(): View
     {
+        // con la funcion with cargamos la relacion de la categoria
+        // a esto se le llama eager loading
+        // ademas paginamos los resultados de 10 en 10
         $posts = Post::with('category')->paginate(10);
         return view('examples.posts.index', compact('posts'));
     }
@@ -26,8 +29,12 @@ class PostController extends Controller
      */
     public function create(): View
     {
+        // creamos una instancia de Post
         $post = new Post();
-        $categories = Category::all();
+        // con la funcion pluck obtenemos un array asociativo con el id y el nombre de la categoria
+        // en lugar de usar all en donde obtenemos un array con los objetos de la categoria
+        // $categories = Category::all();
+        $categories = Category::pluck('name', 'id');
         return view('examples.posts.create', compact('post', 'categories'));
     }
 
@@ -36,6 +43,7 @@ class PostController extends Controller
      */
     public function store(PostRequest $request): RedirectResponse
     {
+        // creamos un nuevo post con los datos validados
         Post::create($request->validated() + [
             'slug' => Str::slug($request->title, '-')
         ]);
@@ -47,6 +55,7 @@ class PostController extends Controller
      */
     public function show(Post $post): View
     {
+        // con la funcion load cargamos la relacion de la categoria
         $post->load('category');
         return view('examples.posts.show', compact('post'));
     }
@@ -56,7 +65,8 @@ class PostController extends Controller
      */
     public function edit(Post $post): View
     {
-        $categories = Category::all();
+        //$categories = Category::all();
+        $categories = Category::pluck('name', 'id');
         return view('examples.posts.edit', compact('post', 'categories'));
     }
 
@@ -65,6 +75,7 @@ class PostController extends Controller
      */
     public function update(PostRequest $request, Post $post): RedirectResponse
     {
+        // actualizamos el post con los datos validados
         $post->update($request->validated() + [
             'slug' => Str::slug($request->title, '-')
         ]);
@@ -76,6 +87,7 @@ class PostController extends Controller
      */
     public function destroy(int $id): RedirectResponse
     {
+        // eliminamos el post
         Post::find($id)->delete();
         return redirect()->route('posts.index')->with('deleted', 'Post eliminado Correctamente');
     }

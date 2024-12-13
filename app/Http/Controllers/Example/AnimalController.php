@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Example;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\AnimalRequest;
-use App\Models\Animal;
+use App\Models\Example\Animal;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
