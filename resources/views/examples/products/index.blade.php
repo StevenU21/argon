@@ -19,38 +19,40 @@
                             <tr>
                                 <th scope="col"><i class="fas fa-list-ol"></i> ID</th>
                                 <th scope="col"><i class="fas fa-heading"></i> Nombre</th>
-                                <th scope="col"><i class="fas fa-list-ol"></i> Slug</th>
+                                <th scope="col"><i class="fas fa-list-ol"></i> Descripción</th>
+                                <th scope="col"><i class="fas fa-list-ol"></i> Precio</th>
+                                <th scope="col"><i class="fas fa-list-ol"></i> Stock</th>
                                 <th scope="col"><i class="fas fa-calendar-check"></i> Fecha de Registro</th>
                                 <th scope="col"><i class="fas fa-cogs"></i> Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($categories as $category)
+                            @foreach ($products as $product)
                                 <tr>
                                     <td>
-                                        <span class="badge badge-pill badge-primary"> {{ $category->id }} </span>
+                                        <span class="badge badge-pill badge-primary"> {{ $product->id }} </span>
                                     </td>
                                     <td>
-                                        {{ $category->name }}
-                                    </td>
-
-                                    <td>
-                                        {{ $category->slug }}
+                                        {{ $product->name }}
                                     </td>
 
                                     <td>
-                                        {{ $category->created_at }}
+                                        {{ $product->slug }}
+                                    </td>
+
+                                    <td>
+                                        {{ $product->created_at }}
                                     </td>
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
-                                        <a href="{{ route('categories.show', $category) }}" class="btn btn-primary btn-sm"
+                                        <a href="{{ route('products.show', $product) }}" class="btn btn-primary btn-sm"
                                             style="margin-right: 5px;">
                                             <i class="fas fa-eye"></i> Mostrar
                                         </a>
-                                        <a href="{{ route('categories.edit', $category) }}" class="btn btn-info btn-sm"
+                                        <a href="{{ route('products.edit', $product) }}" class="btn btn-info btn-sm"
                                             style="margin-right: 5px;">
                                             <i class="fas fa-edit"></i> Editar
                                         </a>
-                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST"
+                                        <form action="{{ route('products.destroy', $product->id) }}" method="POST"
                                             style="display: inline-block; margin: 0; display: flex; align-items: center;">
                                             @csrf
                                             @method('DELETE')
@@ -66,7 +68,7 @@
                 </div>
                 {{-- <div class="card-footer py-4">
                     <nav aria-label="..." class="d-flex flex-wrap justify-content-center justify-content-lg-start">
-                        {{ $categories->links() }}
+                        {{ $products->links() }}
                     </nav>
                 </div> --}}
             </div>
