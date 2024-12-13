@@ -16,11 +16,6 @@ class Category extends Model
         'slug',
     ];
 
-    public function getNameAttribute($value)
-    {
-        return Str::upper($value);
-    }
-
     public function getRouteKeyName(): string
     {
         return 'slug';
