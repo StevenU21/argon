@@ -31,7 +31,7 @@
         <div class="col-lg-6">
             <div class="form-group">
                 <label class="form-control-label" for="input-color">Color</label>
-                <input type="text" id="input-color" name="color" class="form-control form-control-alternative"
+                <input type="color" id="input-color" name="color" class="form-control form-control-alternative"
                     placeholder="Color" value="{{ old('color', $animal->color ?? '') }}">
             </div>
         </div>

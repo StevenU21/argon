@@ -28,7 +28,11 @@
                             <p>{{ $animal->type }}</p>
 
                             <label class="form-control-label" for="name"><i class="fas fa-clock"></i> Color</label>
-                            <p>{{ $animal->color }}</p>
+
+                            <p>
+                                <input type="color" value="{{ $animal->color }}" disabled>
+                                {{ $animal->color }}
+                            </p>
 
                             <label class="form-control-label" for="name"><i class="fas fa-clock"></i> Edad</label>
                             <p>{{ $animal->age }}</p>

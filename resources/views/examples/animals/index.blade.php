@@ -41,6 +41,7 @@
                                     </td>
 
                                     <td>
+                                        <input type="color" value="{{ $animal->color }}" disabled>
                                         {{ $animal->color }}
                                     </td>
 
