@@ -13,17 +13,20 @@ class Client extends Model
         'email',
         'phone',
         'gender',
-    ];
-
-    protected $hidden = [
-        'id',
         'slug',
-        'created_at',
-        'updated_at',
     ];
 
     public function getRouteKeyName(): string
     {
         return 'slug';
+    }
+
+    public function image(): string
+    {
+        if ($this->image) {
+            return asset('storage/' . $this->image);
+        } else {
+            return asset('img/theme/animal.jpeg');
+        }
     }
 }

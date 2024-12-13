@@ -27,7 +27,8 @@ class ClientRequest extends FormRequest
             'last_name' => ['required', 'string', 'min:3', 'max:30'],
             'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,webp', 'max:2048'],
             'email' => ['required', 'email', 'max:255', Rule::unique('clients')->ignore($this->client)],
-            'phone' => ['required', 'string', 'min:10', 'max:15', Rule::unique('clients')->ignore($this->client)],
+            'phone' => ['required', 'string', 'min:10', 'max:20', 'regex:/^\+?[0-9\s\-]{10,20}$/', Rule::unique('clients')->ignore($this->client)],
+            'gender' => ['required', 'string', 'in:male,female'],
             'slug' => [Rule::unique('clients')->ignore($this->client)],
         ];
     }
@@ -56,7 +57,11 @@ class ClientRequest extends FormRequest
             'phone.required' => 'El teléfono es requerido',
             'phone.string' => 'El teléfono debe ser una cadena de texto',
             'phone.min' => 'El teléfono debe tener al menos 10 caracteres',
-            'phone.max' => 'El teléfono no debe tener más de 15 caracteres',
+            'phone.max' => 'El teléfono no debe tener más de 20 caracteres',
+            'phone.regex' => 'El teléfono no tiene un formato válido',
+            'gender.required' => 'El género es requerido',
+            'gender.string' => 'El género debe ser una cadena de texto',
+            'gender.in' => 'El género debe ser masculino o femenino',
         ];
     }
 }

@@ -8,12 +8,34 @@
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Clientes</h3>
-                        <a href="{{ route('clients.create') }}" class="btn btn-primary">
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createClientModal">
                             <i class="fas fa-plus"></i> Nuevo Cliente
-                        </a>
+                        </button>
                     </div>
                 </div>
-                <div class="table-responsive">  
+
+                <!-- Modal -->
+                <div class="modal fade" id="createClientModal" tabindex="-1" role="dialog"
+                    aria-labelledby="createClientModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title" id="createClientModalLabel">Nuevo Cliente</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="{{ route('clients.store') }}" method="POST" enctype="multipart/form-data">
+                                    @csrf
+                                    @include('examples.clients.form')
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
                     <table class="table align-items-center table-flush">
                         <thead class="thead-light">
                             <tr>
@@ -39,7 +61,26 @@
                                     </td>
 
                                     <td>
-                                        {{ $client->slug }}
+                                        {{ $client->last_name }}
+                                    </td>
+
+                                    <td>
+                                        {{ $client->email }}
+                                    </td>
+
+                                    <td>
+                                        {{ $client->phone }}
+                                    </td>
+
+                                    <td>
+                                        {{ $client->gender }}
+                                    </td>
+
+                                    <td class="align-middle">
+                                        <div class="d-flex align-items-center justify-content-center bg-light rounded"
+                                            style="width: 100px; height: 100px; overflow: hidden;">
+                                            <img src="{{ $client->image() }}" alt="{{ $client->name }}" class="img-fluid">
+                                        </div>
                                     </td>
 
                                     <td>
