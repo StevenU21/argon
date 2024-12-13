@@ -5,7 +5,6 @@ use App\Http\Controllers\Example\CategoryController;
 use App\Http\Controllers\Example\PostController;
 use App\Http\Controllers\Example\ProductController;
 use App\Http\Controllers\ProfileController;
-use App\Livewire\Products\ProductList;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -27,10 +26,10 @@ Route::middleware('auth')->group(function () {
 
     //rutas de ejemplo sin controlador con prefijo
     Route::prefix('/ejemplo')->group(function () {
-        Route::get('/index', fn () => view('examples.ejemplo.index'))->name('ejemplo.index');
-        Route::get('/create', fn () => view('examples.ejemplo.create'))->name('ejemplo.create');
-        Route::get('/edit', fn () => view('examples.ejemplo.edit'))->name('ejemplo.edit');
-        Route::get('/show', fn () => view('examples.ejemplo.show'))->name('ejemplo.show');
+        Route::get('/index', fn() => view('examples.ejemplo.index'))->name('ejemplo.index');
+        Route::get('/create', fn() => view('examples.ejemplo.create'))->name('ejemplo.create');
+        Route::get('/edit', fn() => view('examples.ejemplo.edit'))->name('ejemplo.edit');
+        Route::get('/show', fn() => view('examples.ejemplo.show'))->name('ejemplo.show');
     });
 
     //rutas con controlador y prefix
@@ -62,6 +61,13 @@ Route::middleware('auth')->group(function () {
         Route::put('/{animal}', [AnimalController::class, 'update'])->name('animals.update');
         Route::delete('/{animal}', [AnimalController::class, 'destroy'])->name('animals.destroy');
         Route::get('/{animal}', [AnimalController::class, 'show'])->name('animals.show');
+    });
+
+    Route::prefix('/products')->group(function () {
+        Route::get('/', [ProductController::class, 'index'])->name('products.index');
+        Route::get('/create', [ProductController::class, 'create'])->name('products.create');
+        Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
+        Route::get('/{product}', [ProductController::class, 'show'])->name('products.show');
     });
 
     //rutas de posts de tipo resource
