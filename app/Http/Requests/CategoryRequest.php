@@ -24,7 +24,7 @@ class CategoryRequest extends FormRequest
     {
         return [
             'name' => ['required', 'string', 'min:3', 'max:30', Rule::unique('categories')->ignore($this->category)],
-            'slug' => ['string', 'min:3', 'max:30', Rule::unique('categories')->ignore($this->category)],
+            'slug' => [Rule::unique('categories')->ignore($this->category)],
         ];
     }
 
@@ -40,11 +40,7 @@ class CategoryRequest extends FormRequest
             'name.string' => 'El nombre debe ser un texto',
             'name.min' => 'El nombre no puede tener menos de 3 caracteres',
             'name.max' => 'El nombre no puede tener más de 30 caracteres',
-            'name.unique' => 'El nombre ya está en uso',
-            'slug.string' => 'El slug debe ser un texto',
-            'slug.min' => 'El slug no puede tener menos de 3 caracteres',
-            'slug.max' => 'El slug no puede tener más de 30 caracteres',
-            'slug.unique' => 'El slug ya está en uso',
+            'name.unique' => 'El nombre ya está en uso'
         ];
     }
 }

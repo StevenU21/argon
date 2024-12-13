@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class AnimalRequest extends FormRequest
 {
@@ -22,10 +23,11 @@ class AnimalRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'min:3', 'max:30'],
+            'name' => ['required', 'string', 'min:3', 'max:30', Rule::unique('animals')->ignore($this->animal)],
             'type' => ['required', 'string', 'min:3', 'max:20'],
             'color' => ['required', 'string', 'min:3', 'max:20'],
             'age' => ['required', 'integer', 'min:1', 'max:255'],
+            'slug' => [Rule::unique('animals')->ignore($this->animal)],
             'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,webp', 'max:2048'],
         ];
     }

@@ -28,6 +28,7 @@ class PostRequest extends FormRequest
             'title' => ['required', 'string', 'min:3', 'max:255', Rule::unique('posts')->ignore($this->post)],
             'content' => ['required', 'string'],
             'category_id' => ['required', 'exists:categories,id'],
+            'slug' => [Rule::unique('posts')->ignore($this->post)],
         ];
     }
 
