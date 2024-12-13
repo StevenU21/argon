@@ -10,16 +10,17 @@ return new class extends Migration {
      */
     public function up(): void
     {
-        Schema::create('products', function (Blueprint $table) {
+        Schema::create('clients', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->text('description');
-            $table->decimal('price', 8, 2);
-            $table->integer('stock');
+            $table->string('last_name');
+            $table->string('image')->nullable();
+            $table->string('email');
+            $table->string('phone');
+            $table->string('gender');
             $table->string('slug');
 
-            // creamos un indice compuesto para el nombre y el slug
-            $table->unique(['name', 'slug']);
+            $table->unique(['email', 'phone', 'slug', 'name']);
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ return new class extends Migration {
      */
     public function down(): void
     {
-        Schema::dropIfExists('products');
+        Schema::dropIfExists('clients');
     }
 };

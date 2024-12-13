@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Example\AnimalController;
 use App\Http\Controllers\Example\CategoryController;
+use App\Http\Controllers\Example\ClientController;
 use App\Http\Controllers\Example\PostController;
 use App\Http\Controllers\Example\ProductController;
 use App\Http\Controllers\ProfileController;
@@ -63,11 +64,14 @@ Route::middleware('auth')->group(function () {
         Route::get('/{animal}', [AnimalController::class, 'show'])->name('animals.show');
     });
 
-    Route::prefix('/products')->group(function () {
-        Route::get('/', [ProductController::class, 'index'])->name('products.index');
-        Route::get('/create', [ProductController::class, 'create'])->name('products.create');
-        Route::get('/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
-        Route::get('/{product}', [ProductController::class, 'show'])->name('products.show');
+    Route::prefix('/clients')->group(function () {
+        Route::get('/', [ClientController::class, 'index'])->name('clients.index');
+        Route::get('/create', [ClientController::class, 'create'])->name('clients.create');
+        Route::post('/', [ClientController::class, 'store'])->name('clients.store');
+        Route::get('/{client}/edit', [ClientController::class, 'edit'])->name('clients.edit');
+        Route::put('/{client}', [ClientController::class, 'update'])->name('clients.update');
+        Route::delete('/{client}', [ClientController::class, 'destroy'])->name('clients.destroy');
+        Route::get('/{client}', [ClientController::class, 'show'])->name('clients.show');
     });
 
     //rutas de posts de tipo resource
