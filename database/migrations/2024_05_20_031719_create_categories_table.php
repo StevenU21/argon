@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     /**
      * Run the migrations.
      */
@@ -13,8 +12,11 @@ return new class extends Migration
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 30)->unique();
-            $table->string('slug', 30)->unique();
+            $table->string('name');
+            $table->string('slug');
+
+            // creamos un indice compuesto para el nombre y el slug
+            $table->unique(['name', 'slug']);
             $table->timestamps();
         });
     }

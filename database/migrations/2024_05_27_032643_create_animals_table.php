@@ -13,12 +13,13 @@ return new class extends Migration
     {
         Schema::create('animals', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name', 30)->unique();
-            $table->string('type', 16);
-            $table->string('color', 20);
+            $table->string('name');
+            $table->string('type');
+            $table->string('color');
             $table->tinyInteger('age'); // 0-255
             $table->string('image')->nullable();
-            $table->string('slug')->unique();
+            $table->string('slug');
+            $table->unique(['name', 'slug']);
             $table->timestamps();
         });
     }
