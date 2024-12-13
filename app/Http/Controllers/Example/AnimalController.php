@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Example;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\AnimalRequest;
+use App\Http\Request\Example\AnimalRequest;
 use App\Models\Example\Animal;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;

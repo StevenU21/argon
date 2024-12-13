@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Example;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\CategoryRequest;
+use App\Http\Requests\Example\CategoryRequest;
 use App\Models\Example\Category;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\View\View;

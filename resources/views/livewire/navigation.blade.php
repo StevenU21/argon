@@ -90,10 +90,10 @@
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('products.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('products.index') ? 'active' : '' }}"
-                href="{{ route('products.index') }}" wire:navigate>
-                <i class="fas fa-shopping-cart text-blue"></i> Products (Livewire)
+        <li class="nav-item {{ Request::route()->named('clients.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('clients.index') ? 'active' : '' }}"
+                href="{{ route('clients.index') }}" wire:navigate>
+                <i class="fas fa-users text-blue"></i> Clients (Modal)
             </a>
         </li>
     </ul>

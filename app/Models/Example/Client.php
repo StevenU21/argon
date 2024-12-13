@@ -12,5 +12,18 @@ class Client extends Model
         'image',
         'email',
         'phone',
+        'gender',
     ];
+
+    protected $hidden = [
+        'id',
+        'slug',
+        'created_at',
+        'updated_at',
+    ];
+
+    public function getRouteKeyName(): string
+    {
+        return 'slug';
+    }
 }

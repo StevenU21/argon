@@ -4,7 +4,6 @@ use App\Http\Controllers\Example\AnimalController;
 use App\Http\Controllers\Example\CategoryController;
 use App\Http\Controllers\Example\ClientController;
 use App\Http\Controllers\Example\PostController;
-use App\Http\Controllers\Example\ProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 

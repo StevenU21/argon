@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Example;
 
 use App\Http\Controllers\Controller;
-use App\Http\Requests\PostRequest;
+use App\Http\Requests\Example\PostRequest;
 use App\Models\Example\Post;
 use App\Models\Example\Category;
 use Illuminate\Contracts\View\View;
