@@ -26,8 +26,8 @@ class ClientRequest extends FormRequest
             'name' => ['required', 'string', 'min:3', 'max:30'],
             'last_name' => ['required', 'string', 'min:3', 'max:30'],
             'image' => ['nullable', 'image', 'mimes:jpeg,png,jpg,gif,webp', 'max:2048'],
-            'email' => ['required', 'email', 'max:255'],
-            'phone' => ['required', 'string', 'min:10', 'max:15'],
+            'email' => ['required', 'email', 'max:255', Rule::unique('clients')->ignore($this->client)],
+            'phone' => ['required', 'string', 'min:10', 'max:15', Rule::unique('clients')->ignore($this->client)],
             'slug' => [Rule::unique('clients')->ignore($this->client)],
         ];
     }
