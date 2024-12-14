@@ -21,6 +21,40 @@
 
     {{-- @vite('resources/js/app.js') --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css" />
+
+    <style>
+        @keyframes toaster {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+
+            75% {
+                transform: scale(0.95);
+            }
+
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        .modal-body {
+            max-height: 60vh;
+            /* Ajusta la altura del contenido del modal */
+            overflow-y: auto;
+            /* Habilita el scroll si el contenido es demasiado alto */
+        }
+
+        .modal.fade .modal-dialog {
+            animation: toaster 0.5s ease-in-out;
+        }
+    </style>
     @livewireStyles
 </head>
 
@@ -194,12 +228,12 @@
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var multipleCancelButton = new Choices('#exampleFormControlSelect2', {
                 removeItemButton: true,
-                maxItemCount:5,
-                searchResultLimit:5,
-                renderChoiceLimit:5
+                maxItemCount: 5,
+                searchResultLimit: 5,
+                renderChoiceLimit: 5
             });
         });
     </script>

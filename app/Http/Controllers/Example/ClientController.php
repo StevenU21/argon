@@ -16,11 +16,11 @@ class ClientController extends Controller
     public function index(): View
     {
         $client = new Client();
-        $clients = Client::paginate(10);
+        $clients = Client::latest()->paginate(5);
         return view('examples.clients.index', compact('clients', 'client'));
     }
 
-    public function store(ClientRequest $request): RedirectResponse
+    public function store(ClientRequest $request): JsonResponse
     {
         $client = new Client();
 
@@ -40,13 +40,44 @@ class ClientController extends Controller
             ]);
         }
 
-        return redirect()->route('clients.index')->with('success', 'Cliente creado correctamente');
+        return response()->json([
+            'message' => 'Cliente creado correctamente'
+        ]);
     }
 
     public function edit(Client $client): JsonResponse
     {
         return response()->json([
             'client' => $client
+        ]);
+    }
+
+    public function update(ClientRequest $request, int $id): JsonResponse
+    {
+        $client = Client::findOrFail($id);
+
+        $client->fill(
+            $request->validated() +
+            [
+                'slug' => Str::slug($request->name . ' ' . $request->last_name, '-')
+            ]
+        );
+        $client->save();
+
+        if ($request->hasFile('image')) {
+            if ($client->image) {
+                Storage::disk('public')->delete('clients_images/' . $client->image);
+            }
+
+            $file = $request->file('image');
+            $imageName = Str::slug($request->name, '-') . '-' . $client->id . '.png';
+            $client->update([
+                'image' => $file->storeAs('clients_images', $imageName, 'public')
+            ]);
+        }
+
+        return response()->json([
+            'message' => 'Cliente actualizado correctamente'
         ]);
     }
 

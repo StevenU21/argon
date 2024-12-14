@@ -17,7 +17,7 @@
                 <!-- Modal -->
                 <div class="modal fade" id="createClientModal" tabindex="-1" role="dialog"
                     aria-labelledby="createClientModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h4 class="modal-title" id="createClientModalLabel">Nuevo Cliente</h4>
@@ -96,10 +96,14 @@
 
                                         @include('components.clients.modals.showmodal')
 
-                                        <a href="{{ route('clients.edit', $client) }}" class="btn btn-info btn-sm"
-                                            style="margin-right: 5px;">
+                                        <a href="#" class="btn btn-info btn-sm edit-button" style="margin-right: 5px;"
+                                            data-type="{{ $client }}" data-toggle="modal"
+                                            data-target="#editClientModal{{ $client->id }}">
                                             <i class="fas fa-edit"></i> Editar
                                         </a>
+
+                                        @include('components.clients.modals.editmodal')
+
                                         <form action="{{ route('clients.destroy', $client->id) }}" method="POST"
                                             style="display: inline-block; margin: 0; display: flex; align-items: center;">
                                             @csrf
