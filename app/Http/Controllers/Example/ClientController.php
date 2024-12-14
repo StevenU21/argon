@@ -20,7 +20,7 @@ class ClientController extends Controller
         return view('examples.clients.index', compact('clients', 'client'));
     }
 
-    public function store(ClientRequest $request): JsonResponse
+    public function store(ClientRequest $request): RedirectResponse
     {
         $client = new Client();
 
@@ -40,9 +40,7 @@ class ClientController extends Controller
             ]);
         }
 
-        return response()->json([
-            'message' => 'Cliente creado correctamente'
-        ]);
+        return redirect()->route('clients.index')->with('success', 'Cliente creado correctamente');
     }
 
     public function edit(Client $client): JsonResponse
@@ -52,7 +50,7 @@ class ClientController extends Controller
         ]);
     }
 
-    public function update(ClientRequest $request, int $id): JsonResponse
+    public function update(ClientRequest $request, int $id): RedirectResponse
     {
         $client = Client::findOrFail($id);
 
@@ -76,9 +74,7 @@ class ClientController extends Controller
             ]);
         }
 
-        return response()->json([
-            'message' => 'Cliente actualizado correctamente'
-        ]);
+        return redirect()->route('clients.index')->with('updated', 'Cliente actualizado correctamente');
     }
 
     public function show(Client $client): JsonResponse
