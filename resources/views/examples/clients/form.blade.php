@@ -40,6 +40,8 @@
     <div class="form-group">
         <label class="form-control-label" for="image">Imágen</label>
         <input type="file" id="image" name="image" class="form-control form-control-alternative">
+        <img id="imagePreview" src="#" alt="Vista previa de la imagen" class="img-fluid mt-2"
+            style="display: none; max-height: 200px;">
     </div>
     <div class="form-group">
         <label class="form-control-label" for="gender">Género</label>
@@ -57,6 +59,18 @@
         </div>
     </div>
 </div>
+
+<script>
+    document.getElementById('image').addEventListener('change', function(event) {
+        var reader = new FileReader();
+        reader.onload = function() {
+            var output = document.getElementById('imagePreview');
+            output.src = reader.result;
+            output.style.display = 'block';
+        };
+        reader.readAsDataURL(event.target.files[0]);
+    });
+</script>
 
 <hr class="my-4" />
 <!-- Contenido -->
