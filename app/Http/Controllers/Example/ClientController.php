@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Example\ClientRequest;
 use App\Models\Example\Client;
 use Illuminate\Contracts\View\View;
+use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
@@ -40,6 +41,20 @@ class ClientController extends Controller
         }
 
         return redirect()->route('clients.index')->with('success', 'Cliente creado correctamente');
+    }
+
+    public function edit(Client $client): JsonResponse
+    {
+        return response()->json([
+            'client' => $client
+        ]);
+    }
+
+    public function show(Client $client): JsonResponse
+    {
+        return response()->json([
+            'client' => $client
+        ]);
     }
 
     public function destroy(int $id): RedirectResponse

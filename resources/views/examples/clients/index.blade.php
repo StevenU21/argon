@@ -87,10 +87,15 @@
                                         {{ $client->created_at }}
                                     </td>
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
-                                        <a href="{{ route('clients.show', $client) }}" class="btn btn-primary btn-sm"
-                                            style="margin-right: 5px;">
+
+                                        <a href="#" class="btn btn-primary btn-sm show-button"
+                                            style="margin-right: 5px;" data-type="{{ $client }}" data-toggle="modal"
+                                            data-target="#showClientModal{{ $client->id }}">
                                             <i class="fas fa-eye"></i> Mostrar
                                         </a>
+
+                                        @include('components.clients.modals.showmodal')
+
                                         <a href="{{ route('clients.edit', $client) }}" class="btn btn-info btn-sm"
                                             style="margin-right: 5px;">
                                             <i class="fas fa-edit"></i> Editar
