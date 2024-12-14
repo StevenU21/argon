@@ -43,6 +43,7 @@
         <img id="imagePreview" src="#" alt="Vista previa de la imagen" class="img-fluid mt-2"
             style="display: none; max-height: 200px;">
     </div>
+
     <div class="form-group">
         <label class="form-control-label" for="gender">Género</label>
         <div class="d-flex">
