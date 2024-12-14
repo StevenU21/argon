@@ -42,11 +42,15 @@
                 // Manejar éxito
                 console.log('Client updated successfully:', response);
                 $('#editClientModal' + clientId).modal('hide');
-                location.reload(); // Recargar la página para reflejar los cambios
-            },
-            error: function(xhr) {
-                // Manejar errores
-                console.error('Error:', xhr.responseText);
+                Swal.fire({
+                    icon: 'info',
+                    title: 'Éxito',
+                    text: 'Cliente actualizado correctamente',
+                    showConfirmButton: false,
+                    timer: 1500
+                }).then(() => {
+                    location.reload(); // Recargar la página para reflejar los cambios
+                });
             }
         });
     });

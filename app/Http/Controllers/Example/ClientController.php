@@ -8,6 +8,7 @@ use App\Models\Example\Client;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Storage;
 
@@ -50,7 +51,7 @@ class ClientController extends Controller
         ]);
     }
 
-    public function update(ClientRequest $request, int $id): RedirectResponse
+    public function update(ClientRequest $request, int $id): JsonResponse
     {
         $client = Client::findOrFail($id);
 
@@ -74,7 +75,10 @@ class ClientController extends Controller
             ]);
         }
 
-        return redirect()->route('clients.index')->with('updated', 'Cliente actualizado correctamente');
+        return response()->json([
+            'client' => $client,
+            'message' => 'Cliente actualizado correctamente'
+        ]);
     }
 
     public function show(Client $client): JsonResponse
