@@ -43,7 +43,7 @@
                 opacity: 1;
             }
         }
-        
+
         .modal-body {
             max-height: 60vh;
             /* Ajusta la altura del contenido del modal */
@@ -223,6 +223,8 @@
     </script>
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.10.0/css/bootstrap-datepicker.min.css">
+
+    <script src="{{ asset('js/plugins/clipboard/dist/clipboard.min.js') }}"></script>
     <!--   Argon JS   -->
     <script src="{{ asset('js/argon-dashboard.min.js?v=1.1.2') }}"></script>
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
@@ -237,7 +239,6 @@
             });
         });
     </script>
-
 
     <script>
         window.TrackJS &&

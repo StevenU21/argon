@@ -34,6 +34,14 @@
             <a class="nav-link {{ Request::route()->named('ejemplo.index') ? 'active' : '' }}"
                 href="{{ route('ejemplo.index') }}" wire:navigate>
                 <i class="fas fa-book text-purple"></i> Ejemplo
+
+            </a>
+        </li>
+
+        <li class="nav-item {{ Request::route()->named('icons.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('icons.index') ? 'active' : '' }}"
+                href="{{ route('icons.index') }}" wire:navigate>
+                <i class="ni ni-box-2 text-orange"></i> Nucleo Icons
             </a>
         </li>
     </ul>

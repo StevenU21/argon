@@ -32,6 +32,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/show', fn() => view('examples.ejemplo.show'))->name('ejemplo.show');
     });
 
+    Route::get('/icons', function () {
+        return view('examples.icons.index');
+    })->name('icons.index');
+
     //rutas con controlador y prefix
     Route::prefix('/categories')->group(function () {
         Route::get('/', [CategoryController::class, 'index'])->name('categories.index');
