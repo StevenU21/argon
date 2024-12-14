@@ -44,13 +44,6 @@ class ClientController extends Controller
         return redirect()->route('clients.index')->with('success', 'Cliente creado correctamente');
     }
 
-    public function edit(Client $client): JsonResponse
-    {
-        return response()->json([
-            'client' => $client
-        ]);
-    }
-
     public function update(ClientRequest $request, int $id): JsonResponse
     {
         $client = Client::findOrFail($id);
@@ -78,13 +71,6 @@ class ClientController extends Controller
         return response()->json([
             'client' => $client,
             'message' => 'Cliente actualizado correctamente'
-        ]);
-    }
-
-    public function show(Client $client): JsonResponse
-    {
-        return response()->json([
-            'client' => $client
         ]);
     }
 
