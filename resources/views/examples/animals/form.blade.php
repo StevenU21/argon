@@ -24,6 +24,17 @@
                     <option value="Pez" {{ old('type', $animal->type ?? '') == 'Pez' ? 'selected' : '' }}>Pez
                     </option>
                 </select>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const typeSelect = document.getElementById('input-type');
+                        const choices = new Choices(typeSelect, {
+                            searchEnabled: true,
+                            itemSelectText: '',
+                            shouldSort: false
+                        });
+                    });
+                </script>
             </div>
         </div>
     </div>
