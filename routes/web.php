@@ -47,40 +47,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/{category}', [CategoryController::class, 'show'])->name('categories.show');
     });
 
-    Route::prefix('/posts')->group(function () {
-        Route::get('/', [PostController::class, 'index'])->name('posts.index');
-        Route::get('/create', [PostController::class, 'create'])->name('posts.create');
-        Route::post('/', [PostController::class, 'store'])->name('posts.store');
-        Route::get('/{post}/edit', [PostController::class, 'edit'])->name('posts.edit');
-        Route::put('/{post}', [PostController::class, 'update'])->name('posts.update');
-        Route::delete('/{post}', [PostController::class, 'destroy'])->name('posts.destroy');
-        Route::get('/{post}', [PostController::class, 'show'])->name('posts.show');
-    });
-
-    Route::prefix('/animals')->group(function () {
-        Route::get('/', [AnimalController::class, 'index'])->name('animals.index');
-        Route::get('/create', [AnimalController::class, 'create'])->name('animals.create');
-        Route::post('/', [AnimalController::class, 'store'])->name('animals.store');
-        Route::get('/{animal}/edit', [AnimalController::class, 'edit'])->name('animals.edit');
-        Route::put('/{animal}', [AnimalController::class, 'update'])->name('animals.update');
-        Route::delete('/{animal}', [AnimalController::class, 'destroy'])->name('animals.destroy');
-        Route::get('/{animal}', [AnimalController::class, 'show'])->name('animals.show');
-    });
-
-    Route::prefix('/clients')->group(function () {
-        Route::get('/', [ClientController::class, 'index'])->name('clients.index');
-        Route::get('/create', [ClientController::class, 'create'])->name('clients.create');
-        Route::post('/', [ClientController::class, 'store'])->name('clients.store');
-        Route::get('/{client}/edit', [ClientController::class, 'edit'])->name('clients.edit');
-        Route::put('/{client}', [ClientController::class, 'update'])->name('clients.update');
-        Route::delete('/{client}', [ClientController::class, 'destroy'])->name('clients.destroy');
-        Route::get('/{client}', [ClientController::class, 'show'])->name('clients.show');
-    });
-
     //rutas de posts de tipo resource
-    // Route::resource('/posts', PostController::class);
-    // Route::resource('/categories', CategoryController::class);
-    // Route::resource('/animals', AnimalController::class);
+    Route::resource('/posts', PostController::class);
+    Route::resource('/animals', AnimalController::class);
+    Route::resource('/clients', ClientController::class)->except(['show', 'edit', 'create']);
 });
 
 require __DIR__ . '/auth.php';
