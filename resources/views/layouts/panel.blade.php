@@ -132,8 +132,7 @@
                                                     <span class="h2 font-weight-bold mb-0">Ejemplo</span>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <div
-                                                        class="icon icon-shape bg-danger text-white rounded-circle shadow">
+                                                    <div class="icon icon-shape bg-danger text-white rounded-circle shadow">
                                                         <i class="fas fa-chart-bar"></i>
                                                     </div>
                                                 </div>
@@ -150,8 +149,7 @@
                                                     <span class="h2 font-weight-bold mb-0">Ejemplo</span>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <div
-                                                        class="icon icon-shape bg-warning text-white rounded-circle shadow">
+                                                    <div class="icon icon-shape bg-warning text-white rounded-circle shadow">
                                                         <i class="fas fa-chart-pie"></i>
                                                     </div>
                                                 </div>
@@ -168,8 +166,7 @@
                                                     <span class="h2 font-weight-bold mb-0">Ejemplo</span>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <div
-                                                        class="icon icon-shape bg-yellow text-white rounded-circle shadow">
+                                                    <div class="icon icon-shape bg-yellow text-white rounded-circle shadow">
                                                         <i class="fas fa-users"></i>
                                                     </div>
                                                 </div>
@@ -186,8 +183,7 @@
                                                     <span class="h2 font-weight-bold mb-0">Ejemplo</span>
                                                 </div>
                                                 <div class="col-auto">
-                                                    <div
-                                                        class="icon icon-shape bg-info text-white rounded-circle shadow">
+                                                    <div class="icon icon-shape bg-info text-white rounded-circle shadow">
                                                         <i class="fas fa-percent"></i>
                                                     </div>
                                                 </div>
@@ -229,7 +225,7 @@
     <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             var multipleCancelButton = new Choices('#exampleFormControlSelect2', {
                 removeItemButton: true,
                 maxItemCount: 5,
