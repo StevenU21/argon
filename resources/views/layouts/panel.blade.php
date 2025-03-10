@@ -46,16 +46,13 @@
 
         .modal-body {
             max-height: 60vh;
-            /* Ajusta la altura del contenido del modal */
             overflow-y: auto;
-            /* Habilita el scroll si el contenido es demasiado alto */
         }
 
         .modal.fade .modal-dialog {
             animation: toaster 0.5s ease-in-out;
         }
     </style>
-    @livewireStyles
 </head>
 
 <body class="">
@@ -73,7 +70,7 @@
             <!-- User -->
             @include('includes.mobile_menu')
             <!-- Collapse -->
-            <livewire:navigation />
+            @include('includes.navigation')
         </div>
     </nav>
 
@@ -87,7 +84,7 @@
                         href="{{ route('profile.index') }}">Perfil de
                         Usuario</a>
                     <!-- User -->
-                    <livewire:menu />
+                    @include('includes.menu')
                 </div>
             </nav>
             <!-- End Navbar -->
@@ -97,7 +94,20 @@
                 <!-- Mask -->
                 <span class="mask bg-gradient-default opacity-8"></span>
                 <!-- Header container -->
-                <livewire:profile-edit />
+                <div class="container-fluid d-flex align-items-center">
+                    <div class="row">
+                        <div class="col-lg-7 col-md-10">
+                            <h1 class="display-2 text-white">Hola! {{ auth()->user()->name }}</h1>
+                            <p class="text-white mt-0 mb-5">Este es tu perfil de usuario. Puedes ver la información de
+                                tu cuenta y
+                                editarla si lo
+                                deseas.</p>
+                            </p>
+                            <a href="{{ route('profile.edit') }}" class="btn btn-info" wire:navigate>Editar Perfil</a>
+                        </div>
+                    </div>
+                </div>
+
             </div>
             <!-- Page content -->
             <div class="container-fluid mt--7">
@@ -112,7 +122,8 @@
                     <!-- Brand -->
                     <a class="h4 mb-0 text-white text-uppercase d-none d-lg-inline-block"
                         href="{{ route('dashboard') }}">Dashboard</a>
-                    <livewire:menu />
+                     <!-- Menu -->
+                    @include('includes.menu')
                 </div>
             </nav>
             <!-- End Navbar -->
@@ -244,7 +255,6 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     @include('components.alerts') <!-- Mueve esto al final -->
-    @livewireScripts
 </body>
 
 </html>
