@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="card-body container-fluid">
-                <form action="{{ route('articles.update', $article) }}" method="POST">
+                <form action="{{ route('articles.update', $article) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     @include('examples.articles.form')
