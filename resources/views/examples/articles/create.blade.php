@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div class="card-body container-fluid">
-                <form action="{{ route('articles.store') }}" method="POST">
+                <form action="{{ route('articles.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @include('examples.articles.form')
                 </form>

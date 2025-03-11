@@ -9,7 +9,6 @@ use Illuminate\Support\Str;
 
 class ImageService
 {
-    protected UploadedFile $file;
     /**
      * Store a file locally and update the model's file attribute.
      *

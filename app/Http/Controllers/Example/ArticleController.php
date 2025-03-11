@@ -52,16 +52,8 @@ class ArticleController extends Controller
             'user_id' => auth()->id()
         ]);
 
-        // Validación de tags
-        $tags = $request->input('tags', []);
-        foreach ($tags as $tagId) {
-            if (!Tag::find($tagId)) {
-                throw new \Exception("Tag ID {$tagId} no es válido.");
-            }
-        }
-
         // Sincronizamos las etiquetas
-        $article->tags()->sync($tags);
+        $article->tags()->sync($request->tags);
 
         //Guardamos la imagen
         if ($request->hasFile('image')) {
@@ -73,7 +65,7 @@ class ArticleController extends Controller
             );
         }
 
-        return redirect()->route('articles.index')->with('success', 'Article creado Correctamente');
+        return redirect()->route('articles.index')->with('success', 'Articulo creado Correctamente');
     }
 
     /**

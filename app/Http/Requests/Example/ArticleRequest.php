@@ -25,7 +25,7 @@ class ArticleRequest extends FormRequest
         return [
             'title' => ['required', 'string', 'min:3', 'max:255', Rule::unique('articles')->ignore($this->article)],
             'content' => ['required', 'string', 'min:6', 'max:10000'],
-            'image' => ['required','max:5600'],
+            'image' => ['required', 'image', 'mimes:jpg,png,jpeg,webp','max:5600'],
             'category_id' => ['required', 'integer', 'exists:categories,id'],
             'user_id' => ['integer', 'exists:users,id'],
             'tags' => ['required', 'array', 'min:1', 'max:5'],
