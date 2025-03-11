@@ -2,9 +2,9 @@
 
 namespace App\Traits;
 
+use App\Exceptions\AuthorizationException;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Permission\Exceptions\UnauthorizedException;
 
 trait HasPermissionCheck
 {
@@ -18,11 +18,11 @@ trait HasPermissionCheck
     public function checkPermission(User $user, string $permission, ?Model $model = null): bool
     {
         if (!$user->hasPermissionTo($permission)) {
-            throw new UnauthorizedException(403);
+            throw new AuthorizationException();
         }
 
         if ($model && $user->id !== $model->user_id) {
-            throw new UnauthorizedException(403);
+            throw new AuthorizationException();
         }
 
         if ($user->hasRole('admin')) {

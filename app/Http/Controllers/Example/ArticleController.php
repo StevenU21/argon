@@ -89,7 +89,7 @@ class ArticleController extends Controller
     public function edit(Article $article): View
     {
         $this->authorize('update', $article);
-        
+
         //$categories = Category::all();
         $categories = Category::pluck('name', 'id');
         $tags = Tag::pluck('name', 'id');
