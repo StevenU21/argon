@@ -50,40 +50,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Navbar items -->
-                    <ul class="navbar-nav ml-auto">
-                        @if (Route::has('login'))
-                            @auth
-                                <li class="nav-item">
-                                    <a class="nav-link nav-link-icon" href="{{ route('dashboard') }}">
-                                        <i class="ni ni-planet"></i>
-                                        <span class="nav-link-inner--text">Dashboard</span>
-                                    </a>
-                                </li>
-                            @else
-                                <li class="nav-item">
-                                    <a class="nav-link nav-link-icon" href="{{ route('login') }}">
-                                        <i class="ni ni-key-25"></i>
-                                        <span class="nav-link-inner--text">Login</span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link nav-link-icon" href="{{ route('profile.edit') }}">
-                                        <i class="ni ni-single-02"></i>
-                                        <span class="nav-link-inner--text">Profile</span>
-                                    </a>
-                                </li>
-                                @if (Route::has('register'))
-                                    <li class="nav-item">
-                                        <a class="nav-link nav-link-icon" href="{{ route('register') }}">
-                                            <i class="ni ni-circle-08"></i>
-                                            <span class="nav-link-inner--text">Register</span>
-                                        </a>
-                                    </li>
-                                @endif
-                            @endauth
-                        @endif
-                    </ul>
                 </div>
             </div>
         </nav>
@@ -92,14 +58,6 @@
         bg-gradient-primary py-7 py-lg-8">
             <div class="container">
                 <div class="header-body text-center mb-7">
-                    <div class="row justify-content-center">
-                        @if (!Route::has('login'))
-                            <div class="col-lg-5 col-md-6">
-                                <h1 class="text-white">¡Bienvenido!</h1>
-                                <p class="text-lead text-light">Inicia Sesión o crea una Cuenta para Continuar.</p>
-                            </div>
-                        @endif
-                    </div>
                 </div>
             </div>
             <div class="separator separator-bottom separator-skew zindex-100">
@@ -110,7 +68,17 @@
             </div>
         </div>
         <!-- Page content -->
-        @yield('content')
+        <div class="container mt--8 pb-5">
+            <div class="row justify-content-center">
+                <div class="col-lg-5 col-md-7 text-center">
+                    <h1 class="display-1 text-white font-weight-bold">404</h1>
+                    <h2 class="text-muted text-white">Página no encontrada</h2>
+                    <p class="text-lead text-light">Lo sentimos, la página que buscas no está disponible o ha sido
+                        movida.</p>
+                    <a href="{{ url('/dashboard') }}" class="btn btn-primary mt-3">Volver al inicio</a>
+                </div>
+            </div>
+        </div>
 
         <!-- Footer -->
         <footer class="py-5">
