@@ -24,6 +24,7 @@
                                 <th scope="col"><i class="fas fa-align-left"></i> Contenido</th>
                                 <th scope="col"><i class="fas fa-tags"></i> Categoria</th>
                                 <th scope="col"><i class="fas fa-tags"></i> Etiquetas</th>
+                                <th scope="col"><i class="fas fa-tags"></i> Imagen</th>
                                 <th scope="col"><i class="fas fa-calendar-check"></i> Fecha de Registro</th>
                                 <th scope="col"><i class="fas fa-cogs"></i> Acciones</th>
                             </tr>
@@ -54,6 +55,10 @@
                                                 <span class="badge badge-success">{{ $tag->name }} </span>
                                             </span>
                                         @endforeach
+                                    </td>
+
+                                    <td>
+                                        <img src="{{ $article->image() }}" alt="{{ $article->title }}" style="width: 100px; height: auto;">
                                     </td>
 
                                     <td>

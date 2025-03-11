@@ -16,44 +16,28 @@
                 </div>
             </div>
             <div class="card-body">
-                <h6 class="heading-small text-muted mb-4">Información del Articulo</h6>
-                <div class="pl-lg-4">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <label class="form-control-label" for="title"><i class="fas fa-heading"></i>
-                                    Título</label>
-                                <p>{{ $article->title }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="form-group">
-                                <label class="form-control-label" for="content"><i class="fas fa-align-left"></i>
-                                    Contenido</label>
-                                <p>{{ $article->content }}</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="category"><i
-                                        class="fas fa-tags"></i> Categoria</label>
-                                <p>
-                                    <span class="badge badge-success">{{ $article->category->name }}</span>
-                                </p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <label class="form-control-label" for="register_date"><i class="fas fa-calendar-check"></i>
-                                    Fecha de Registro</label>
-                                <p>{{ $article->created_at}}</p>
-                            </div>
-                        </div>
-                    </div>
+                <h1 class="display-4">{{ $article->title }}</h1>
+                <p class="lead">by <a href="#">{{ $article->user->name }}</a></p>
+                <hr>
+                <p><i class="fas fa-calendar-check"></i> Publicado el {{ $article->created_at->format('d M Y') }}</p>
+                <hr>
+                @if($article->image)
+                    <img src="{{ asset('storage/' . $article->image) }}" class="img-fluid rounded mb-4"
+                        alt="Imagen del artículo">
+                @endif
+                
+                <div id="article-content" class="lead">{{ $article->content }}</div>
+
+                <hr>
+                <div class="mb-3">
+                    <i class="fas fa-tags"></i> Categoría: <span
+                        class="badge badge-success">{{ $article->category->name }}</span>
+                </div>
+                <div class="mb-3">
+                    <i class="fas fa-tag"></i> Tags:
+                    @foreach($article->tags as $tag)
+                        <span class="badge badge-info">{{ $tag->name }}</span>
+                    @endforeach
                 </div>
             </div>
         </div>

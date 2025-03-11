@@ -15,7 +15,6 @@ use Spatie\Sluggable\SlugOptions;
 class Article extends Model
 {
     use HasFactory, HasSlug, HasResolveModelBinding, HasRouteKeyName;
-
     protected $fillable = [
         'title',
         'content',
@@ -31,10 +30,14 @@ class Article extends Model
             ->saveSlugsTo('slug');
     }
 
-    public function getImageUrlAttribute(): string
-    {
-        return asset('storage/' . $this->image);
-    }
+    public function image(): string
+     {
+         if ($this->image) {
+             return asset('storage/' . $this->image);
+         } else {
+             return asset('img/theme/animal.jpeg');
+         }
+     }
 
     public function category(): BelongsTo
     {

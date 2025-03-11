@@ -24,7 +24,7 @@ class ArticleController extends Controller
         // con la funcion with cargamos la relacion de la categoria
         // a esto se le llama eager loading
         // ademas paginamos los resultados de 10 en 10
-        $articles = Article::with(['category', 'tags', 'user'])->paginate(10);
+        $articles = Article::with(['category', 'tags', 'user'])->latest()->paginate(10);
         return view('examples.articles.index', compact('articles'));
     }
 
@@ -80,6 +80,7 @@ class ArticleController extends Controller
         $this->authorize('view', $article);
         // con la funcion load cargamos la relacion de la categoria
         $article->load(['category', 'tags', 'user']);
+        
         return view('examples.articles.show', compact('article'));
     }
 
