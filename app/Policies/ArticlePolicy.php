@@ -11,27 +11,27 @@ class ArticlePolicy
 {
     use HandlesAuthorization, HasPermissionCheck;
 
-    public function viewAny(User $user): bool
+    public function viewAny(User $user)
     {
         return $this->checkPermission($user, 'read articles');
     }
 
-    public function view(User $user, Article $article): bool
+    public function view(User $user, Article $article)
     {
         return $this->checkPermission($user, 'read articles');
     }
 
-    public function create(User $user): bool
+    public function create(User $user)
     {
         return $this->checkPermission($user, 'create articles');
     }
 
-    public function update(User $user, Article $article): bool
+    public function update(User $user, Article $article)
     {
         return $this->checkPermission($user, 'update articles', $article);
     }
 
-    public function destroy(User $user, Article $article): bool
+    public function destroy(User $user, Article $article)
     {
         return $this->checkPermission($user, 'destroy articles', $article);
     }

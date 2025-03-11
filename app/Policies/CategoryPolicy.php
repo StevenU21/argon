@@ -11,27 +11,27 @@ class CategoryPolicy
 {
     use HandlesAuthorization, HasPermissionCheck;
 
-    public function viewAny(User $user): bool
+    public function viewAny(User $user)
     {
         return $this->checkPermission($user, 'read categories');
     }
 
-    public function view(User $user, Category $category): bool
+    public function view(User $user, Category $category)
     {
         return $this->checkPermission($user, 'read categories');
     }
 
-    public function create(User $user): bool
+    public function create(User $user)
     {
         return $this->checkPermission($user, 'create categories');
     }
 
-    public function update(User $user, Category $category): bool
+    public function update(User $user, Category $category)
     {
         return $this->checkPermission($user, 'update categories');
     }
 
-    public function destroy(User $user, Category $category): bool
+    public function destroy(User $user, Category $category)
     {
         return $this->checkPermission($user, 'destroy categories');
     }
