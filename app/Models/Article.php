@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use App\Models\User;
+use App\Traits\HasResolveModelBinding;
+use App\Traits\HasRouteKeyName;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -12,7 +14,7 @@ use Spatie\Sluggable\SlugOptions;
 
 class Article extends Model
 {
-    use HasFactory, HasSlug;
+    use HasFactory, HasSlug, HasResolveModelBinding, HasRouteKeyName;
 
     protected $fillable = [
         'title',
@@ -33,12 +35,6 @@ class Article extends Model
     {
         return asset('storage/' . $this->image);
     }
-
-    public function resolveRouteBinding($value, $field = null)
-    {
-        return $this->where($field ?? 'id', $value)->orWhere('slug', $value)->firstOrFail();
-    }
-
 
     public function category(): BelongsTo
     {

@@ -4,21 +4,23 @@ namespace App\Http\Controllers\Example;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Example\ArticleRequest;
-use App\Http\Requests\Example\TagRequest;
 use App\Models\Article;
 use App\Models\Category;
 use App\Models\Tag;
 use App\Services\ImageService;
 use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\RedirectResponse;
 
 class ArticleController extends Controller
 {
+    use AuthorizesRequests;
     /**
      * Display a listing of the resource.
      */
     public function index(): View
     {
+        $this->authorize('viewAny', Article::class);
         // con la funcion with cargamos la relacion de la categoria
         // a esto se le llama eager loading
         // ademas paginamos los resultados de 10 en 10
@@ -31,6 +33,7 @@ class ArticleController extends Controller
      */
     public function create(): View
     {
+        $this->authorize('create', Article::class);
         // creamos una instancia de Article
         $article = new Article();
         // con la funcion pluck obtenemos un array asociativo con el id y el nombre de la categoria
@@ -47,6 +50,7 @@ class ArticleController extends Controller
      */
     public function store(ArticleRequest $request, ImageService $imageService): RedirectResponse
     {
+        $this->authorize('create', Article::class);
         // creamos un nuevo Article con los datos validados
         $article = Article::create($request->validated() + [
             'user_id' => auth()->id()
@@ -73,6 +77,7 @@ class ArticleController extends Controller
      */
     public function show(Article $article): View
     {
+        $this->authorize('view', $article);
         // con la funcion load cargamos la relacion de la categoria
         $article->load(['category', 'tags', 'user']);
         return view('examples.articles.show', compact('article'));
@@ -83,9 +88,11 @@ class ArticleController extends Controller
      */
     public function edit(Article $article): View
     {
+        $this->authorize('update', $article);
         //$categories = Category::all();
         $categories = Category::pluck('name', 'id');
-        return view('examples.articles.edit', compact('article', 'categories'));
+        $tags = Tag::pluck('name', 'id');
+        return view('examples.articles.edit', compact('article', 'categories', 'tags'));
     }
 
     /**
@@ -93,6 +100,7 @@ class ArticleController extends Controller
      */
     public function update(ArticleRequest $request, Article $article, ImageService $imageService): RedirectResponse
     {
+        $this->authorize('update', $article);
         // actualizamos el Article con los datos validados
         $article->update($request->validated());
 
@@ -113,6 +121,7 @@ class ArticleController extends Controller
      */
     public function destroy(Article $article, ImageService $imageService): RedirectResponse
     {
+        $this->authorize('destroy', $article);
         $imageService->deleteLocal($article, 'image');
         // eliminamos el Article
         $article->delete();

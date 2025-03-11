@@ -6,17 +6,19 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Example\TagRequest;
 use App\Models\Tag;
 use Illuminate\Contracts\View\View;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Storage;
-use Illuminate\Support\Str;
+
 
 class TagController extends Controller
 {
+    use AuthorizesRequests;
     /**
      * Display a listing of the resource.
      */
     public function index(): View
     {
+        $this->authorize('viewAny', Tag::class);
         $tags = Tag::latest()->paginate(5);
         return view('examples.tags.index', compact('tags'));
     }
@@ -26,6 +28,7 @@ class TagController extends Controller
      */
     public function create(): View
     {
+        $this->authorize('create', Tag::class);
         $tag = new Tag();
         return view('examples.tags.create', compact('tag'));
     }
@@ -35,6 +38,7 @@ class TagController extends Controller
      */
     public function store(TagRequest $request): RedirectResponse
     {
+        $this->authorize('create', Tag::class);
         Tag::create($request->validated());
 
         return redirect()->route('tags.index')->with('success', 'Etiqueta creada correctamente.');
@@ -45,6 +49,7 @@ class TagController extends Controller
      */
     public function show(Tag $tag): View
     {
+        $this->authorize('view', $tag);
         return view('examples.tags.show', compact('tag'));
     }
 
@@ -53,6 +58,7 @@ class TagController extends Controller
      */
     public function edit(Tag $tag): View
     {
+        $this->authorize('update', $tag);
         return view('examples.tags.edit', compact('tag'));
     }
 
@@ -61,6 +67,7 @@ class TagController extends Controller
      */
     public function update(TagRequest $request, Tag $tag): RedirectResponse
     {
+        $this->authorize('update', $tag);
         $tag->update($request->validated());
 
         return redirect()->route('tags.index')->with('updated', 'Etiqueta actualizada correctamente.');
@@ -71,6 +78,7 @@ class TagController extends Controller
      */
     public function destroy(Tag $tag): RedirectResponse
     {
+        $this->authorize('destroy', $tag);
         $tag->delete();
         return redirect()->route('tags.index')->with('deleted', 'Etiqueda borrada correctamente.');
     }

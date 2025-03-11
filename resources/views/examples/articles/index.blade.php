@@ -8,9 +8,11 @@
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Articulos</h3>
-                        <a href="{{ route('articles.create') }}" class="btn btn-primary">
-                            <i class="fas fa-plus"></i> Nuevo Articulo
-                        </a>
+                        @can('create articles')
+                            <a href="{{ route('articles.create') }}" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Nuevo Articulo
+                            </a>
+                        @endcan
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -21,6 +23,7 @@
                                 <th scope="col"><i class="fas fa-heading"></i> Título</th>
                                 <th scope="col"><i class="fas fa-align-left"></i> Contenido</th>
                                 <th scope="col"><i class="fas fa-tags"></i> Categoria</th>
+                                <th scope="col"><i class="fas fa-tags"></i> Etiquetas</th>
                                 <th scope="col"><i class="fas fa-calendar-check"></i> Fecha de Registro</th>
                                 <th scope="col"><i class="fas fa-cogs"></i> Acciones</th>
                             </tr>
@@ -44,26 +47,43 @@
                                             <span class="badge badge-success"> {{ $article->category->name }}</span>
                                         </span>
                                     </td>
+
+                                    <td class="d-none d-lg-table-cell">
+                                        @foreach ($article->tags as $tag)
+                                            <span class="badge badge-dot mr-4">
+                                                <span class="badge badge-success">{{ $tag->name }} </span>
+                                            </span>
+                                        @endforeach
+                                    </td>
+
                                     <td>
                                         {{ $article->created_at }}
                                     </td>
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
-                                        <a href="{{ route('articles.show', $article) }}" class="btn btn-primary btn-sm"
-                                            style="margin-right: 5px;">
-                                            <i class="fas fa-eye"></i> Mostrar
-                                        </a>
-                                        <a href="{{ route('articles.edit', $article) }}" class="btn btn-info btn-sm"
-                                            style="margin-right: 5px;">
-                                            <i class="fas fa-edit"></i> Editar
-                                        </a>
-                                        <form action="{{ route('articles.destroy', $article->id) }}" method="article"
-                                            style="display: inline-block; margin: 0; display: flex; align-items: center;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm">
-                                                <i class="fas fa-trash"></i> Eliminar
-                                            </button>
-                                        </form>
+                                        @can('read articles')
+                                            <a href="{{ route('articles.show', $article) }}" class="btn btn-primary btn-sm"
+                                                style="margin-right: 5px;">
+                                                <i class="fas fa-eye"></i> Mostrar
+                                            </a>
+                                        @endcan
+                                        @if (Auth::id() === $article->user_id)
+                                            @can('update articles')
+                                                <a href="{{ route('articles.edit', $article) }}" class="btn btn-info btn-sm"
+                                                    style="margin-right: 5px;">
+                                                    <i class="fas fa-edit"></i> Editar
+                                                </a>
+                                            @endcan
+                                            @can('destroy articles')
+                                                <form action="{{ route('articles.destroy', $article) }}" method="POST"
+                                                    style="display: inline-block; margin: 0; display: flex; align-items: center;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                    <button type="submit" class="btn btn-danger btn-sm">
+                                                        <i class="fas fa-trash"></i> Eliminar
+                                                    </button>
+                                                </form>
+                                            @endcan
+                                        @endif
                                     </td>
                                 </tr>
                             @endforeach

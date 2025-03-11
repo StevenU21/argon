@@ -8,9 +8,11 @@
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Categories</h3>
-                        <a href="{{ route('categories.create') }}" class="btn btn-primary">
-                            <i class="fas fa-plus"></i> Nueva Categoria
-                        </a>
+                        @can('create categories')
+                            <a href="{{ route('categories.create') }}" class="btn btn-primary">
+                                <i class="fas fa-plus"></i> Nueva Categoria
+                            </a>
+                        @endcan
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -19,6 +21,7 @@
                             <tr>
                                 <th scope="col"><i class="fas fa-list-ol"></i> ID</th>
                                 <th scope="col"><i class="fas fa-heading"></i> Nombre</th>
+                                <th scope="col"><i class="fas fa-heading"></i> Description</th>
                                 <th scope="col"><i class="fas fa-list-ol"></i> Slug</th>
                                 <th scope="col"><i class="fas fa-calendar-check"></i> Fecha de Registro</th>
                                 <th scope="col"><i class="fas fa-cogs"></i> Acciones</th>
@@ -35,6 +38,10 @@
                                     </td>
 
                                     <td>
+                                        {{ $category->description }}
+                                    </td>
+
+                                    <td>
                                         {{ $category->slug }}
                                     </td>
 
@@ -42,22 +49,28 @@
                                         {{ $category->created_at }}
                                     </td>
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
-                                        <a href="{{ route('categories.show', $category) }}" class="btn btn-primary btn-sm"
-                                            style="margin-right: 5px;">
-                                            <i class="fas fa-eye"></i> Mostrar
-                                        </a>
-                                        <a href="{{ route('categories.edit', $category) }}" class="btn btn-info btn-sm"
-                                            style="margin-right: 5px;">
-                                            <i class="fas fa-edit"></i> Editar
-                                        </a>
-                                        <form action="{{ route('categories.destroy', $category->id) }}" method="POST"
-                                            style="display: inline-block; margin: 0; display: flex; align-items: center;">
-                                            @csrf
-                                            @method('DELETE')
-                                            <button type="submit" class="btn btn-danger btn-sm">
-                                                <i class="fas fa-trash"></i> Eliminar
-                                            </button>
-                                        </form>
+                                        @can('read categories')
+                                            <a href="{{ route('categories.show', $category) }}" class="btn btn-primary btn-sm"
+                                                style="margin-right: 5px;">
+                                                <i class="fas fa-eye"></i> Mostrar
+                                            </a>
+                                        @endcan
+                                        @can('update categories')
+                                            <a href="{{ route('categories.edit', $category) }}" class="btn btn-info btn-sm"
+                                                style="margin-right: 5px;">
+                                                <i class="fas fa-edit"></i> Editar
+                                            </a>
+                                        @endcan
+                                        @can('destroy categories')
+                                            <form action="{{ route('categories.destroy', $category) }}" method="POST"
+                                                style="display: inline-block; margin: 0; display: flex; align-items: center;">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-danger btn-sm">
+                                                    <i class="fas fa-trash"></i> Eliminar
+                                                </button>
+                                            </form>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach
