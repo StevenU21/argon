@@ -56,24 +56,7 @@ Antes de comenzar a utilizar esta plantilla, asegúrate de tener instalado:
     php artisan key:generate
     ```
 
-6. Configura Mailtrap para la funcionalidad de verificación de correo electrónico y otros servicios de correo:
-   
-   - Crea una cuenta en [Mailtrap](https://mailtrap.io/).
-   - Obtén tus credenciales de Mailtrap (username y password).
-   - Añade tus credenciales de Mailtrap en el archivo `.env` de tu proyecto:
-
-    ```env
-    MAIL_MAILER=smtp
-    MAIL_HOST=smtp.mailtrap.io
-    MAIL_PORT=2525
-    MAIL_USERNAME=your_mailtrap_username
-    MAIL_PASSWORD=your_mailtrap_password
-    MAIL_ENCRYPTION=null
-    MAIL_FROM_ADDRESS=example@example.com
-    MAIL_FROM_NAME="${APP_NAME}"
-    ```
-
-7. Ejecuta las migraciones de la base de datos y los seeders (si es necesario):
+6. Ejecuta las migraciones de la base de datos y los seeders:
 
     ```bash
     php artisan migrate --seed
