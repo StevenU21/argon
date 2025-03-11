@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\Animal;
 use App\Models\Category;
-use App\Models\Post;
-use App\Models\Product;
+use App\Models\Article;
+use App\Models\Tag;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -16,34 +15,42 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
+        $this->call(RolesAndPermissionsSeeder::class);
         // User::factory(10)->create();
 
-        User::factory()->create(
+        $adminUser = User::factory()->create(
             [
-                'name' => 'Steven Ulloa',
-                'email' => 'steven@gmail.com',
-                'password' => bcrypt('steven@gmail.com')
+                'name' => 'Admin',
+                'email' => 'admin@example.test',
+                'password' => bcrypt('password')
             ],
         );
+        $adminUser->assignRole('admin');
 
-        User::factory()->create(
+        $writerUser = User::factory()->create(
             [
-                'name' => 'Limber Rodriguez',
-                'email' => 'limber@gmail.com',
-                'password' => bcrypt('limber@gmail.com')
+                'name' => 'Writer',
+                'email' => 'writer@example.test',
+                'password' => bcrypt('password')
             ],
         );
+        $writerUser->assignRole('writer');
 
-        User::factory()->create(
+        $readerUser = User::factory()->create(
             [
-                'name' => 'Test User',
-                'email' => 'test@gmail.com',
-                'password' => bcrypt('test@gmail.com')
+                'name' => 'Reader',
+                'email' => 'reader@example.test',
+                'password' => bcrypt('password')
             ],
         );
+        $readerUser->assignRole('reader');
 
-        // Category::factory(7)->create();
-        // Post::factory(20)->create();
-        // Animal::factory(5)->create();
+        Category::factory(5)->create();
+        Tag::factory(10)->create();
+
+        Article::factory(20)->create()->each(function ($post) {
+            $tags = Tag::inRandomOrder()->take(rand(1, 3))->pluck('id')->toArray();
+            $post->tags()->attach($tags);
+        });
     }
 }

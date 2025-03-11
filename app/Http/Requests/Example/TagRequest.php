@@ -5,7 +5,7 @@ namespace App\Http\Requests\Example;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class CategoryRequest extends FormRequest
+class TagRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -23,8 +23,7 @@ class CategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => ['required', 'string', 'min:3', 'max:30', Rule::unique('categories')->ignore($this->category)],
-            'description' => ['required', 'string', 'min:6', 'max:120']
+            'name' => ['required', 'string', 'min:3', 'max:30', Rule::unique('tags')->ignore($this->animal)],
         ];
     }
 
@@ -37,9 +36,9 @@ class CategoryRequest extends FormRequest
     {
         return [
             'name.required' => 'El nombre es requerido',
-            'name.string' => 'El nombre debe ser un texto',
-            'name.min' => 'El nombre no puede tener menos de :min caracteres',
-            'name.max' => 'El nombre no puede tener más de :max caracteres',
+            'name.string' => 'El nombre debe ser una cadena de texto',
+            'name.min' => 'El nombre debe tener al menos :min caracteres',
+            'name.max' => 'El nombre no debe tener más de :max caracteres',
         ];
     }
 }

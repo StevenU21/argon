@@ -10,6 +10,16 @@
         </div>
     </div>
 </div>
+<hr class="my-4" />
+<!-- Extra -->
+<h6 class="heading-small text-muted mb-4">Información Adicional</h6>
+<div class="pl-lg-4">
+    <div class="form-group">
+        <label for="description">Descripción</label>
+        <textarea rows="4" name="description" id="description" class="form-control form-control-alternative"
+            placeholder="Escriba algo...">{{ old('description', $category->description) }}</textarea>
+    </div>
+</div>
 
 <hr class="my-4" />
 <!-- Contenido -->

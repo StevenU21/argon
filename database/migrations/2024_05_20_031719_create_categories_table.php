@@ -13,10 +13,8 @@ return new class extends Migration {
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('slug');
-
-            // creamos un indice compuesto para el nombre y el slug
-            $table->unique(['name', 'slug']);
+            $table->string('description');
+            $table->string('slug')->unique();
             $table->timestamps();
         });
     }

@@ -5,7 +5,7 @@ namespace App\Http\Requests\Example;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class PostRequest extends FormRequest
+class ArticleRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,13 +22,14 @@ class PostRequest extends FormRequest
      */
     public function rules(): array
     {
-        // $postId = $this->route('post');
-
         return [
-            'title' => ['required', 'string', 'min:3', 'max:255', Rule::unique('posts')->ignore($this->post)],
-            'content' => ['required', 'string'],
-            'category_id' => ['required', 'exists:categories,id'],
-            'slug' => [Rule::unique('posts')->ignore($this->post)],
+            'title' => ['required', 'string', 'min:3', 'max:255', Rule::unique('articles')->ignore($this->article)],
+            'content' => ['required', 'string', 'min:6', 'max:10000'],
+            'image' => ['required','max:5600'],
+            'category_id' => ['required', 'integer', 'exists:categories,id'],
+            'user_id' => ['integer', 'exists:users,id'],
+            'tags' => ['required', 'array', 'min:1', 'max:5'],
+            'tags.*' => ['distinct', 'integer', 'exists:tags,id']
         ];
     }
 
@@ -45,10 +46,6 @@ class PostRequest extends FormRequest
             'title.min' => 'El título no puede tener menos de 3 caracteres',
             'title.max' => 'El título no puede tener más de 255 caracteres',
             'title.unique' => 'El título ya está en uso',
-            'slug.string' => 'El slug debe ser un texto',
-            'slug.min' => 'El slug no puede tener menos de 3 caracteres',
-            'slug.max' => 'El slug no puede tener más de 255 caracteres',
-            'slug.unique' => 'El slug ya está en uso',
             'content.required' => 'El contenido es requerido',
             'content.string' => 'El contenido debe ser un texto',
             'category_id.required' => 'La categoría es requerida',

@@ -41,12 +41,10 @@ class RegisteredUserController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
+        $user->assignRole('writer');
+
         Auth::login($user);
 
-        return redirect(route('dashboard', absolute: false));
-
-        // event(new Registered($user));
-
-        // return redirect(route('login'))->with('warning', 'Por favor, verifique su dirección de correo.');
+        return redirect(to: route(name: 'dashboard', absolute: false));
     }
 }

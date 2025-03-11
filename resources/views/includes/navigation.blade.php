@@ -83,24 +83,17 @@
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('posts.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('posts.index') ? 'active' : '' }}"
-                href="{{ route('posts.index') }}">
-                <i class="fas fa-newspaper text-green"></i> Posts (Relacionado)
+        <li class="nav-item {{ Request::route()->named('tags.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('tags.index') ? 'active' : '' }}"
+                href="{{ route('tags.index') }}">
+                <i class="fas fa-dove text-orange"></i> Tags (Normal)
             </a>
         </li>
 
-        <li class="nav-item {{ Request::route()->named('animals.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('animals.index') ? 'active' : '' }}"
-                href="{{ route('animals.index') }}">
-                <i class="fas fa-dove text-orange"></i> Animals (Imagenes)
-            </a>
-        </li>
-
-        <li class="nav-item {{ Request::route()->named('clients.index') ? 'active' : '' }}">
-            <a class="nav-link {{ Request::route()->named('clients.index') ? 'active' : '' }}"
-                href="{{ route('clients.index') }}">
-                <i class="fas fa-users text-blue"></i> Clients (Modal)
+        <li class="nav-item {{ Request::route()->named('articles.index') ? 'active' : '' }}">
+            <a class="nav-link {{ Request::route()->named('articles.index') ? 'active' : '' }}"
+                href="{{ route('articles.index') }}">
+                <i class="fas fa-newspaper text-green"></i> Articles (Relacionado)
             </a>
         </li>
     </ul>

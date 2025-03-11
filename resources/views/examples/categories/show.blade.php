@@ -30,6 +30,15 @@
                     <div class="row">
                         <div class="col-lg-12">
                             <div class="form-group">
+                                <label class="form-control-label" for="title"><i class="fas fa-heading"></i>
+                                    Descripción</label>
+                                <p>{{ $category->description }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="form-group">
                                 <label class="form-control-label" for="content"><i class="fas fa-align-left"></i>
                                     URL Amigable</label>
                                 <p>{{ $category->slug }}</p>

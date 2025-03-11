@@ -1,5 +1,5 @@
 @extends('layouts.panel')
-@section('title', 'Post')
+@section('title', 'Articles')
 
 @section('content')
     <div class="row">
@@ -7,9 +7,9 @@
             <div class="card shadow">
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
-                        <h3 class="mb-0">Posts</h3>
-                        <a href="{{ route('posts.create') }}" class="btn btn-primary">
-                            <i class="fas fa-plus"></i> Nuevo Post
+                        <h3 class="mb-0">Articulos</h3>
+                        <a href="{{ route('articles.create') }}" class="btn btn-primary">
+                            <i class="fas fa-plus"></i> Nuevo Articulo
                         </a>
                     </div>
                 </div>
@@ -26,37 +26,37 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach ($posts as $post)
+                            @foreach ($articles as $article)
                                 <tr>
                                     <td>
-                                        <span class="badge badge-pill badge-primary"> {{ $post->id }} </span>
+                                        <span class="badge badge-pill badge-primary"> {{ $article->id }} </span>
                                     </td>
                                     <td>
-                                        {{ $post->title }}
+                                        {{ $article->title }}
                                     </td>
 
                                     <td>
-                                        {{ Str::limit($post->content, 20) }}
+                                        {{ Str::limit($article->content, 20) }}
                                     </td>
 
                                     <td class="d-none d-lg-table-cell">
                                         <span class="badge badge-dot mr-4">
-                                            <span class="badge badge-success"> {{ $post->category->name }}</span>
+                                            <span class="badge badge-success"> {{ $article->category->name }}</span>
                                         </span>
                                     </td>
                                     <td>
-                                        {{ $post->created_at }}
+                                        {{ $article->created_at }}
                                     </td>
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
-                                        <a href="{{ route('posts.show', $post) }}" class="btn btn-primary btn-sm"
+                                        <a href="{{ route('articles.show', $article) }}" class="btn btn-primary btn-sm"
                                             style="margin-right: 5px;">
                                             <i class="fas fa-eye"></i> Mostrar
                                         </a>
-                                        <a href="{{ route('posts.edit', $post) }}" class="btn btn-info btn-sm"
+                                        <a href="{{ route('articles.edit', $article) }}" class="btn btn-info btn-sm"
                                             style="margin-right: 5px;">
                                             <i class="fas fa-edit"></i> Editar
                                         </a>
-                                        <form action="{{ route('posts.destroy', $post->id) }}" method="POST"
+                                        <form action="{{ route('articles.destroy', $article->id) }}" method="article"
                                             style="display: inline-block; margin: 0; display: flex; align-items: center;">
                                             @csrf
                                             @method('DELETE')
@@ -72,7 +72,7 @@
                 </div>
                 <div class="card-footer py-4">
                     <nav aria-label="..." class="d-flex flex-wrap justify-content-center justify-content-lg-start">
-                        {{ $posts->links() }}
+                        {{ $articles->links() }}
                     </nav>
                 </div>
             </div>

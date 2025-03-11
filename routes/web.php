@@ -1,9 +1,8 @@
 <?php
 
-use App\Http\Controllers\Example\AnimalController;
+use App\Http\Controllers\Example\TagController;
 use App\Http\Controllers\Example\CategoryController;
-use App\Http\Controllers\Example\ClientController;
-use App\Http\Controllers\Example\PostController;
+use App\Http\Controllers\Example\ArticleController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -48,9 +47,8 @@ Route::middleware('auth')->group(function () {
     });
 
     //rutas de posts de tipo resource
-    Route::resource('/posts', PostController::class);
-    Route::resource('/animals', AnimalController::class);
-    Route::resource('/clients', ClientController::class)->except(['show', 'edit', 'create']);
+    Route::resource('/articles', ArticleController::class);
+    Route::resource('/tags', TagController::class);
 });
 
 require __DIR__ . '/auth.php';
