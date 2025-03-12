@@ -9,9 +9,8 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Categories</h3>
                         @can('create categories')
-                            <a href="{{ route('categories.create') }}" class="btn btn-primary">
-                                <i class="fas fa-plus"></i> Nueva Categoria
-                            </a>
+                            <x-link href="{{ route('categories.create') }}" variant="primary" icon="fas fa-plus"
+                                text="Nueva Categoria" />
                         @endcan
                     </div>
                 </div>
@@ -50,26 +49,16 @@
                                     </td>
                                     <td style="white-space: nowrap; display: flex; align-items: center;">
                                         @can('read categories')
-                                            <a href="{{ route('categories.show', $category) }}" class="btn btn-primary btn-sm"
-                                                style="margin-right: 5px;">
-                                                <i class="fas fa-eye"></i> Mostrar
-                                            </a>
+                                            <x-link href="{{ route('categories.show', $category) }}" variant="primary"
+                                                icon="fas fa-eye" text="Mostrar" size="sm" />
                                         @endcan
                                         @can('update categories')
-                                            <a href="{{ route('categories.edit', $category) }}" class="btn btn-info btn-sm"
-                                                style="margin-right: 5px;">
-                                                <i class="fas fa-edit"></i> Editar
-                                            </a>
+                                            <x-link href="{{ route('categories.edit', $category) }}" variant="info"
+                                                icon="fas fa-edit" text="Editar" size="sm" />
                                         @endcan
                                         @can('destroy categories')
-                                            <form action="{{ route('categories.destroy', $category) }}" method="POST"
-                                                style="display: inline-block; margin: 0; display: flex; align-items: center;">
-                                                @csrf
-                                                @method('DELETE')
-                                                <button type="submit" class="btn btn-danger btn-sm">
-                                                    <i class="fas fa-trash"></i> Eliminar
-                                                </button>
-                                            </form>
+                                            <x-delete-button :route="route('categories.destroy', $category)" icon="fas fa-trash"
+                                                text="Eliminar" />
                                         @endcan
                                     </td>
                                 </tr>
