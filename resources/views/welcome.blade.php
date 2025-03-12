@@ -351,33 +351,10 @@
                             <small class="text-uppercase font-weight-bold">Sliders</small>
                         </div>
                         <!-- Simple slider -->
-                        <div class="input-slider-container">
-                            <div id="input-slider" class="input-slider" data-range-value-min="100"
-                                data-range-value-max="500"></div>
-                            <!-- Input slider values -->
-                            <div class="row mt-3 d-none">
-                                <div class="col-6">
-                                    <span id="input-slider-value" class="range-slider-value"
-                                        data-range-value-low="100"></span>
-                                </div>
-                            </div>
-                        </div>
+                        <x-welcome.input-slider id="input-slider" min="100" max="500" valueId="input-slider-value" value="100" />
+
                         <!-- Range slider -->
-                        <div class="mt-5">
-                            <!-- Range slider container -->
-                            <div id="input-slider-range" data-range-value-min="100" data-range-value-max="500"></div>
-                            <!-- Range slider values -->
-                            <div class="row d-none">
-                                <div class="col-6">
-                                    <span class="range-slider-value value-low" data-range-value-low="200"
-                                        id="input-slider-range-value-low"></span>
-                                </div>
-                                <div class="col-6 text-right">
-                                    <span class="range-slider-value value-high" data-range-value-high="400"
-                                        id="input-slider-range-value-high"></span>
-                                </div>
-                            </div>
-                        </div>
+                        <x-welcome.range-slider id="input-slider-range" min="100" max="500" lowValueId="input-slider-range-value-low" lowValue="200" highValueId="input-slider-range-value-high" highValue="400" />
                     </div>
                 </div>
                 <div class="row justify-content-center mt-md">
