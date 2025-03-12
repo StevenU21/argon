@@ -1057,68 +1057,46 @@
                     <small class="text-uppercase text-muted font-weight-bold">Quote</small>
                 </div>
                 <div class="col-sm-9">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a
-                            ante.</p>
-                        <footer class="blockquote-footer">Someone famous in
-                            <cite title="Source Title">Source Title</cite>
-                        </footer>
-                    </blockquote>
+                <x-welcome.blockquote text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+              footer="Someone famous in"
+              cite="Source Title" />
                 </div>
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Muted text</small>
                 </div>
-                <div class="col-sm-9">
-                    <p class="text-muted mb-0">I will be the leader of a company that ends up being worth billions of
-                        dollars, because I got the answers...</p>
-                </div>
+                <x-welcome.colored-text color="muted" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Primary text</small>
                 </div>
-                <div class="col-sm-9">
-                    <p class="text-primary">I will be the leader of a company that ends up being worth billions of
-                        dollars, because I got the answers...</p>
-                </div>
+                <x-welcome.colored-text color="primary" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Info text</small>
                 </div>
-                <div class="col-sm-9">
-                    <p class="text-info mb-0">I will be the leader of a company that ends up being worth billions of
-                        dollars, because I got the answers...</p>
-                </div>
+                <x-welcome.colored-text color="info" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Success text</small>
                 </div>
-                <div class="col-sm-9">
-                    <p class="text-success mb-0">I will be the leader of a company that ends up being worth billions of
-                        dollars, because I got the answers...</p>
-                </div>
+                <x-welcome.colored-text color="success" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Warning text</small>
                 </div>
-                <div class="col-sm-9">
-                    <p class="text-warning mb-0">I will be the leader of a company that ends up being worth billions of
-                        dollars, because I got the answers...</p>
-                </div>
+                <x-welcome.colored-text color="warning" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Danger text</small>
                 </div>
-                <div class="col-sm-9">
-                    <p class="text-danger mb-0">I will be the leader of a company that ends up being worth billions of
-                        dollars, because I got the answers...</p>
-                </div>
+                <x-welcome.colored-text color="danger" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <!-- Images -->
             <h2 class="mt-lg mb-5">
