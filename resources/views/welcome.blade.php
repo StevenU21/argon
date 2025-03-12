@@ -924,11 +924,11 @@
                         <div class="col-lg-5">
                             <h3 class="h4 text-success font-weight-bold mb-5">Labels</h3>
                 </h3>
-                <span class="badge badge-pill badge-primary text-uppercase">Primary</span>
-                <span class="badge badge-pill badge-success text-uppercase">Success</span>
-                <span class="badge badge-pill badge-danger text-uppercase">Danger</span>
-                <span class="badge badge-pill badge-warning text-uppercase">Warning</span>
-                <span class="badge badge-pill badge-info text-uppercase">Info</span>
+                <x-welcome.badge color="primary" text="Primary" />
+                <x-welcome.badge color="success" text="Success" />
+                <x-welcome.badge color="danger" text="Danger" />
+                <x-welcome.badge color="warning" text="Warning" />
+                <x-welcome.badge color="info" text="Info" />
             </div>
             </div>
             <h3 class="mt-lg mb-4">
