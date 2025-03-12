@@ -2,7 +2,7 @@
     'type' => 'submit',
     'variant' => 'primary',
     'icon' => '',
-    'text' => 'Save'
+    'text' => ''
 ])
 
 @php
