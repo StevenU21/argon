@@ -875,14 +875,24 @@
                                 <div class="card-body">
                                     <x-welcome.tab-content id="myTabContent">
                                         <x-welcome.tab-pane id="tabs-text-1" :active="true">
-                                            <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-                                            <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse.</p>
+                                            <p class="description">Raw denim you probably haven't heard of them jean
+                                                shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
+                                                cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
+                                                Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                                            <p class="description">Raw denim you probably haven't heard of them jean
+                                                shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
+                                                cleanse.</p>
                                         </x-welcome.tab-pane>
                                         <x-welcome.tab-pane id="tabs-text-2" :active="false">
-                                            <p class="description">Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</p>
+                                            <p class="description">Cosby sweater eu banh mi, qui irure terry richardson
+                                                ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
+                                                cardigan american apparel, butcher voluptate nisi qui.</p>
                                         </x-welcome.tab-pane>
                                         <x-welcome.tab-pane id="tabs-text-3" :active="false">
-                                            <p class="description">Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
+                                            <p class="description">Raw denim you probably haven't heard of them jean
+                                                shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
+                                                cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
+                                                Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
                                         </x-welcome.tab-pane>
                                     </x-welcome.tab-content>
                                 </div>
@@ -894,53 +904,12 @@
                             <h3 class="h4 text-success font-weight-bold mb-4">Progress bars</h3>
                             <x-welcome.progress-bar label="Task completed" percentage="40" color="default" value="25" />
                             <x-welcome.progress-bar label="Task completed" percentage="60" color="primary" value="60" />
-                        </div>  
+                        </div>
                         <div class="col-lg-5">
                             <h3 class="h4 text-success font-weight-bold mb-5">Pagination</h3>
-                            <nav aria-label="Page navigation example" class="mb-4">
-                                <ul class="pagination">
-                                    <li class="page-item">
-                                        <a class="page-link" href="">1</a>
-                                    </li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="">3</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="">4</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="">5</a>
-                                    </li>
-                                </ul>
-                            </nav>
-                            <nav aria-label="Page navigation example">
-                                <ul class="pagination">
-                                    <li class="page-item">
-                                        <a class="page-link" href=""><i class="fa fa-angle-left"></i></a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="">1</a>
-                                    </li>
-                                    <li class="page-item active">
-                                        <a class="page-link" href="">2</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="">3</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="">4</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href="">5</a>
-                                    </li>
-                                    <li class="page-item">
-                                        <a class="page-link" href=""><i class="fa fa-angle-right"></i></a>
-                                    </li>
-                                </ul>
-                            </nav>
+                            <x-welcome.pagination :pages="[1, 2, 3, 4, 5]" :currentPage="2" class="mb-4"
+                                :showArrows="false" />
+                            <x-welcome.pagination :pages="[1, 2, 3, 4, 5]" :currentPage="2" />
                         </div>
                     </div>
                     <div class="row row-grid justify-content-between">
