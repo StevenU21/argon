@@ -61,11 +61,7 @@
                         @endforeach
                     </x-table>
                 </div>
-                <div class="card-footer py-4">
-                    <nav aria-label="..." class="d-flex flex-wrap justify-content-center justify-content-lg-start">
-                        {{ $categories->links() }}
-                    </nav>
-                </div>
+                <x-pagination :links="$categories->links()" />
             </div>
         </div>
     </div>
