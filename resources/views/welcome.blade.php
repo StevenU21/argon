@@ -892,35 +892,9 @@
                     <div class="row row-grid justify-content-between align-items-center mt-lg">
                         <div class="col-lg-5">
                             <h3 class="h4 text-success font-weight-bold mb-4">Progress bars</h3>
-                            <div class="progress-wrapper">
-                                <div class="progress-info">
-                                    <div class="progress-label">
-                                        <span>Task completed</span>
-                                    </div>
-                                    <div class="progress-percentage">
-                                        <span>40%</span>
-                                    </div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-default" role="progressbar" aria-valuenow="25"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 25%;"></div>
-                                </div>
-                            </div>
-                            <div class="progress-wrapper">
-                                <div class="progress-info">
-                                    <div class="progress-label">
-                                        <span>Task completed</span>
-                                    </div>
-                                    <div class="progress-percentage">
-                                        <span>60%</span>
-                                    </div>
-                                </div>
-                                <div class="progress">
-                                    <div class="progress-bar bg-primary" role="progressbar" aria-valuenow="60"
-                                        aria-valuemin="0" aria-valuemax="100" style="width: 60%;"></div>
-                                </div>
-                            </div>
-                        </div>
+                            <x-welcome.progress-bar label="Task completed" percentage="40" color="default" value="25" />
+                            <x-welcome.progress-bar label="Task completed" percentage="60" color="primary" value="60" />
+                        </div>  
                         <div class="col-lg-5">
                             <h3 class="h4 text-success font-weight-bold mb-5">Pagination</h3>
                             <nav aria-label="Page navigation example" class="mb-4">
