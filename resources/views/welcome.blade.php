@@ -351,10 +351,13 @@
                             <small class="text-uppercase font-weight-bold">Sliders</small>
                         </div>
                         <!-- Simple slider -->
-                        <x-welcome.input-slider id="input-slider" min="100" max="500" valueId="input-slider-value" value="100" />
+                        <x-welcome.input-slider id="input-slider" min="100" max="500" valueId="input-slider-value"
+                            value="100" />
 
                         <!-- Range slider -->
-                        <x-welcome.range-slider id="input-slider-range" min="100" max="500" lowValueId="input-slider-range-value-low" lowValue="200" highValueId="input-slider-range-value-high" highValue="400" />
+                        <x-welcome.range-slider id="input-slider-range" min="100" max="500"
+                            lowValueId="input-slider-range-value-low" lowValue="200"
+                            highValueId="input-slider-range-value-high" highValue="400" />
                     </div>
                 </div>
                 <div class="row justify-content-center mt-md">
@@ -823,33 +826,18 @@
                             <div class="mb-3">
                                 <small class="text-uppercase font-weight-bold">With icons</small>
                             </div>
-                            <div class="nav-wrapper">
-                                <ul class="nav nav-pills nav-fill flex-column flex-md-row" id="tabs-icons-text"
-                                    role="tablist">
-                                    <li class="nav-item">
-                                        <a class="nav-link mb-sm-3 mb-md-0 active" id="tabs-icons-text-1-tab"
-                                            data-toggle="tab" href="#tabs-icons-text-1" role="tab"
-                                            aria-controls="tabs-icons-text-1" aria-selected="true"><i
-                                                class="ni ni-cloud-upload-96 mr-2"></i>Home</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-2-tab" data-toggle="tab"
-                                            href="#tabs-icons-text-2" role="tab" aria-controls="tabs-icons-text-2"
-                                            aria-selected="false"><i class="ni ni-bell-55 mr-2"></i>Profile</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link mb-sm-3 mb-md-0" id="tabs-icons-text-3-tab" data-toggle="tab"
-                                            href="#tabs-icons-text-3" role="tab" aria-controls="tabs-icons-text-3"
-                                            aria-selected="false"><i
-                                                class="ni ni-calendar-grid-58 mr-2"></i>Messages</a>
-                                    </li>
-                                </ul>
-                            </div>
+                            <x-welcome.nav-wrapper id="tabs-icons-text">
+                                <x-welcome.nav-item id="tabs-icons-text-1" label="Home" icon="ni ni-cloud-upload-96"
+                                    :active="true" />
+                                <x-welcome.nav-item id="tabs-icons-text-2" label="Profile" icon="ni ni-bell-55"
+                                    :active="false" />
+                                <x-welcome.nav-item id="tabs-icons-text-3" label="Messages"
+                                    icon="ni ni-calendar-grid-58" :active="false" />
+                            </x-welcome.nav-wrapper>
                             <div class="card shadow">
                                 <div class="card-body">
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="tabs-icons-text-1" role="tabpanel"
-                                            aria-labelledby="tabs-icons-text-1-tab">
+                                    <x-welcome.tab-content id="myTabContent">
+                                        <x-welcome.tab-pane id="tabs-icons-text-1" :active="true">
                                             <p class="description">Raw denim you probably haven't heard of them jean
                                                 shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
                                                 cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
@@ -857,21 +845,19 @@
                                             <p class="description">Raw denim you probably haven't heard of them jean
                                                 shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
                                                 cleanse.</p>
-                                        </div>
-                                        <div class="tab-pane fade" id="tabs-icons-text-2" role="tabpanel"
-                                            aria-labelledby="tabs-icons-text-2-tab">
+                                        </x-welcome.tab-pane>
+                                        <x-welcome.tab-pane id="tabs-icons-text-2" :active="false">
                                             <p class="description">Cosby sweater eu banh mi, qui irure terry richardson
                                                 ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis
                                                 cardigan american apparel, butcher voluptate nisi qui.</p>
-                                        </div>
-                                        <div class="tab-pane fade" id="tabs-icons-text-3" role="tabpanel"
-                                            aria-labelledby="tabs-icons-text-3-tab">
+                                        </x-welcome.tab-pane>
+                                        <x-welcome.tab-pane id="tabs-icons-text-3" :active="false">
                                             <p class="description">Raw denim you probably haven't heard of them jean
                                                 shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master
                                                 cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica.
                                                 Reprehenderit butcher retro keffiyeh dreamcatcher synth.</p>
-                                        </div>
-                                    </div>
+                                        </x-welcome.tab-pane>
+                                    </x-welcome.tab-content>
                                 </div>
                             </div>
                         </div>
