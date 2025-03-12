@@ -934,34 +934,10 @@
             <h3 class="mt-lg mb-4">
                 <span>Alerts</span>
             </h3>
-            <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <span class="alert-inner--icon"><i class="ni ni-like-2"></i></span>
-                <span class="alert-inner--text"><strong>Success!</strong> This is a success alert—check it out!</span>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="alert alert-info alert-dismissible fade show" role="alert">
-                <span class="alert-inner--icon"><i class="ni ni-bell-55"></i></span>
-                <span class="alert-inner--text"><strong>Info!</strong> This is an info alert—check it out!</span>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                <span class="alert-inner--icon"><i class="ni ni-bell-55"></i></span>
-                <span class="alert-inner--text"><strong>Warning!</strong> This is a warning alert—check it out!</span>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                <span class="alert-inner--icon"><i class="ni ni-support-16"></i></span>
-                <span class="alert-inner--text"><strong>Danger!</strong> This is an error alert—check it out!</span>
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
+            <x-welcome.alert type="success" icon="ni ni-like-2" title="Success!" message="This is a success alert—check it out!" />
+            <x-welcome.alert type="info" icon="ni ni-bell-55" title="Info!" message="This is an info alert—check it out!" />
+            <x-welcome.alert type="warning" icon="ni ni-bell-55" title="Warning!" message="This is a warning alert—check it out!" />
+            <x-welcome.alert type="danger" icon="ni ni-support-16" title="Danger!" message="This is an error alert—check it out!" />
             <!-- Typography -->
             <h2 class="mt-lg mb-5">
                 <span>Typography</span>
