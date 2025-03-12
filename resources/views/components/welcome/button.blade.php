@@ -1,3 +1,19 @@
-@props(['size' => 'btn-1', 'color' => 'primary', 'outline' => false])
+@props([
+    'size' => 'btn-1',
+    'color' => 'primary',
+    'outline' => false,
+    'type' => 'button',
+    'dismiss' => false,
+    'textColor' => ''
+])
 
-<button class="btn {{ $size }} btn-{{ $outline ? 'outline-' : '' }}{{ $color }}" type="button">{{ $slot }}</button>
+@php
+    $buttonClass = $outline ? 'btn-outline-' : 'btn-';
+    $buttonClass .= $color === 'link' ? 'link' : $color;
+@endphp
+
+<button class="btn {{ $size }} {{ $buttonClass }} {{ $textColor ? 'text-' . $textColor : '' }}"
+    type="{{ $type }}"
+    @if($dismiss) data-dismiss="modal" @endif>
+    {{ $slot }}
+</button>

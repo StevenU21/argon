@@ -1126,51 +1126,37 @@
             <!-- Modals -->
             <div class="row">
                 <div class="col-md-4">
-                    <x-welcome.modal-button target="modal-default" color="primary" text="Default" />
-                    <x-welcome.modal id="modal-default" title="Type your modal title">
-                        <x-slot name="body">
-                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                                there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
-                                the Semantics, a large language ocean.</p>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary
-                                regelialia. It is a paradisematic country, in which roasted parts of sentences fly into
-                                your mouth.</p>
-                        </x-slot>
-                        <x-slot name="footer">
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                            <button type="button" class="btn btn-link ml-auto" data-dismiss="modal">Close</button>
-                        </x-slot>
-                    </x-welcome.modal>
+                <x-welcome.modal-button target="modal-default" color="primary" text="Default" />
+                <x-welcome.modal id="modal-default" title="Type your modal title">
+                    <x-slot name="body">
+                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                            there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
+                            the Semantics, a large language ocean.</p>
+                        <p>A small river named Duden flows by their place and supplies it with the necessary
+                            regelialia. It is a paradisematic country, in which roasted parts of sentences fly into
+                            your mouth.</p>
+                    </x-slot>
+                    <x-slot name="footer">
+                        <x-welcome.button color="primary" type="button">Save Changes</x-welcome.button>
+                        <x-welcome.button color="link" type="button" dismiss="true">Close</x-welcome.button>
+                    </x-slot>
+                </x-welcome.modal>
                 </div>
                 <div class="col-md-4">
-                    <x-welcome.modal-button target="modal-notification" color="warning" text="Notification" />
-                    <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog"
-                        aria-labelledby="modal-notification" aria-hidden="true">
-                        <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-                            <div class="modal-content bg-gradient-danger">
-                                <div class="modal-header">
-                                    <h6 class="modal-title" id="modal-title-notification">Your attention is required
-                                    </h6>
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">×</span>
-                                    </button>
-                                </div>
-                                <div class="modal-body">
-                                    <div class="py-3 text-center">
-                                        <i class="ni ni-bell-55 ni-3x"></i>
-                                        <h4 class="heading mt-4">You should read this!</h4>
-                                        <p>A small river named Duden flows by their place and supplies it with the
-                                            necessary regelialia.</p>
-                                    </div>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-white">Ok, Got it</button>
-                                    <button type="button" class="btn btn-link text-white ml-auto"
-                                        data-dismiss="modal">Close</button>
-                                </div>
-                            </div>
+                <x-welcome.modal-button target="modal-notification" color="warning" text="Notification" />
+                <x-welcome.modal id="modal-notification" title="Your attention is required" style="danger">
+                    <x-slot name="body">
+                        <div class="py-3 text-center">
+                            <i class="ni ni-bell-55 ni-3x"></i>
+                            <h4 class="heading mt-4">You should read this!</h4>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
                         </div>
-                    </div>
+                    </x-slot>
+                    <x-slot name="footer">
+                        <x-welcome.button color="white" type="button">Ok, Got it</x-welcome.button>
+                        <x-welcome.button color="link" textColor='white' type="button" dismiss="true">Close</x-welcome.button>
+                    </x-slot>
+                </x-welcome.modal>
                 </div>
                 <div class="col-md-4">
                     <x-welcome.modal-button target="modal-form" color="default" text="Form" />
