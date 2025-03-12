@@ -272,16 +272,17 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-4 col-sm-6">
-                    <x-welcome.form-input type="text" placeholder="Regular" />
-                    <x-welcome.form-input type="text" placeholder="Search" icon="ni ni-zoom-split-in" />
+                        <x-welcome.form-input type="text" placeholder="Regular" />
+                        <x-welcome.form-input type="text" placeholder="Search" icon="ni ni-zoom-split-in" />
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                    <x-welcome.form-input type="text" placeholder="Regular" disabled="true" />
-                    <x-welcome.form-input type="text" placeholder="Birthday" icon="ni ni-zoom-split-in" iconPosition="right" />
+                        <x-welcome.form-input type="text" placeholder="Regular" disabled="true" />
+                        <x-welcome.form-input type="text" placeholder="Birthday" icon="ni ni-zoom-split-in"
+                            iconPosition="right" />
                     </div>
                     <div class="col-lg-4 col-sm-6">
-                    <x-welcome.form-input type="text" placeholder="Success" :isValid="true" />
-                    <x-welcome.form-input type="email" placeholder="Error Input" :isValid="false" />
+                        <x-welcome.form-input type="text" placeholder="Success" :isValid="true" />
+                        <x-welcome.form-input type="email" placeholder="Error Input" :isValid="false" />
                     </div>
                 </div>
             </div>
@@ -294,11 +295,13 @@
                     <div class="row">
                         <div class="col-lg-4 col-sm-6">
                             <x-welcome.form-input-alternative type="text" placeholder="Regular" />
-                            <x-welcome.form-input-alternative type="text" placeholder="Search" icon="ni ni-zoom-split-in" />
+                            <x-welcome.form-input-alternative type="text" placeholder="Search"
+                                icon="ni ni-zoom-split-in" />
                         </div>
                         <div class="col-lg-4 col-sm-6">
                             <x-welcome.form-input-alternative type="text" placeholder="Regular" disabled="true" />
-                            <x-welcome.form-input-alternative type="text" placeholder="Birthday" icon="ni ni-zoom-split-in" iconPosition="right" />
+                            <x-welcome.form-input-alternative type="text" placeholder="Birthday"
+                                icon="ni ni-zoom-split-in" iconPosition="right" />
                         </div>
                         <div class="col-lg-4 col-sm-6">
                             <x-welcome.form-input-alternative type="text" placeholder="Success" :isValid="true" />
@@ -327,33 +330,10 @@
                         <div class="mb-3">
                             <small class="text-uppercase font-weight-bold">Radios</small>
                         </div>
-                        <div class="custom-control custom-radio mb-3">
-                            <input name="custom-radio-1" class="custom-control-input" id="customRadio1" type="radio">
-                            <label class="custom-control-label" for="customRadio1">
-                                <span>Unchecked</span>
-                            </label>
-                        </div>
-                        <div class="custom-control custom-radio mb-3">
-                            <input name="custom-radio-1" class="custom-control-input" id="customRadio2" checked
-                                type="radio">
-                            <label class="custom-control-label" for="customRadio2">
-                                <span>Checked</span>
-                            </label>
-                        </div>
-                        <div class="custom-control custom-radio mb-3">
-                            <input name="custom-radio-2" class="custom-control-input" id="customRadio3" disabled
-                                type="radio">
-                            <label class="custom-control-label" for="customRadio3">
-                                <span>Disabled unchecked</span>
-                            </label>
-                        </div>
-                        <div class="custom-control custom-radio mb-3">
-                            <input name="custom-radio-2" class="custom-control-input" id="customRadio4" checked disabled
-                                type="radio">
-                            <label class="custom-control-label" for="customRadio4">
-                                <span>Disabled checkbox</span>
-                            </label>
-                        </div>
+                        <x-welcome.radio name="custom-radio-1" id="customRadio1" label="Unchecked" />
+                        <x-welcome.radio name="custom-radio-1" id="customRadio2" checked="true" label="Checked" />
+                        <x-welcome.radio name="custom-radio-2" id="customRadio3" disabled="true" label="Disabled unchecked" />
+                        <x-welcome.radio name="custom-radio-2" id="customRadio4" checked="true" disabled="true" label="Disabled checked" />
                     </div>
                     <div class="col-lg-3 col-sm-6 mt-4 mt-md-0">
                         <!-- Toggle buttons -->
