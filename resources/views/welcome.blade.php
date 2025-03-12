@@ -915,27 +915,11 @@
                     <div class="row row-grid justify-content-between">
                         <div class="col-lg-5">
                             <h3 class="h4 text-success font-weight-bold mb-5">Navigation Pills</h3>
-                            <ul class="nav nav-pills nav-pills-circle mb-3" id="tabs_2" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link rounded-circle active" id="home-tab" data-toggle="tab"
-                                        href="#tabs_2_1" role="tab" aria-controls="home" aria-selected="true">
-                                        <span class="nav-link-icon d-block"><i class="ni ni-atom"></i></span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#tabs_2_2" role="tab"
-                                        aria-controls="profile" aria-selected="false">
-                                        <span class="nav-link-icon d-block"><i class="ni ni-chat-round"></i></span>
-                                    </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#tabs_2_3" role="tab"
-                                        aria-controls="contact" aria-selected="false">
-                                        <span class="nav-link-icon d-block"><i
-                                                class="ni ni-cloud-download-95"></i></span>
-                                    </a>
-                                </li>
-                            </ul>
+                            <x-welcome.nav-pills id="tabs_2">
+                                <x-welcome.nav-pill-item id="tabs_2_1" icon="ni ni-atom" :active="true" />
+                                <x-welcome.nav-pill-item id="tabs_2_2" icon="ni ni-chat-round" :active="false" />
+                                <x-welcome.nav-pill-item id="tabs_2_3" icon="ni ni-cloud-download-95" :active="false" />
+                            </x-welcome.nav-pills>
                         </div>
                         <div class="col-lg-5">
                             <h3 class="h4 text-success font-weight-bold mb-5">Labels</h3>
