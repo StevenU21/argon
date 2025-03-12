@@ -934,10 +934,14 @@
             <h3 class="mt-lg mb-4">
                 <span>Alerts</span>
             </h3>
-            <x-welcome.alert type="success" icon="ni ni-like-2" title="Success!" message="This is a success alert—check it out!" />
-            <x-welcome.alert type="info" icon="ni ni-bell-55" title="Info!" message="This is an info alert—check it out!" />
-            <x-welcome.alert type="warning" icon="ni ni-bell-55" title="Warning!" message="This is a warning alert—check it out!" />
-            <x-welcome.alert type="danger" icon="ni ni-support-16" title="Danger!" message="This is an error alert—check it out!" />
+            <x-welcome.alert type="success" icon="ni ni-like-2" title="Success!"
+                message="This is a success alert—check it out!" />
+            <x-welcome.alert type="info" icon="ni ni-bell-55" title="Info!"
+                message="This is an info alert—check it out!" />
+            <x-welcome.alert type="warning" icon="ni ni-bell-55" title="Warning!"
+                message="This is a warning alert—check it out!" />
+            <x-welcome.alert type="danger" icon="ni ni-support-16" title="Danger!"
+                message="This is an error alert—check it out!" />
             <!-- Typography -->
             <h2 class="mt-lg mb-5">
                 <span>Typography</span>
@@ -947,49 +951,37 @@
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Heading 1</small>
                 </div>
-                <div class="col-sm-9">
-                    <h1 class="mb-0">Argon Design System</h1>
-                </div>
+                <x-welcome.heading level="1" text="Argon Design System" />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Heading 2</small>
                 </div>
-                <div class="col-sm-9">
-                    <h2 class="mb-0">Argon Design System</h2>
-                </div>
+                <x-welcome.heading level="2" text="Argon Design System" />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Heading 3</small>
                 </div>
-                <div class="col-sm-9">
-                    <h3 class="mb-0">Argon Design System</h3>
-                </div>
+                <x-welcome.heading level="3" text="Argon Design System" />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Heading 4</small>
                 </div>
-                <div class="col-sm-9">
-                    <h4 class="mb-0">Argon Design System</h4>
-                </div>
+                <x-welcome.heading level="4" text="Argon Design System" />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Heading 5</small>
                 </div>
-                <div class="col-sm-9">
-                    <h5 class="mb-0">Argon Design System </h5>
-                </div>
+                <x-welcome.heading level="5" text="Argon Design System" />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Heading 6</small>
                 </div>
-                <div class="col-sm-9">
-                    <h6 class="mb-0">Argon Design System </h6>
-                </div>
+                <x-welcome.heading level="6" text="Argon Design System" />
             </div>
             <!-- Display titles -->
             <h3 class="h4 text-success font-weight-bold mt-md">Display titles</h3>
@@ -997,33 +989,25 @@
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Display 1</small>
                 </div>
-                <div class="col-sm-9">
-                    <h1 class="display-1 mb-0">Argon Design System</h1>
-                </div>
+                <x-welcome.display-title level="1" text="Argon Design System" />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Display 2</small>
                 </div>
-                <div class="col-sm-9">
-                    <h2 class="display-2 mb-0">Argon Design System</h2>
-                </div>
+                <x-welcome.display-title level="2" text="Argon Design System" />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Display 3</small>
                 </div>
-                <div class="col-sm-9">
-                    <h3 class="display-3 mb-0">Argon Design System</h3>
-                </div>
+                <x-welcome.display-title level="3" text="Argon Design System" />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Display 4</small>
                 </div>
-                <div class="col-sm-9">
-                    <h4 class="display-4 mb-0">Argon Design System</h4>
-                </div>
+                <x-welcome.display-title level="4" text="Argon Design System" />
             </div>
             <!-- Specialized titles -->
             <h3 class="h4 text-success font-weight-bold mt-md">Specialized titles</h3>
