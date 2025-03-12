@@ -2,11 +2,7 @@
 <div class="pl-lg-4">
     <div class="row">
         <div class="col-lg-6">
-            <div class="form-group">
-                <label class="form-control-label" for="name">Título</label>
-                <input type="text" id="name" name="name" class="form-control form-control-alternative"
-                    placeholder="Agregar un Nombre" value="{{ old('name', $category->name) }}">
-            </div>
+            <x-form-input label="Nombre" id="name" name="name" value="{{ $category->name }}" placeholder="Ingrese el nombre..." />
         </div>
     </div>
 </div>
@@ -14,11 +10,7 @@
 <!-- Extra -->
 <h6 class="heading-small text-muted mb-4">Información Adicional</h6>
 <div class="pl-lg-4">
-    <div class="form-group">
-        <label for="description">Descripción</label>
-        <textarea rows="4" name="description" id="description" class="form-control form-control-alternative"
-            placeholder="Escriba algo...">{{ old('description', $category->description) }}</textarea>
-    </div>
+    <x-form-textarea label="Descripción" id="description" name="description" value="{{ $category->description }}" placeholder="Escribe aquí..." />
 </div>
 
 <hr class="my-4" />

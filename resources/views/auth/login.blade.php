@@ -9,14 +9,8 @@
                     <div class="card-header bg-transparent pb-5">
                         <div class="text-muted text-center mt-2 mb-3"><small>Iniciar con</small></div>
                         <div class="btn-wrapper text-center">
-                            <a href="#" class="btn btn-neutral btn-icon">
-                                <span class="btn-inner--icon"><img src="{{ asset('img/icons/common/github.svg') }}"></span>
-                                <span class="btn-inner--text">Github</span>
-                            </a>
-                            <a href="#" class="btn btn-neutral btn-icon">
-                                <span class="btn-inner--icon"><img src="{{ asset('img/icons/common/google.svg') }}"></span>
-                                <span class="btn-inner--text">Google</span>
-                            </a>
+                            <x-social-button link="#" icon="img/icons/common/github.svg" text="Github" />
+                            <x-social-button link="#" icon="img/icons/common/google.svg" text="Google" />
                         </div>
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
@@ -31,8 +25,8 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text"><i class="ni ni-email-83"></i></span>
                                     </div>
-                                    <input class="form-control" placeholder="Email" id="email" type="email"
-                                        name="email" :value="old('email')" required autofocus autocomplete="username">
+                                    <input class="form-control" placeholder="Email" id="email" type="email" name="email"
+                                        :value="old('email')" required autofocus autocomplete="username">
                                 </div>
                             </div>
                             <div class="form-group">

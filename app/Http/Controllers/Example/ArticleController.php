@@ -80,7 +80,7 @@ class ArticleController extends Controller
         $this->authorize('view', $article);
         // con la funcion load cargamos la relacion de la categoria
         $article->load(['category', 'tags', 'user']);
-        
+
         return view('examples.articles.show', compact('article'));
     }
 
