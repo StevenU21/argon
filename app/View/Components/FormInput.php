@@ -13,17 +13,19 @@ class FormInput extends Component
     public $name;
     public $placeholder;
     public $value;
+    public $icon;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($label = '', $id = '', $name = '', $placeholder = '', $value = '')
+    public function __construct($label = '', $id = '', $name = '', $placeholder = '', $value = '', $icon = '')
     {
         $this->label = $label;
         $this->id = $id;
         $this->name = $name;
         $this->placeholder = $placeholder;
         $this->value = $value;
+        $this->icon = $icon;
     }
 
     /**

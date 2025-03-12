@@ -17,8 +17,9 @@ class FormTextarea extends Component
     public $name;
     public $placeholder;
     public $value;
+    public $icon;
 
-    public function __construct($label = '', $rows = 4, $id = '', $name = '', $placeholder = '', $value = '')
+    public function __construct($label = '', $rows = 4, $id = '', $name = '', $placeholder = '', $value = '', $icon = '')
     {
         $this->label = $label;
         $this->rows = $rows;
@@ -26,6 +27,7 @@ class FormTextarea extends Component
         $this->name = $name;
         $this->placeholder = $placeholder;
         $this->value = $value;
+        $this->icon = $icon;
     }
 
     /**
