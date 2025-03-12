@@ -1027,7 +1027,8 @@
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Heading section</small>
                 </div>
-                <x-welcome.heading-section title="Header with small subtitle" subtitle="According to the National Oceanic and Atmospheric Administration, Ted, Scambos, NSIDClead scientist, puts the potentially record maximum." />
+                <x-welcome.heading-section title="Header with small subtitle"
+                    subtitle="According to the National Oceanic and Atmospheric Administration, Ted, Scambos, NSIDClead scientist, puts the potentially record maximum." />
             </div>
             <!-- Paragraphs -->
             <h3 class="h4 text-success font-weight-bold mt-md">Paragraphs</h3>
@@ -1057,56 +1058,66 @@
                     <small class="text-uppercase text-muted font-weight-bold">Quote</small>
                 </div>
                 <div class="col-sm-9">
-                <x-welcome.blockquote text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
-              footer="Someone famous in"
-              cite="Source Title" />
+                    <x-welcome.blockquote
+                        text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante."
+                        footer="Someone famous in" cite="Source Title" />
                 </div>
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Muted text</small>
                 </div>
-                <x-welcome.colored-text color="muted" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
+                <x-welcome.colored-text color="muted"
+                    text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Primary text</small>
                 </div>
-                <x-welcome.colored-text color="primary" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
+                <x-welcome.colored-text color="primary"
+                    text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Info text</small>
                 </div>
-                <x-welcome.colored-text color="info" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
+                <x-welcome.colored-text color="info"
+                    text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Success text</small>
                 </div>
-                <x-welcome.colored-text color="success" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
+                <x-welcome.colored-text color="success"
+                    text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Warning text</small>
                 </div>
-                <x-welcome.colored-text color="warning" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
+                <x-welcome.colored-text color="warning"
+                    text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Danger text</small>
                 </div>
-                <x-welcome.colored-text color="danger" text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
+                <x-welcome.colored-text color="danger"
+                    text="I will be the leader of a company that ends up being worth billions of dollars, because I got the answers..." />
             </div>
             <!-- Images -->
             <h2 class="mt-lg mb-5">
                 <span>Images</span>
             </h2>
             <div class="row">
-            <x-welcome.image src="img/theme/team-1-800x800.jpg" alt="Rounded image" class="rounded shadow" style="width: 150px;" label="Image" />
-            <x-welcome.image src="img/theme/team-2-800x800.jpg" alt="Circle image" class="rounded-circle shadow" style="width: 150px;" label="Circle Image" />
-            <x-welcome.image src="img/theme/team-3-800x800.jpg" alt="Raised image" class="rounded shadow-lg" style="width: 150px;" label="Raised" />
-            <x-welcome.image src="img/theme/team-4-800x800.jpg" alt="Raised circle image" class="rounded-circle shadow-lg" style="width: 150px;" label="Circle Raised" />
+                <x-welcome.image src="img/theme/team-1-800x800.jpg" alt="Rounded image" class="rounded shadow"
+                    style="width: 150px;" label="Image" />
+                <x-welcome.image src="img/theme/team-2-800x800.jpg" alt="Circle image" class="rounded-circle shadow"
+                    style="width: 150px;" label="Circle Image" />
+                <x-welcome.image src="img/theme/team-3-800x800.jpg" alt="Raised image" class="rounded shadow-lg"
+                    style="width: 150px;" label="Raised" />
+                <x-welcome.image src="img/theme/team-4-800x800.jpg" alt="Raised circle image"
+                    class="rounded-circle shadow-lg" style="width: 150px;" label="Circle Raised" />
             </div>
             <h2 class="mt-lg mb-5">
                 <span>Javascript Components</span>
@@ -1115,9 +1126,8 @@
             <!-- Modals -->
             <div class="row">
                 <div class="col-md-4">
-                    <button type="button" class="btn btn-block btn-primary mb-3" data-toggle="modal"
-                        data-target="#modal-default">Default</button>
-                    <x-modal id="modal-default" title="Type your modal title">
+                    <x-welcome.modal-button target="modal-default" color="primary" text="Default" />
+                    <x-welcome.modal id="modal-default" title="Type your modal title">
                         <x-slot name="body">
                             <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
                                 there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
@@ -1130,11 +1140,10 @@
                             <button type="button" class="btn btn-primary">Save changes</button>
                             <button type="button" class="btn btn-link ml-auto" data-dismiss="modal">Close</button>
                         </x-slot>
-                    </x-modal>
+                    </x-welcome.modal>
                 </div>
                 <div class="col-md-4">
-                    <button type="button" class="btn btn-block btn-warning mb-3" data-toggle="modal"
-                        data-target="#modal-notification">Notification</button>
+                    <x-welcome.modal-button target="modal-notification" color="warning" text="Notification" />
                     <div class="modal fade" id="modal-notification" tabindex="-1" role="dialog"
                         aria-labelledby="modal-notification" aria-hidden="true">
                         <div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
@@ -1164,8 +1173,7 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <button type="button" class="btn btn-block btn-default" data-toggle="modal"
-                        data-target="#modal-form">Form</button>
+                    <x-welcome.modal-button target="modal-form" color="default" text="Form" />
                     <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form"
                         aria-hidden="true">
                         <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
