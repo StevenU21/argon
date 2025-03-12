@@ -27,17 +27,18 @@ class Article extends Model
     {
         return SlugOptions::create()
             ->generateSlugsFrom('title')
-            ->saveSlugsTo('slug');
+            ->saveSlugsTo('slug')
+            ->doNotGenerateSlugsOnUpdate();
     }
 
     public function image(): string
-     {
-         if ($this->image) {
-             return asset('storage/' . $this->image);
-         } else {
-             return asset('img/theme/animal.jpeg');
-         }
-     }
+    {
+        if ($this->image) {
+            return asset('storage/' . $this->image);
+        } else {
+            return asset('img/theme/animal.jpeg');
+        }
+    }
 
     public function category(): BelongsTo
     {
