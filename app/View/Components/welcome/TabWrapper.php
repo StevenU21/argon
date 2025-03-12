@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class NavWrapper extends Component
+class TabWrapper extends Component
 {
     public $id;
 
@@ -23,6 +23,6 @@ class NavWrapper extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.welcome.nav-wrapper');
+        return view('components.welcome.tab-wrapper');
     }
 }

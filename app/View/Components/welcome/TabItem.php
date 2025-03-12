@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class NavItem extends Component
+class TabItem extends Component
 {
     public $id;
     public $label;
@@ -29,6 +29,6 @@ class NavItem extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.welcome.nav-item');
+        return view('components.welcome.tab-item');
     }
 }

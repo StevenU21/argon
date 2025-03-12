@@ -826,14 +826,14 @@
                             <div class="mb-3">
                                 <small class="text-uppercase font-weight-bold">With icons</small>
                             </div>
-                            <x-welcome.nav-wrapper id="tabs-icons-text">
-                                <x-welcome.nav-item id="tabs-icons-text-1" label="Home" icon="ni ni-cloud-upload-96"
+                            <x-welcome.tab-wrapper id="tabs-icons-text">
+                                <x-welcome.tab-item id="tabs-icons-text-1" label="Home" icon="ni ni-cloud-upload-96"
                                     :active="true" />
-                                <x-welcome.nav-item id="tabs-icons-text-2" label="Profile" icon="ni ni-bell-55"
+                                <x-welcome.tab-item id="tabs-icons-text-2" label="Profile" icon="ni ni-bell-55"
                                     :active="false" />
-                                <x-welcome.nav-item id="tabs-icons-text-3" label="Messages"
+                                <x-welcome.tab-item id="tabs-icons-text-3" label="Messages"
                                     icon="ni ni-calendar-grid-58" :active="false" />
-                            </x-welcome.nav-wrapper>
+                            </x-welcome.tab-wrapper>
                             <div class="card shadow">
                                 <div class="card-body">
                                     <x-welcome.tab-content id="myTabContent">
@@ -866,11 +866,11 @@
                             <div class="mb-3">
                                 <small class="text-uppercase font-weight-bold">With text</small>
                             </div>
-                            <x-welcome.nav-wrapper id="tabs-text">
-                                <x-welcome.nav-item id="tabs-text-1" label="Home" :active="true" />
-                                <x-welcome.nav-item id="tabs-text-2" label="Profile" :active="false" />
-                                <x-welcome.nav-item id="tabs-text-3" label="Messages" :active="false" />
-                            </x-welcome.nav-wrapper>
+                            <x-welcome.tab-wrapper id="tabs-text">
+                                <x-welcome.tab-item id="tabs-text-1" label="Home" :active="true" />
+                                <x-welcome.tab-item id="tabs-text-2" label="Profile" :active="false" />
+                                <x-welcome.tab-item id="tabs-text-3" label="Messages" :active="false" />
+                            </x-welcome.tab-wrapper>
                             <div class="card shadow">
                                 <div class="card-body">
                                     <x-welcome.tab-content id="myTabContent">
