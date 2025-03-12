@@ -332,23 +332,19 @@
                         </div>
                         <x-welcome.radio name="custom-radio-1" id="customRadio1" label="Unchecked" />
                         <x-welcome.radio name="custom-radio-1" id="customRadio2" checked="true" label="Checked" />
-                        <x-welcome.radio name="custom-radio-2" id="customRadio3" disabled="true" label="Disabled unchecked" />
-                        <x-welcome.radio name="custom-radio-2" id="customRadio4" checked="true" disabled="true" label="Disabled checked" />
+                        <x-welcome.radio name="custom-radio-2" id="customRadio3" disabled="true"
+                            label="Disabled unchecked" />
+                        <x-welcome.radio name="custom-radio-2" id="customRadio4" checked="true" disabled="true"
+                            label="Disabled checked" />
                     </div>
                     <div class="col-lg-3 col-sm-6 mt-4 mt-md-0">
                         <!-- Toggle buttons -->
                         <div class="mb-3">
                             <small class="text-uppercase font-weight-bold">Toggle buttons</small>
                         </div>
-                        <label class="custom-toggle">
-                            <input type="checkbox">
-                            <span class="custom-toggle-slider rounded-circle"></span>
-                        </label>
+                        <x-welcome.toggle-button />
                         <span class="clearfix"></span>
-                        <label class="custom-toggle">
-                            <input type="checkbox" checked>
-                            <span class="custom-toggle-slider rounded-circle"></span>
-                        </label>
+                        <x-welcome.toggle-button checked="true" />
                     </div>
                     <div class="col-lg-3 col-sm-6 mt-4 mt-md-0">
                         <div class="mb-3">
