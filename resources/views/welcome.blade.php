@@ -317,30 +317,10 @@
                         <div class="mb-3">
                             <small class="text-uppercase font-weight-bold">Checkboxes</small>
                         </div>
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input class="custom-control-input" id="customCheck1" type="checkbox">
-                            <label class="custom-control-label" for="customCheck1">
-                                <span>Unchecked</span>
-                            </label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input class="custom-control-input" id="customCheck2" type="checkbox" checked>
-                            <label class="custom-control-label" for="customCheck2">
-                                <span>Checked</span>
-                            </label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input class="custom-control-input" id="customCheck3" type="checkbox" disabled>
-                            <label class="custom-control-label" for="customCheck3">
-                                <span>Disabled Unchecked</span>
-                            </label>
-                        </div>
-                        <div class="custom-control custom-checkbox mb-3">
-                            <input class="custom-control-input" id="customCheck4" type="checkbox" checked disabled>
-                            <label class="custom-control-label" for="customCheck4">
-                                <span>Disabled Checked</span>
-                            </label>
-                        </div>
+                        <x-welcome.checkbox id="customCheck1" label="Unchecked" />
+                        <x-welcome.checkbox id="customCheck2" checked="true" label="Checked" />
+                        <x-welcome.checkbox id="customCheck3" disabled="true" label="Disabled Unchecked" />
+                        <x-welcome.checkbox id="customCheck4" checked="true" disabled="true" label="Disabled Checked" />
                     </div>
                     <div class="col-lg-3 col-sm-6 mt-4 mt-md-0">
                         <!-- Radio buttons -->
