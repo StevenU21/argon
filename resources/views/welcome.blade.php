@@ -1015,29 +1015,19 @@
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Heading</small>
                 </div>
-                <div class="col-sm-9">
-                    <h3 class="heading mb-0">Argon Design System</h3>
-                </div>
+                <x-welcome.specialized-heading text="Argon Design System" />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
                     <small class="text-uppercase text-muted font-weight-bold">Heading title</small>
                 </div>
-                <div class="col-sm-9">
-                    <h3 class="heading-title text-warning mb-0">Argon Design System</h3>
-                </div>
+                <x-welcome.specialized-heading-title text="Argon Design System" color="warning" />
             </div>
             <div class="row py-3 align-items-center">
                 <div class="col-sm-3">
-                    <small class="text-uppercase text-muted font-weight-bold">Heading seaction</small>
+                    <small class="text-uppercase text-muted font-weight-bold">Heading section</small>
                 </div>
-                <div class="col-sm-9">
-                    <div>
-                        <h2 class="display-3">Header with small subtitle </h2>
-                        <p class="lead text-muted">According to the National Oceanic and Atmospheric Administration,
-                            Ted, Scambos, NSIDClead scentist, puts the potentially record maximum.</p>
-                    </div>
-                </div>
+                <x-welcome.heading-section title="Header with small subtitle" subtitle="According to the National Oceanic and Atmospheric Administration, Ted, Scambos, NSIDClead scientist, puts the potentially record maximum." />
             </div>
             <!-- Paragraphs -->
             <h3 class="h4 text-success font-weight-bold mt-md">Paragraphs</h3>
