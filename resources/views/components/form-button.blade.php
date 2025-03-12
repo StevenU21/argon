@@ -2,11 +2,17 @@
     'type' => 'submit',
     'variant' => 'primary',
     'icon' => '',
-    'text' => ''
+    'text' => '',
+    'size' => 'md' 
 ])
 
 @php
     $buttonClass = 'btn btn-' . $variant;
+    if ($size === 'sm') {
+        $buttonClass .= ' btn-sm';
+    } elseif ($size === 'lg') {
+        $buttonClass .= ' btn-lg';
+    }
 @endphp
 
 <div class="form-group">
