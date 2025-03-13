@@ -225,11 +225,66 @@
                             <x-welcome.icon-button icon="ni ni-bag-17"></x-welcome.icon-button>
                             <!-- Button wizes -->
                             <div class="mb-3 mt-5">
+                                <small class="text-uppercase font-weight-bold">Icon Buttons</small>
+                            </div>
+                            <x-welcome.icon-button size="btn-1" color="primary"
+                                icon="ni ni-bag-17">Primary</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" color="info"
+                                icon="ni ni-active-40">Info</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" color="success"
+                                icon="ni ni-air-baloon">Success</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" color="warning"
+                                icon="ni ni-atom">Warning</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" color="danger"
+                                icon="ni ni-bell-55">Danger</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" color="neutral"
+                                icon="ni ni-bulb-61">Neutral</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" color="default"
+                                icon="ni ni-calendar-grid-58">Default</x-welcome.icon-button>
+                            <div class="mb-3 mt-5">
+                                <small class="text-uppercase font-weight-bold">Icon Buttons Position</small>
+                            </div>
+                            <x-welcome.icon-button size="btn-1" color="primary" icon="ni ni-bag-17"
+                                iconPosition="left">Primary</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" color="info" icon="ni ni-bag-17"
+                                iconPosition="right">Info</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" color="success"
+                                icon="ni ni-bag-17"></x-welcome.icon-button>
+                            <div class="mb-3 mt-5">
+                                <small class="text-uppercase font-weight-bold">Icon Buttons Outline</small>
+                            </div>
+                            <x-welcome.icon-button size="btn-1" color="primary" icon="ni ni-bag-17"
+                                outline="true">Primary</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" color="info" icon="ni ni-active-40"
+                                outline="true">Info</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" color="success" icon="ni ni-air-baloon"
+                                outline="true">Success</x-welcome.icon-button>
+                            <div class="mb-3 mt-5">
+                                <small class="text-uppercase font-weight-bold">Icon Buttons Size</small>
+                            </div>
+                            <x-welcome.icon-button size="btn-1" size="btn-sm" color="primary"
+                                icon="ni ni-bag-17">Primary</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" size="btn-1" color="info"
+                                icon="ni ni-active-40">Info</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-lg" size="btn-lg" color="success"
+                                icon="ni ni-air-baloon">Success</x-welcome.icon-button>
+                            <!-- Button wizes -->
+                            <div class="mb-3 mt-5">
                                 <small class="text-uppercase font-weight-bold">Pick your size</small>
                             </div>
                             <x-welcome.button size="btn-sm">Small</x-welcome.button>
                             <x-welcome.button size="btn-1">Regular</x-welcome.button>
                             <x-welcome.button size="btn-lg">Large Button</x-welcome.button>
+                            <!-- Button styles -->
+                            <div class="mb-3 mt-5">
+                                <small class="text-uppercase font-weight-bold">Pick your style</small>
+                            </div>
+                            <x-welcome.button size="btn-1">Default</x-welcome.button>
+                            <x-welcome.button size="btn-1" style="round">Round</x-welcome.button>
+                            <x-welcome.icon-button size="btn-1" icon="ni ni-bag-17" iconPosition="right">With
+                                Icon</x-welcome.icon-button>
+                            <x-welcome.icon-button size="btn-1" icon="ni ni-active-40"></x-welcome.icon-button>
+                            <x-welcome.button size="btn-1" style="neutral">Regular</x-welcome.button>
                         </div>
                         <!-- Button colors -->
                         <div class="mb-3 mt-5">
@@ -241,6 +296,34 @@
                         <x-welcome.button color="warning">Warning</x-welcome.button>
                         <x-welcome.button color="danger">Danger</x-welcome.button>
                         <x-welcome.button color="neutral">Neutral</x-welcome.button>
+                        <x-welcome.button color="default">Default</x-welcome.button>
+                        <div class="mb-3 mt-5">
+                            <small class="text-uppercase font-weight-bold">Disabled state</small>
+                        </div>
+                        <x-welcome.button size="btn-1" color="primary" isDisabled="true">Primary</x-welcome.button>
+                        <x-welcome.button size="btn-1" color="info" isDisabled="true">Info</x-welcome.button>
+                        <x-welcome.button size="btn-1" color="success" isDisabled="true">Success</x-welcome.button>
+                        <x-welcome.button size="btn-1" color="warning" isDisabled="true">Warning</x-welcome.button>
+                        <x-welcome.button size="btn-1" color="danger" isDisabled="true">Danger</x-welcome.button>
+                        <x-welcome.button size="btn-1" color="neutral" isDisabled="true">Neutral</x-welcome.button>
+                        <x-welcome.button size="btn-1" color="default" isDisabled="true">Default</x-welcome.button>
+                        <div class="mb-3 mt-5">
+                            <small class="text-uppercase font-weight-bold">Disabled state icon</small>
+                        </div>
+                        <x-welcome.icon-button color="primary" isDisabled="true"
+                            icon="ni ni-active-40">Primary</x-welcome.icon-button>
+                        <x-welcome.icon-button color="info" isDisabled="true"
+                            icon="ni ni-air-baloon">Info</x-welcome.icon-button>
+                        <x-welcome.icon-button color="success" isDisabled="true"
+                            icon="ni ni-atom">Success</x-welcome.icon-button>
+                        <x-welcome.icon-button color="warning" isDisabled="true"
+                            icon="ni ni-bell-55">Warning</x-welcome.icon-button>
+                        <x-welcome.icon-button color="danger" isDisabled="true"
+                            icon="ni ni-bold">Danger</x-welcome.icon-button>
+                        <x-welcome.icon-button color="neutral" isDisabled="true"
+                            icon="ni ni-bulb-61">Neutral</x-welcome.icon-button>
+                        <x-welcome.icon-button color="default" isDisabled="true"
+                            icon="ni ni-calendar-grid-58">Default</x-welcome.icon-button>
                         <div class="mb-3 mt-5">
                             <small class="text-uppercase font-weight-bold">Outline</small>
                         </div>
@@ -1194,7 +1277,8 @@
                 </div>
                 <div class="col-md-8 mt-4 mt-md-0">
                     <small class="d-block text-uppercase font-weight-bold mb-3">Date range</small>
-                    <x-welcome.datepicker-range startPlaceholder="Start date" endPlaceholder="End date" startValue="06/18/2018" endValue="06/22/2018" />
+                    <x-welcome.datepicker-range startPlaceholder="Start date" endPlaceholder="End date"
+                        startValue="06/18/2018" endValue="06/22/2018" />
                 </div>
             </div>
             <!-- Tooltips and Popovers -->
@@ -1209,10 +1293,14 @@
                 </div>
                 <div class="col-lg-6 mt-4 mt-lg-0">
                     <small class="d-block text-uppercase font-weight-bold mb-3">Popovers</small>
-                    <x-welcome.popover placement="left" title="Popover On Left" content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On left" />
-                    <x-welcome.popover placement="top" title="Popover on Top" content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On top" />
-                    <x-welcome.popover placement="right" title="Popover on Right" content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On right" />
-                    <x-welcome.popover placement="bottom" title="Popover on Bottom" content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On bottom" />
+                    <x-welcome.popover placement="left" title="Popover On Left"
+                        content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On left" />
+                    <x-welcome.popover placement="top" title="Popover on Top"
+                        content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On top" />
+                    <x-welcome.popover placement="right" title="Popover on Right"
+                        content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On right" />
+                    <x-welcome.popover placement="bottom" title="Popover on Bottom"
+                        content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On bottom" />
                 </div>
             </div>
             </div>

@@ -4,16 +4,20 @@
     'outline' => false,
     'type' => 'button',
     'dismiss' => false,
-    'textColor' => ''
+    'textColor' => '',
+    'style' => '',
+    'isDisabled' => false,
 ])
 
 @php
     $buttonClass = $outline ? 'btn-outline-' : 'btn-';
     $buttonClass .= $color === 'link' ? 'link' : $color;
+    $buttonClass .= $style ? ' btn-' . $style : '';
 @endphp
 
 <button class="btn {{ $size }} {{ $buttonClass }} {{ $textColor ? 'text-' . $textColor : '' }}"
     type="{{ $type }}"
-    @if($dismiss) data-dismiss="modal" @endif>
+    @if($dismiss) data-dismiss="modal" @endif
+    @if($isDisabled) disabled @endif>
     {{ $slot }}
 </button>

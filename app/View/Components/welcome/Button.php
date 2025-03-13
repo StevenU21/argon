@@ -11,15 +11,19 @@ class Button extends Component
     public $size;
     public $color;
     public $outline;
+    public $style;
+    public $isDisabled;
 
     /**
      * Create a new component instance.
      */
-    public function __construct($size = 'btn-1', $color = 'primary', $outline = false)
+    public function __construct($size = 'md', $color = 'primary', $outline = false, $style = '', $isDisabled = false)
     {
         $this->size = $size;
         $this->color = $color;
         $this->outline = $outline;
+        $this->style = $style;
+        $this->isDisabled = $isDisabled;
     }
 
     /**
