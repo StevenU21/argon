@@ -403,11 +403,9 @@
                     <div class="mb-3">
                         <small class="text-uppercase font-weight-bold">Carousel</small>
                     </div>
-                    <x-welcome.carousel id="myCarousel" :indicators="[true, false, false]" size="d-block w-30">
-                        <x-welcome.carousel-item src="{{ asset('img/theme/img-1-1200x1000.jpg') }}" alt="First slide"
-                            active="true" />
-                        <x-welcome.carousel-item src="{{ asset('img/theme/img-2-1200x1000.jpg') }}"
-                            alt="Second slide" />
+                    <x-welcome.carousel id="myCarousel" size="d-block w-30">
+                        <x-welcome.carousel-item src="{{ asset('img/theme/img-1-1200x1000.jpg') }}" alt="First slide" active="true" />
+                        <x-welcome.carousel-item src="{{ asset('img/theme/img-2-1200x1000.jpg') }}" alt="Second slide" />
                         <x-welcome.carousel-item src="{{ asset('img/theme/animal.jpeg') }}" alt="Third slide" />
                     </x-welcome.carousel>
                 </div>
