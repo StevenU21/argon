@@ -1126,106 +1126,63 @@
             <!-- Modals -->
             <div class="row">
                 <div class="col-md-4">
-                <x-welcome.modal-button target="modal-default" color="primary" text="Default" />
-                <x-welcome.modal id="modal-default" title="Type your modal title">
-                    <x-slot name="body">
-                        <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
-                            there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
-                            the Semantics, a large language ocean.</p>
-                        <p>A small river named Duden flows by their place and supplies it with the necessary
-                            regelialia. It is a paradisematic country, in which roasted parts of sentences fly into
-                            your mouth.</p>
-                    </x-slot>
-                    <x-slot name="footer">
-                        <x-welcome.button color="primary" type="button">Save Changes</x-welcome.button>
-                        <x-welcome.button color="link" type="button" dismiss="true">Close</x-welcome.button>
-                    </x-slot>
-                </x-welcome.modal>
+                    <x-welcome.modal-button target="modal-default" color="primary" text="Default" />
+                    <x-welcome.modal id="modal-default" title="Type your modal title">
+                        <x-slot name="body">
+                            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
+                                there live the blind texts. Separated they live in Bookmarksgrove right at the coast of
+                                the Semantics, a large language ocean.</p>
+                            <p>A small river named Duden flows by their place and supplies it with the necessary
+                                regelialia. It is a paradisematic country, in which roasted parts of sentences fly into
+                                your mouth.</p>
+                        </x-slot>
+                        <x-slot name="footer">
+                            <x-welcome.button color="primary" type="button">Save Changes</x-welcome.button>
+                            <x-welcome.button color="link" type="button" dismiss="true">Close</x-welcome.button>
+                        </x-slot>
+                    </x-welcome.modal>
                 </div>
                 <div class="col-md-4">
-                <x-welcome.modal-button target="modal-notification" color="warning" text="Notification" />
-                <x-welcome.modal id="modal-notification" title="Your attention is required" style="danger">
-                    <x-slot name="body">
-                        <div class="py-3 text-center">
-                            <i class="ni ni-bell-55 ni-3x"></i>
-                            <h4 class="heading mt-4">You should read this!</h4>
-                            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-                        </div>
-                    </x-slot>
-                    <x-slot name="footer">
-                        <x-welcome.button color="white" type="button">Ok, Got it</x-welcome.button>
-                        <x-welcome.button color="link" textColor='white' type="button" dismiss="true">Close</x-welcome.button>
-                    </x-slot>
-                </x-welcome.modal>
+                    <x-welcome.modal-button target="modal-notification" color="warning" text="Notification" />
+                    <x-welcome.modal id="modal-notification" title="Your attention is required" style="danger">
+                        <x-slot name="body">
+                            <div class="py-3 text-center">
+                                <i class="ni ni-bell-55 ni-3x"></i>
+                                <h4 class="heading mt-4">You should read this!</h4>
+                                <p>A small river named Duden flows by their place and supplies it with the necessary
+                                    regelialia.</p>
+                            </div>
+                        </x-slot>
+                        <x-slot name="footer">
+                            <x-welcome.button color="white" type="button">Ok, Got it</x-welcome.button>
+                            <x-welcome.button color="link" textColor='white' type="button"
+                                dismiss="true">Close</x-welcome.button>
+                        </x-slot>
+                    </x-welcome.modal>
                 </div>
                 <div class="col-md-4">
                     <x-welcome.modal-button target="modal-form" color="default" text="Form" />
-                    <div class="modal fade" id="modal-form" tabindex="-1" role="dialog" aria-labelledby="modal-form"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal- modal-dialog-centered modal-sm" role="document">
-                            <div class="modal-content">
-                                <div class="modal-body p-0">
-                                    <div class="card bg-secondary shadow border-0">
-                                        <div class="card-header bg-white pb-5">
-                                            <div class="text-muted text-center mb-3">
-                                                <small>Sign in with</small>
-                                            </div>
-                                            <div class="btn-wrapper text-center">
-                                                <a href="#" class="btn btn-neutral btn-icon">
-                                                    <span class="btn-inner--icon">
-                                                        <img src="{{ asset('img/icons/common/github.svg')}}">
-                                                    </span>
-                                                    <span class="btn-inner--text">Github</span>
-                                                </a>
-                                                <a href="#" class="btn btn-neutral btn-icon">
-                                                    <span class="btn-inner--icon">
-                                                        <img src="{{ asset('img/icons/common/google.svg')}}">
-                                                    </span>
-                                                    <span class="btn-inner--text">Google</span>
-                                                </a>
-                                            </div>
-                                        </div>
-                                        <div class="card-body px-lg-5 py-lg-5">
-                                            <div class="text-center text-muted mb-4">
-                                                <small>Or sign in with credentials</small>
-                                            </div>
-                                            <form role="form">
-                                                <div class="form-group mb-3">
-                                                    <div class="input-group input-group-alternative">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i
-                                                                    class="ni ni-email-83"></i></span>
-                                                        </div>
-                                                        <input class="form-control" placeholder="Email" type="email">
-                                                    </div>
-                                                </div>
-                                                <div class="form-group">
-                                                    <div class="input-group input-group-alternative">
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text"><i
-                                                                    class="ni ni-lock-circle-open"></i></span>
-                                                        </div>
-                                                        <input class="form-control" placeholder="Password"
-                                                            type="password">
-                                                    </div>
-                                                </div>
-                                                <div class="custom-control custom-control-alternative custom-checkbox">
-                                                    <input class="custom-control-input" id=" customCheckLogin"
-                                                        type="checkbox">
-                                                    <label class="custom-control-label" for=" customCheckLogin">
-                                                        <span>Remember me</span>
-                                                    </label>
-                                                </div>
-                                                <div class="text-center">
-                                                    <button type="button" class="btn btn-primary my-4">Sign in</button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                </div>
+                    <x-welcome.modal-form id="modal-form" title="Sign in with">
+                        <x-slot name="slot">
+                            <x-welcome.social-link url="#" icon="img/icons/common/github.svg" name="Github" />
+                            <x-welcome.social-link url="#" icon="img/icons/common/google.svg" name="Google" />
+                        </x-slot>
+                        <x-slot name="form">
+                            <div class="text-center text-muted mb-4">
+                                <small>Or sign in with credentials</small>
                             </div>
-                        </div>
-                    </div>
+                            <form role="form">
+                                <x-welcome.form-input-alternative icon="ni ni-email-83" placeholder="Email"
+                                    label="Email" type="email" />
+                                <x-welcome.form-input-alternative icon="ni ni-lock-circle-open" placeholder="Password"
+                                    label="Remember me" type="password" />
+                                <x-welcome.check-box id="customCheckLogin" label="Remember me" />
+                                <div class="text-center">
+                                    <x-welcome.button color="primary my-4" type="button">Sign in</x-welcome.button>
+                                </div>
+                            </form>
+                        </x-slot>
+                    </x-welcome.modal-form>
                 </div>
             </div>
             <!-- Datepicker -->
