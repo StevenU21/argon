@@ -367,6 +367,9 @@
                         <x-welcome.form-input type="text" placeholder="Success" :isValid="true" />
                         <x-welcome.form-input type="email" placeholder="Error Input" :isValid="false" />
                     </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <x-welcome.form-textarea id="description" name="description" placeholder="Write here..." />
+                    </div>
                 </div>
             </div>
             <div class="py-5 bg-secondary">
