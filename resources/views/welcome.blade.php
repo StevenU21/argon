@@ -1209,18 +1209,10 @@
                 </div>
                 <div class="col-lg-6 mt-4 mt-lg-0">
                     <small class="d-block text-uppercase font-weight-bold mb-3">Popovers</small>
-                    <button type="button" class="btn btn-sm btn-default" data-container="body"
-                        data-original-title="Popover On Left" data-toggle="popover" data-placement="left"
-                        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">On left</button>
-                    <button type="button" class="btn btn-sm btn-default" data-container="body"
-                        data-original-title="Popover on Top" data-toggle="popover" data-placement="top"
-                        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">On top</button>
-                    <button type="button" class="btn btn-sm btn-default" data-container="body"
-                        data-original-title="Popover on Right" data-toggle="popover" data-placement="right"
-                        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">On right</button>
-                    <button type="button" class="btn btn-sm btn-default" data-container="body"
-                        data-original-title="Popover on Bottom" data-toggle="popover" data-placement="bottom"
-                        data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">On bottom</button>
+                    <x-welcome.popover placement="left" title="Popover On Left" content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On left" />
+                    <x-welcome.popover placement="top" title="Popover on Top" content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On top" />
+                    <x-welcome.popover placement="right" title="Popover on Right" content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On right" />
+                    <x-welcome.popover placement="bottom" title="Popover on Bottom" content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus." text="On bottom" />
                 </div>
             </div>
             </div>
