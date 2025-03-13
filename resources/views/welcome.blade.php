@@ -1202,18 +1202,10 @@
             <div class="row">
                 <div class="col-lg-6">
                     <small class="d-block text-uppercase font-weight-bold mb-3">Tooltips</small>
-                    <button type="button" class="btn btn-sm btn-primary btn-tooltip" data-toggle="tooltip"
-                        data-placement="left" title="Tooltip on left" data-container="body" data-animation="true"
-                        data-delay="100">On left</button>
-                    <button type="button" class="btn btn-sm btn-primary btn-tooltip" data-toggle="tooltip"
-                        data-placement="top" title="Tooltip on top" data-container="body" data-animation="true">On
-                        top</button>
-                    <button type="button" class="btn btn-sm btn-primary btn-tooltip" data-toggle="tooltip"
-                        data-placement="bottom" title="Tooltip on bottom" data-container="body" data-animation="true">On
-                        bottom</button>
-                    <button type="button" class="btn btn-sm btn-primary btn-tooltip" data-toggle="tooltip"
-                        data-placement="right" title="Tooltip on right" data-container="body" data-animation="true">On
-                        right</button>
+                    <x-welcome.tooltip placement="left" title="Tooltip on left" text="On left" />
+                    <x-welcome.tooltip placement="top" title="Tooltip on top" text="On top" />
+                    <x-welcome.tooltip placement="bottom" title="Tooltip on bottom" text="On bottom" />
+                    <x-welcome.tooltip placement="right" title="Tooltip on right" text="On right" />
                 </div>
                 <div class="col-lg-6 mt-4 mt-lg-0">
                     <small class="d-block text-uppercase font-weight-bold mb-3">Popovers</small>
