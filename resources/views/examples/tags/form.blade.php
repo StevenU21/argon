@@ -2,11 +2,8 @@
 <div class="pl-lg-4">
     <div class="row">
         <div class="col-lg-6">
-            <div class="form-group">
-                <label class="form-control-label" for="input-name">Nombre</label>
-                <input type="text" id="input-name" name="name" class="form-control form-control-alternative"
-                    placeholder="Nombre" value="{{ old('name', $tag->name ?? '') }}">
-            </div>
+            <x-form-input name="name" id="name" placeholder="Ingrese un nombre" label="Nombre"
+                :value="$tag->name" />
         </div>
     </div>
 </div>

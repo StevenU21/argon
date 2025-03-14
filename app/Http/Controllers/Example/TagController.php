@@ -5,10 +5,8 @@ namespace App\Http\Controllers\Example;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Example\TagRequest;
 use App\Models\Tag;
-use Illuminate\Contracts\View\View;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Http\RedirectResponse;
-
 
 class TagController extends Controller
 {
@@ -16,7 +14,7 @@ class TagController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(): View
+    public function index()
     {
         $this->authorize('viewAny', Tag::class);
         $tags = Tag::latest()->paginate(5);
@@ -26,7 +24,7 @@ class TagController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create(): View
+    public function create()
     {
         $this->authorize('create', Tag::class);
         $tag = new Tag();
@@ -47,7 +45,7 @@ class TagController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Tag $tag): View
+    public function show(Tag $tag)
     {
         $this->authorize('view', $tag);
         return view('examples.tags.show', compact('tag'));
@@ -56,7 +54,7 @@ class TagController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Tag $tag): View
+    public function edit(Tag $tag)
     {
         $this->authorize('update', $tag);
         return view('examples.tags.edit', compact('tag'));

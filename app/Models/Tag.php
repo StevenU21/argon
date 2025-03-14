@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Traits\HasResolveModelBinding;
 use App\Traits\HasRouteKeyName;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -13,7 +14,7 @@ class Tag extends Model
 {
     use HasFactory, HasSlug, HasRouteKeyName;
     protected $fillable = [
-        'name',
+        'name'
     ];
 
     public function getSlugOptions() : SlugOptions

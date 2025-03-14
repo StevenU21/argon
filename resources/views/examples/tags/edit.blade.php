@@ -10,14 +10,12 @@
                         <h3 class="mb-0"><i class="fas fa-plus-circle"></i> Actualizar Etiqueta</h3>
                     </div>
                     <div class="col-4 text-right">
-                        <a href="{{ route('tags.index') }}" class="btn btn-sm btn-primary"><i
-                                class="fas fa-arrow-left"></i>
-                            Volver</a>
+                        <x-link :href="route('tags.index')" variant="primary" icon="fas fa-arrow-left" text="Volver"/>
                     </div>
                 </div>
             </div>
             <div class="card-body container-fluid">
-                <form action="{{ route('tags.update', $tag->id) }}" method="POST" enctype="multipart/form-data">
+                <form action="{{ route('tags.update', $tag) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     @include('examples.tags.form')

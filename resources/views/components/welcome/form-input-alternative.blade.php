@@ -4,10 +4,15 @@
     'icon' => '',
     'iconPosition' => 'left',
     'disabled' => false,
-    'isValid' => null
+    'isValid' => null,
+    'label' => '',
+    'value' => ''
 ])
 
 <div class="form-group {{ $isValid === true ? 'has-success' : ($isValid === false ? 'has-danger' : '') }}">
+    @if($label)
+        <label class="form-control-label">{{ $label }}</label>
+    @endif
     @if($icon)
         <div class="input-group input-group-alternative mb-4">
             @if($icon && $iconPosition === 'left')
@@ -15,7 +20,7 @@
                     <span class="input-group-text"><i class="{{ $icon }}"></i></span>
                 </div>
             @endif
-            <input class="form-control form-control-alternative {{ $isValid === true ? 'is-valid' : ($isValid === false ? 'is-invalid' : '') }}" placeholder="{{ $placeholder }}" type="{{ $type }}" {{ $disabled ? 'disabled' : '' }}>
+            <input class="form-control form-control-alternative {{ $isValid === true ? 'is-valid' : ($isValid === false ? 'is-invalid' : '') }}" placeholder="{{ $placeholder }}" type="{{ $type }}" value="{{ $value }}" {{ $disabled ? 'disabled' : '' }}>
             @if($icon && $iconPosition === 'right')
                 <div class="input-group-append">
                     <span class="input-group-text"><i class="{{ $icon }}"></i></span>
@@ -23,6 +28,6 @@
             @endif
         </div>
     @else
-        <input type="{{ $type }}" placeholder="{{ $placeholder }}" class="form-control form-control-alternative {{ $isValid === true ? 'is-valid' : ($isValid === false ? 'is-invalid' : '') }}" {{ $disabled ? 'disabled' : '' }}>
+        <input type="{{ $type }}" placeholder="{{ $placeholder }}" class="form-control form-control-alternative {{ $isValid === true ? 'is-valid' : ($isValid === false ? 'is-invalid' : '') }}" value="{{ $value }}" {{ $disabled ? 'disabled' : '' }}>
     @endif
 </div>

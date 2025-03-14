@@ -8,10 +8,9 @@
                 <div class="card-header border-0">
                     <div class="d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Categories</h3>
-                        @can('create categories')
-                            <x-link href="{{ route('categories.create') }}" variant="primary" icon="fas fa-plus"
-                                text="Nueva Categoria" />
-                        @endcan
+                        <x-link href="{{ route('categories.create') }}" variant="primary" icon="fas fa-plus"
+                            text="Nueva Categoria" can="create categories"/>
+
                     </div>
                 </div>
                 <div class="table-responsive">
@@ -44,18 +43,14 @@
                                     {{ $category->created_at }}
                                 </td>
                                 <td style="white-space: nowrap; display: flex; align-items: center;">
-                                    @can('read categories')
-                                        <x-link href="{{ route('categories.show', $category) }}" variant="primary" icon="fas fa-eye"
-                                            text="Mostrar" size="sm" />
-                                    @endcan
-                                    @can('update categories')
-                                        <x-link href="{{ route('categories.edit', $category) }}" variant="info" icon="fas fa-edit"
-                                            text="Editar" size="sm" />
-                                    @endcan
-                                    @can('destroy categories')
-                                        <x-delete-button :route="route('categories.destroy', $category)" icon="fas fa-trash"
-                                            text="Eliminar" />
-                                    @endcan
+                                    <x-link href="{{ route('categories.show', $category) }}" variant="primary" icon="fas fa-eye"
+                                        text="Mostrar" size="sm" can="read categories" />
+
+                                    <x-link href="{{ route('categories.edit', $category) }}" variant="info" icon="fas fa-edit"
+                                        text="Editar" size="sm" can="update categories" />
+
+                                    <x-delete-button :route="route('categories.destroy', $category)" icon="fas fa-trash"
+                                        text="Eliminar" can="destroy categories" />
                                 </td>
                             </tr>
                         @endforeach

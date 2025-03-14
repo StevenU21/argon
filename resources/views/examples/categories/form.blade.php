@@ -2,7 +2,7 @@
 <div class="pl-lg-4">
     <div class="row">
         <div class="col-lg-6">
-            <x-form-input label="Nombre" id="name" name="name" value="{{ $category->name }}"
+            <x-form-input label="Nombre" id="name" name="name" :value="$category->name"
                 placeholder="Ingrese el nombre..." />
         </div>
     </div>
@@ -19,5 +19,5 @@
 <!-- Contenido -->
 <h6 class="heading-small text-muted mb-4">Guardar</h6>
 <div class="pl-lg-4">
-    <x-form-button type="submit" variant="primary" icon="fas fa-save" text="Registrar" size="md"/>
+    <x-form-button type="submit" variant="primary" icon="fas fa-save" text="Registrar" size="md" />
 </div>

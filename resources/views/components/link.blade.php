@@ -4,7 +4,8 @@
     'icon' => '',
     'text' => '',
     'size' => '',
-    'style' => '', 
+    'style' => '',
+    'can' => null, // Permiso opcional
 ])
 
 @php
@@ -14,9 +15,11 @@
     }
 @endphp
 
-<a href="{{ $href }}" class="{{ $buttonClass }}" style="{{ $style }}">
-    @if($icon)
-        <i class="{{ $icon }}"></i>
-    @endif
-    {{ $text }}
-</a>
+@if(is_null($can) || auth()->user()->can($can))
+    <a href="{{ $href }}" class="{{ $buttonClass }}" style="{{ $style }}">
+        @if($icon)
+            <i class="{{ $icon }}"></i>
+        @endif
+        {{ $text }}
+    </a>
+@endif

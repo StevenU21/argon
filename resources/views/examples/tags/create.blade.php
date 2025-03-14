@@ -10,9 +10,7 @@
                         <h3 class="mb-0"><i class="fas fa-plus-circle"></i> Registrar Etiqueda</h3>
                     </div>
                     <div class="col-4 text-right">
-                        <a href="{{ route('tags.index') }}" class="btn btn-sm btn-primary"><i
-                                class="fas fa-arrow-left"></i>
-                            Volver</a>
+                        <x-link :href="route('tags.index')" variant="primary" icon="fas fa-arrow-left" text="Volver"/>
                     </div>
                 </div>
             </div>
