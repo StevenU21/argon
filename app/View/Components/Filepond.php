@@ -1,21 +1,19 @@
 <?php
 
-namespace App\View\Components\welcome;
+namespace App\View\Components;
 
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Badge extends Component
+class Filepond extends Component
 {
-    public $color;
-
     /**
      * Create a new component instance.
      */
-    public function __construct($color)
+    public function __construct()
     {
-        $this->color = $color;
+        //
     }
 
     /**
@@ -23,6 +21,6 @@ class Badge extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.welcome.badge');
+        return view('components.filepond');
     }
 }

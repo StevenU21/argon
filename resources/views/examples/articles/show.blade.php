@@ -25,7 +25,7 @@
                     <img src="{{ asset('storage/' . $article->image) }}" class="img-fluid rounded mb-4"
                         alt="Imagen del artículo">
                 @endif
-                
+
                 <div id="article-content" class="lead">{{ $article->content }}</div>
 
                 <hr>

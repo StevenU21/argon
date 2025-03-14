@@ -9,7 +9,7 @@
                     <div class="d-flex justify-content-between align-items-center">
                         <h3 class="mb-0">Etiquetas</h3>
                         <x-link :href="route('tags.create')" variant="primary" icon="fas fa-plus" text="Nueva Etiqueta"
-                            can="create tags" outline/>
+                            can="create tags" />
                     </div>
                 </div>
                 <x-table>
@@ -26,18 +26,18 @@
                         @foreach ($tags as $tag)
                             <tr>
                                 <x-table.td>
-                                    <x-welcome.badge color="primary" :text="$tag->id" />
+                                    <x-welcome.badge color="primary">{{ $tag->id }}</x-welcome.badge>
                                 </x-table.td>
                                 <x-table.td> {{ $tag->name }} </x-table.td>
                                 <x-table.td> {{ $tag->slug }} </x-table.td>
                                 <x-table.td> {{ $tag->created_at }} </x-table.td>
                                 <x-table.td styleType="action">
                                     <x-link :href="route('tags.show', $tag)" variant="primary" icon="fas fa-eye" text="Mostrar"
-                                        size="sm" can="read tags" outline/>
+                                        size="sm" can="read tags" />
                                     <x-link :href="route('tags.edit', $tag)" variant="info" icon="fas fa-edit" text="Editar"
-                                        size="sm" can="update tags" outline/>
+                                        size="sm" can="update tags" />
                                     <x-delete-button :route="route('tags.destroy', $tag)" icon="fas fa-trash" text="Eliminar"
-                                        can="destroy tags" outline/>
+                                        can="destroy tags" />
                                 </x-table.td>
                             </tr>
                         @endforeach

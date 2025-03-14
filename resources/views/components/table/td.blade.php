@@ -1,4 +1,4 @@
-@props(['styleType' => ''])
+@props(['styleType' => '', 'limit' => null])
 
 @php
     $styles = [
@@ -8,5 +8,9 @@
 @endphp
 
 <td {{ $attributes->merge(['style' => $style]) }}>
-    {{ $slot }}
+    @if($limit)
+        {{ Str::limit($slot, $limit) }}
+    @else
+        {{ $slot }}
+    @endif
 </td>
