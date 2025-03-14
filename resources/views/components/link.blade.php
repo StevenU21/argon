@@ -5,11 +5,12 @@
     'text' => '',
     'size' => '',
     'style' => '',
-    'can' => null, // Permiso opcional
+    'can' => null,
+    'outline' => false,
 ])
 
 @php
-    $buttonClass = 'btn btn-' . $variant;
+    $buttonClass = $outline ? 'btn btn-outline-' . $variant : 'btn btn-' . $variant;
     if ($size) {
         $buttonClass .= ' btn-' . $size;
     }
