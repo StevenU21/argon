@@ -11,8 +11,8 @@
 <!-- Extra -->
 <h6 class="heading-small text-muted mb-4">Información Adicional</h6>
 <div class="pl-lg-4">
-    <x-form-textarea label="Descripción" id="description" name="description" value="{{ $category->description }}"
-        placeholder="Escribe aquí..." />
+    <x-welcome.form-textarea label="Descripción" id="description" name="description"
+        value="{{ $category->description }}" placeholder="Escribe aquí..." />
 </div>
 
 <hr class="my-4" />
@@ -21,3 +21,4 @@
 <div class="pl-lg-4">
     <x-form-button type="submit" variant="primary" icon="fas fa-save" text="Registrar" size="md" />
 </div>
+    

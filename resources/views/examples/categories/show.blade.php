@@ -18,28 +18,11 @@
             <div class="card-body">
                 <h6 class="heading-small text-muted mb-4">Información de la Categoria</h6>
                 <div class="pl-lg-4">
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <x-form-label for="name" icon="fas fa-heading" label="Nombre" :value="$category->name" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <x-form-label for="description" icon="fas fa-heading" label="Descripción"
-                                :value="$category->description" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <x-form-label for="slug" icon="fas fa-heading" label="Slug" :value="$category->slug" />
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-lg-6">
-                            <x-form-label for="created_at" icon="fas fa-calendar" label="Creado"
-                                :value="$category->created_at" />
-                        </div>
-                    </div>
+                    <x-form-label for="name" icon="fas fa-heading" label="Nombre" :value="$category->name" />
+                    <x-form-label for="slug" icon="fas fa-link" label="Slug" :value="$category->slug" />
+                    <x-form-label for="description" icon="fas fa-heading" label="Descripción" :value="$category->description" />
+                    <x-form-label for="created_at" icon="fas fa-calendar" label="Creado el" :value="$category->created_at" />
+                    <x-form-label for="updated_at" icon="fas fa-calendar" label="Actualizado el" :value="$category->updated_at" />
                 </div>
             </div>
         </div>
