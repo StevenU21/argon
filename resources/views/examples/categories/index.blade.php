@@ -11,6 +11,7 @@
                         <x-link href="{{ route('categories.create') }}" variant="primary" icon="fas fa-plus"
                             text="Nueva Categoria" can="create categories" />
 
+                        <x-welcome.link route="categories.create" icon="fas fa-plus" text="Nueva Categoria" can="create categories" />
                     </div>
                 </div>
                 <div class="table-responsive">

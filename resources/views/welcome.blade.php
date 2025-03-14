@@ -129,17 +129,12 @@
                         <li class="nav-item d-none d-lg-block ml-lg-4">
                             @if (Route::has('login'))
                                 @auth
-                                    <a href="{{ route('dashboard') }}" target="_blank" class="btn btn-neutral btn-icon">
-                                        <span class="nav-link-inner--text">Dashboard</span>
-                                    </a>
+                                    <x-link :href="route('dashboard')" variant="danger" text="Dashboard"/>
                                 @else
-                                    <a href="{{ route('login') }}" target="_blank" class="btn btn-neutral btn-icon">
-                                        <span class="nav-link-inner--text">Login</span>
+                                    <x-link :href="route('login')" variant="primary" text="Login"/>
                                     </a>
                                     @if (Route::has('register'))
-                                        <a href="{{ route('register') }} }}" target="_blank" class="btn btn-neutral btn-icon">
-                                            <span class="nav-link-inner--text">Register</span>
-                                        </a>
+                                    <x-link :href="route('register')" variant="info" text="Register"/>
                                     @endif
                                 @endauth
                             @endif
