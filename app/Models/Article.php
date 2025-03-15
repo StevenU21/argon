@@ -31,6 +31,7 @@ class Article extends Model
             ->doNotGenerateSlugsOnUpdate();
     }
 
+    // comentarios para mantener la racha
     public function image(): string
     {
         if ($this->image) {
