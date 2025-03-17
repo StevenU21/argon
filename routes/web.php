@@ -46,8 +46,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/{category}', [CategoryController::class, 'show'])->name('categories.show');
     });
 
-    //rutas de posts de tipo resource
+    //rutas de articles
     Route::resource('/articles', ArticleController::class);
+     //rutas de tags
     Route::resource('/tags', TagController::class);
 });
 
