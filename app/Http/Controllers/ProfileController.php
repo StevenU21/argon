@@ -43,17 +43,15 @@ class ProfileController extends Controller
         }
 
         if ($request->hasFile('profile_image')) {
-            // Eliminar la imagen anterior si existe
             if ($user->profile_image) {
                 Storage::disk('public')->delete('profiles_images/' . $user->profile_image);
             }
 
             $file = $request->file('profile_image');
-            // El borrar solo funciona si las imagenes se llaman exactamente igual
             $imageName = Str::slug($user->name, '-') . '-' . $user->id . '.jpg';
             $user->profile_image = $file->storeAs('profile_images', $imageName, 'public');
         }
-        
+
         $user->save();
         return Redirect::route('profile.edit')->with('updated', 'Perfil actualizado correctamente.');
     }
