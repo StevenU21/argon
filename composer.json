@@ -1,7 +1,8 @@
 {
-    "name": "laravel/laravel",
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "deifhelt/argon-laravel",
     "type": "project",
-    "description": "The skeleton application for the Laravel framework.",
+    "description": "The argon template for laravel projects.",
     "keywords": ["laravel", "framework"],
     "license": "MIT",
     "require": {
