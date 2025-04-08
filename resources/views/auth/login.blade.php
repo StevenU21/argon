@@ -10,7 +10,7 @@
                         <div class="text-muted text-center mt-2 mb-3"><small>Iniciar con</small></div>
                         <div class="btn-wrapper text-center">
                             <x-welcome.social-link url="#" name="Github" icon="img/icons/common/github.svg" />
-                            <x-welcome.social-link url="#" name="goole" icon="img/icons/common/google.svg" />
+                            <x-welcome.social-link url="#" name="Google" icon="img/icons/common/google.svg" />
                         </div>
                     </div>
                     <div class="card-body px-lg-5 py-lg-5">
@@ -36,7 +36,7 @@
                                 Contraseña?</small></x-welcome.link>
                     </div>
                     <div class="col-6 text-right">
-                        <x-welcome.link :href="route('register')" color="light"><small>Crear una
+                        <x-welcome.link href="{{ route('register') }}" color="light"><small>Crear una
                                 Cuenta</small></x-welcome.link>
                     </div>
                 </div>
