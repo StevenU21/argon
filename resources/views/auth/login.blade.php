@@ -33,11 +33,13 @@
                 <div class="row mt-3">
                     <div class="col-6">
                         <x-welcome.link href="{{ route('password.request') }}" color="light"><small>¿Olvidaste tu
-                                Contraseña?</small></x-welcome.link>
+                                Contraseña?</small>
+                        </x-welcome.link>
                     </div>
                     <div class="col-6 text-right">
-                        <x-welcome.link href="{{ route('register') }}" color="light"><small>Crear una
-                                Cuenta</small></x-welcome.link>
+                        <x-welcome.link href="{{ route('register') }}" color="light">
+                            <small>Crear una Cuenta</small>
+                        </x-welcome.link>
                     </div>
                 </div>
             </div>
